@@ -1,0 +1,239 @@
+% 08.11.2011
+
+\point{2} \textbf{Свойства преобразования Лапласа}
+
+\Th Пусть $f(t) \Lap \tilde f(p)$, $\gamma$~--- комплексное число. Тогда
+$$
+    \gamma f(t) \Lap \gamma \tilde f(p)
+$$
+\Th Пусть $f_1(t) \Lap \tilde f_1 (p)$, $f_2(t) \Lap \tilde f_2 (p)$.
+Тогда
+$$
+    f_1(t) + f_2(t) \Lap \tilde f_1(p) + \tilde f_2 (p)
+$$
+\Proof Пусть выполнены условия
+$$
+    |f_1 (t)| \leqslant M_1 e^{\alpha_1 t}, \,
+    |f_2 (t)| \leqslant M_2 e^{\alpha_2 t}.
+$$
+Тогда по неравенству треугольника
+$$
+    |f_1(t) + f_2(t)| \leqslant M e^{\alpha t}, \, \alpha = \max(\alpha_1, \alpha_2),
+    \, M = M_1 + M_2
+$$
+\Th Пусть $f(t)$~--- оригинал,
+$$
+    F(t) = \int\limits_0^t f(\tau) \id \tau.
+$$
+Тогда $F(t)$~--- оригинал.
+
+\Proof Пусть $|f(t)| \leqslant M e^{\alpha t}$.
+Берём $\alpha > 0$. Тогда
+$$
+    |F(t)| = \left| \int\limits_0^t f(\tau)\id \tau \right| \leqslant
+    \int\limits_0^t M e^{\alpha \tau} = \df M \alpha (e^{\alpha t} - 1)
+    \leqslant \df M \alpha e^{\alpha t}.
+$$
+\Th Пусть $f(t) \Lap \tilde f (p)$. Пусть также $f(t)$ непрерывно дифференцируемая,
+$$
+    f'(t) = g(t), \, g(t) \Lap \tilde g(p).
+$$
+Тогда
+$$
+    \tilde g(p) = p \tilde f(p) - f(0).
+$$
+\Proof
+$$
+    \tilde g(p) = \int\limits_0^{+\infty} e^{-pt} g(t) \id t =
+    \int\limits_0^{+\infty} e^{-pt}f'(t) \id t =
+$$
+$$
+    \underbrace{\left.\left( e^{-pt} \cdot f(t) \right)\right|_0^{+\infty}}_{=0} -
+    \int\limits_{0}^{+\infty} -p e^{-pt} f(t)\id t =
+    -f(0) + p \int_0^{+\infty} e^{-pt} f(t) \id t
+$$
+\Th Пусть $f(t) \Lap \tilde f(p)$, и выполнены следующие условия:
+\begin{enumerate}
+  \item $f(t)$~--- $m$ раз непрерывно дифференцируемая, $f^{(m)} (t) = g(t)$.
+  \item $g(t) \Lap \tilde g(p)$
+\end{enumerate}
+Тогда
+$$
+    \tilde g(p) = p^m \tilde f(0) - p^{m-1} f(0) -
+    p^{m-2} f'(0) - \ldots - f^{(m-1)} (0)
+$$
+\Proof
+$$
+    f^{(m-1)} (t) = \int_0^t f^{(m)} (\tau) \id \tau + f^{(m-1)} (0) \text{ --- оригинал}
+$$
+$$
+    f^{(m-2)}, \ldots, f'(t) \text{ --- оригиналы.}
+$$
+Утверждение доказывается по индукции.
+
+\Th Пусть $f(t) \Lap \tilde f(p)$, и выполнены следующие условия:
+\begin{enumerate}
+  \item $f(t)$~--- непрерывно дифференцируемая.
+  \item $|f(t)| \leqslant M e^{\alpha t}$.
+  \item $\sigma > \alpha$.
+\end{enumerate}
+
+Тогда при $t > 0$ имеет место
+$$
+    f(t) = \df{1}{2\pi} \lim_{T \to +\infty} \int \limits_{-T}^T
+    e^{(\sigma + i \tau)t} \cdot \tilde f (\sigma + i \tau) \id \tau
+    \eqno (3)
+$$
+При $t = 0$ правая часто даёт не $f(0)$, а $\df12 f(0)$.
+
+\Th Пусть $f_1(t) \Lap \tilde f_1 (p)$, $f_2(t) \Lap \tilde f_2 (p)$.
+Пусть кроме того, $\tilde f_1 (p) = \tilde f_2 (p)$.
+\begin{center}
+Тогда $f_1(t) = f_2 (t)$
+\end{center}
+\Proof
+$$
+    F_1(t) = \int_0^t f_1(\tau) \id \tau, \,
+    F_2(t) = \int_0^t f_2(\tau) \id \tau
+$$
+$$
+    F_1(t) \Lap \tilde F_1 (p), \, F_2(t) \Lap \tilde F_2 (p)
+$$
+$$
+    f_1(t) = F'_1(t), \, \tilde f_1(p) = p F_1(p) - f_1(0) = p F_1 (p)
+$$
+$$
+    f_2 (p) = p F_2(p); \, \tilde F_2(p) = \dfrac{\tilde f_1 (p)}{p}
+    = \dfrac{\tilde f_2 (p)}{p} = \tilde F_2 (p) \RA
+$$
+$$
+    F_1(t) = F_2(t), \quad f_1(t) = f_2(t)
+$$
+\point{3} Пусть выполнены следующие условия:
+\nopagebreak
+\begin{enumerate}
+  \item $\varphi(t) = t^k e^{\lam t}$, $\lam$~--- комплексное, $0 \leqslant k$, $k \in \ZZ$.
+  \item $\alpha > \Re \lam$
+\end{enumerate}
+Найдём преобразование Лапласа функции $\varphi$.
+
+$\vphi (t) e^{\alpha t} \rightarrow 0$ при $t \to +\infty$.
+Кроме того, $|\vphi(t) e^{\alpha t}| \leqslant M$, $|\vphi(t)| \leqslant M e^{\alpha t}$.
+
+Рассматривая $p \such \Re p > \alpha$, $\Re (-p + \lam)$, вычисляем
+$$
+    \int_0^{+\infty} e ^ {-pt} t^k e^{\lam t} \id t.
+$$
+$$
+    \psi_k \eqdef \int_0^{+\infty} t^k e^{-zt}\id t, \,\,\Re z > 0
+$$
+$$
+    \psi_0 (z) = \int_0^{+\infty} e^{-zt} = \df 1 z
+$$
+$\lam \leqslant k \such$
+$$
+    \psi_k(z) = \int_0^{+\infty} t^k e^{-zt} \id t =
+    \left[ t^k\cdot \df{e^{-zt}}{-z} \right]_0 ^{+\infty} - \int_0^{+\infty}
+    \dfrac{kt^{k-1}e^{-zt}}{-z}\id t = \dfrac kz \psi_{k-1} (z);
+$$
+Таким образом,
+$$
+    t^k e^{\lam t} \Lap \dfrac{k!}{(p-\lam)^{k+1}}, \text{ где $0 \leqslant k$~--- целое, $\lam$~--- комплексное}.
+$$
+\Th Пусть $f(t) \Lap \tilde f(p)$, $f(t)$~--- квазимногочлен.
+
+Тогда это равносильно тому, что $\tilde f(p)$~--- правильная рациональная дробь, то есть $\tilde f(p) = \dfrac{q(p)}{r(p)}$, где $q, r$~--- многочлены, $\deg q < \deg r$.
+
+\Proof
+Очевидно, $\tilde f(p) = \sum_s \dfrac{r_s}{(p-\lam_s)^{k_s + 1}}$
+
+Рассмотрим функцию
+$$
+    h(t) \eqdef \sum_s \dfrac{\gamma_s t^{k_s} e^{\lam_s}}{k_s!}
+$$
+Тогда $h(t) \Lap \tilde f(p) \RA f(t) = h(t)$
+
+\point{4}
+$$
+\left\{
+\begin{array}{l}
+  y^{(n)} + a_1 y^{(n-1)} + \ldots + a_n y = f(t) \\
+  0 \leqslant t < + \infty,\,\text{ $a_i$~--- комплексные} \\
+  y(0) = C_0, \, y'(0) = C_1,\, \ldots, \, y^{(n-1)} (0) = C_{n-1}
+\end{array}
+\right.
+    \eqno (5)
+$$
+\textbf{Дополнительное предположение:} $f(t)$~--- оригинал.
+
+Тогда $y(t), y'(t), \ldots, y^{(n)} (t)$~--- оригиналы.
+
+Ниже предлагается метод решения такого уравнения:
+$$
+    y(t) \Lap \tilde y(p);\, y'(t) \Lap p\tilde y(p) - \underbrace{y(0)}_{=C_0}
+$$
+$$
+    y'' (t) \Lap p^2 \tilde y(p) - C_0 p - C_1; \ldots
+$$
+$$
+    (5) \LRA (5') \such
+    \left\{
+    \begin{array}{rl}
+      \tilde f(p) = & \tilde y(p) p^n - C_0 p^{n-1} - C_1 p^{n-2} - \ldots - C_{n-1} +  \\
+                    & + a_1 \big( p^{n-1} \tilde y(p) - p^{n-2} C_0 - \ldots \big) + \\
+                    & + \ldots
+    \end{array}\right.
+$$
+$$
+    L(p) \tilde y(p) = F(p) \eqno (5'')
+$$
+$$
+    L(p) = p^n + a_1 p^{n-1} + \ldots + a_n , \quad F(p) = \tilde f(p)
+    + C_0 p^{n-1} + (C_0 + a_1 C_0)p^{n-2} + \ldots
+$$
+Из $(5'')$: $\tilde y(p) = \dfrac{F(p)}{L(p)}$.
+Находя обратное преобразование Лапласа функции $\tilde y(p)$, получаем общее решение.
+
+Рассмотрим теперь такую систему:
+$$
+    \left\{
+    \begin{array}{l}
+      \dfrac{\id \vec y}{\id t} = A \vec y + \vec f(t) \\
+      \vec f = \left\|\stolb{f_1}{\vdots}{f_n}\right\|, \, A = \left\|
+        \begin{array}{ccc}
+          a_{11} & \ldots & a_{1n} \\
+          \hdotsfor{3} \\
+          a_{n1} & \ldots & a_{nn} 
+        \end{array}
+                                          \right\|, \, \vec y = \left\|\stolb{y_1}{\vdots}{y_n}\right\| \\
+      \vec y(0) = \vec C
+    \end{array}
+    \right. \eqno (6)
+$$
+\textbf{Дополнительное предположение:} все $f_r(t)$~--- оригиналы.
+$$
+    f_r(t) \Lap \tilde f_r(p)
+$$
+Тогда все $y_r(t)$~--- оригиналы (см. \S 9)
+$$
+    \left\| \stolb{\tilde f_1(p)}{\vdots}{\tilde f_n(p)} \right\|
+     = \vec{\tilde f} (p); \,
+    \left\| \stolb{\tilde y_1(p)}{\vdots}{\tilde y_n(p)} \right\|
+     = \vec{\tilde y} (p); \,
+$$
+Из $(6)$:
+$$
+    y'_r (t) \Lap p \tilde y_r (p) - C_r
+$$
+$$
+    (6) \LRA p \vec{\tilde y} (p) - \vec C = A \vec{\tilde y} (p) + \vec{\tilde f} (p);
+$$
+$$
+    \vec{\tilde y} (p) = (pE - A)^{-1} \left( \vec{\tilde f} (p) + \vec C \right)
+$$
+Такой приём решения задач и называется операционным методом.
+
+\point{5} \textbf{Заключительные замечания:}
+
+Обратить внимание на ограничения. Множества рассматриваются на $(0, +\infty)$. Если не все $f_r$~--- оригиналы, то метод неприменим.
+ 

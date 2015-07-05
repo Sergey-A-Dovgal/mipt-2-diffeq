@@ -1,0 +1,254 @@
+%07.02.2012
+
+\section{Глава 3. Исследование задачи Коши}
+
+\subsection{Вспомогательные сведения}
+
+\point{1}
+Рассмотрим матрицу $A$ из функций $a_{pq}$,
+$$
+    A(z_{1},...,z_{n}) = \left(\begin{array}{ccc}
+         a_{11} & \ldots & a_{1m} \\
+         \ldots & \ldots & \ldots \\
+         a_{n1} & \ldots & a_{nm}
+    \end{array}
+\right)
+$$
+$ a_{pq} = a_{qp}(z_{1},...,z_{r})$
+где $n, m$~--- фиксированные числа, $ z_{1}, \ldots, z_{r} $~--- вещественные переменные,
+$a_{pq}$~--- вещественные или комплексные (нужно уточнить).
+
+\Def $A(z_{1},...,z_{n})$ непрерывна $\defdef$ все $a_{pq}$ непрерывны.
+
+\point{2}
+
+\Def Если задана функция $\vec{y}(\vec{x})$, 
+$\vec{y} = \left(\begin{array}{c}
+y_1 \\
+\vdots \\
+y_n
+\end{array} \right)$
+,
+$
+    \vec{x} = \left(\begin{array}{c}
+                    x_1 \\
+                    \vdots \\
+                    x_m
+\end{array} \right)$, то
+
+$$
+\ud{\vec{y}}{\vec{x}} \eqdef \left(\begin{array}{ccc}
+\ud{\vec{y_1}}{\vec{x_1}}  & ... & \ud{\vec{y_1}}{\vec{x_m}}  \\
+... & ... & ... \\
+\ud{\vec{y_n}}{\vec{x_1}}  & ... & \ud{\vec{y_n}}{\vec{x_m}}
+\end{array} \right)
+$$
+
+\Task Доказать, что если
+ $ \vec{y} = \vec{y} (\vec{x}) $ , $ \vec{x} = \vec{x} (\vec{z}) $
+ $ \vec(y) = (\vec{x}(\vec{z}))$, то 
+ $ \ud{\vec{y}}{\vec{z}} = \ud{\vec{y}}{\vec{x}} \ud{\vec{x}}{\vec{z}}  $
+
+\point{3}
+Пусть 
+$A = \left(\begin{array}{ccc}
+a_{11} & \ldots & a_{1m} \\
+\hdotsfor{3} \\
+a_{n1} & \ldots & a_{nm}
+\end{array}
+\right)
+$, $a_{ij}$~--- вещественные или комплексные.
+
+\Def \emph{Норма матрицы}:
+$$ \vert A \vert = \sqrt{\sum_{i,j} \vert a_{ij} \vert^2} $$
+
+\textbf{Свойства:}
+\begin{enumerate}
+  \item Пусть $ A + B$ определено. Тогда
+$$ \vert A + B \vert \leq \vert A \vert + \vert B \vert$$
+  \item Пусть $AB$ определено. Тогда
+$$ \vert AB \vert \leq \vert A \vert \vert B \vert $$
+\Proof $$ C = AB,\, C = \Vert c_{rs} \Vert ,\, c_{rs} = \sum_p a_{rp}b_{ps} $$
+$$ \vert c_{rs} \vert^2 = \sum_p a_{rp}b_{ps} \leq
+\sum_p \vert a_{rp} \vert^2 \sum_q \vert b_{qs} \vert^2
+  $$
+$$ \vert C \vert^2 =\sum_{r,s} \vert c_{rs} \vert^2
+\leq \sum_{r,s} \left(\sum_p \vert a_{rp} \vert^2 \sum_q \vert b_{qp} \vert^2 \right) =
+\sum_{r,p} \vert a_{rp} \vert^2 \sum_{q,s} \vert b_{qs}\vert^2 =
+\vert A \vert^2 \vert B \vert^2
+ $$
+    \item Если $\alpha$ --- комплексное число, то
+$ \vert \alpha A \vert = \vert \alpha \vert \vert A \vert $
+\end{enumerate}
+
+\point{4} \Th
+Пусть
+$
+\vec{f} = \left(\begin{array}{c}
+y_1 \\
+\vdots \\
+y_n
+\end{array} \right) $
+$
+\vec{x} = \left(\begin{array}{c}
+x_1 \\
+\vdots \\
+x_m
+\end{array} \right) $,
+$\vec{x}$~--- вещественный, $ \vec{f} $~--- вещественная или комплексная, и выполнены следующие условия:
+\begin{enumerate}
+  \item Функция $ \vec{f}(\vec{x}) $ определена в замкнутой области $ \bar G $. 
+  \item $ \vec f $ и $ \ud{\vec f}{\vec {x}} $ непрерывны в $ \bar G $.
+  \item отрезок $ [\vec a, \vec b ] $ лежит в  $ \vec G $
+\end{enumerate}
+Тогда
+$$
+\vert \vec f (\vec b) - \vec f (\vec{\vphantom{b} a}) \vert \leq
+\max_{\vec x \in [\vec a, \vec b ] } \left| \ud{\vec f}{\vec {x}} \right|  \vert b - a \vert
+$$
+\Proof
+Рассмотрим
+$$
+    \vec \omega (t) \eqdef \vec f (\vec{\vphantom{b} a} + t(\vec b - \vec {\vphantom{b} a})), \qquad 0 \leq t \leq 1
+$$
+$$
+    \vec f (\vec b) - \vec f (\va) = \vec \omega (1) - \vec \omega (0) =
+\displaystyle\int\limits_{0}^1 \vec{\omega'}(t) dt =
+\displaystyle\int\limits_{0}^1 \left(\ud{\vec f}{\vec {x}}(\va + t(\vec b - \va))(\vec b - \va  )\right) dt
+$$
+$$
+\vert \vec f (\vec b) - \vec f (\va) \vert \leq
+\displaystyle\int\limits_{0}^1 \left(\ud{\vec f}{\vec {x}}(\va + t(\vec b - \va))(\vec b - \va  )\right) dt \leq
+\displaystyle\int\limits_{0}^1 \left\vert \ud{\vec f}{\vec {x}}(\va + t(\vec b - \va)\right\vert
+\vert \vec b - \va   \vert  dt \leq
+\max_{\vec x \in [\va, \vec b ] } \left\vert \ud{\vec f}{\vec {x}} \right\vert  \vert b - a \vert
+$$
+
+\point{5} \Th (\textbf{Лемма Гронуолла}).
+
+Пусть при $ \alpha \leqslant t \leqslant \beta $ определена вещественная функция $f(t)$.
+
+Пусть $f(t)$ непрерывна и удовлетворяет на $ \alpha \leqslant t \leqslant \beta $ соотношению
+$$
+    f(t) \leqslant A + B \int\limits_{\alpha}^t f(\tau) d\tau,  \eqno (1)
+$$
+где $A$ и $B$ - вещественные числа, $ B \geqslant 0 $. Тогда при $ \alpha \leqslant t \leqslant \beta$ имеет место
+$$
+    f(t) \leq Ae^{B(t-\alpha)}
+$$
+\Proof
+Из (1) получаем :
+$$
+    \underbrace
+    {
+        Be^{-Bt} f(t) - B^2e^{-Bt} \int\limits_{\alpha}^t f(\tau) d\tau
+    }_
+    {
+        \dfrac{d}{dt} (Be^{-Bt} \int\limits_{\alpha}^t f(\tau) d \tau  )
+    }
+    \leq ABe^{-Bt}
+     \eqno(2)
+$$
+
+$$
+Be^{-Bt} \int\limits_{\alpha}^t f(\tau) d \tau  \leq
+\int\limits_{\alpha}^t ABe^{-B\tau} d \tau = A(e^{-B\alpha} - e^{-Bt})
+$$
+$$
+B \int\limits_{\alpha}^t f(\tau) d \tau  \leq Ae^{B (t-\alpha)} - A
+$$
+
+\subsection{О приближенных решениях.}
+
+\Rem Далее в  $\S$2 -$\S$5 все величины вещественны.
+
+Пусть $n$ фиксированное, $ \vec z = \left(\begin{array}{c}
+z_1 \\
+\vdots \\
+z_n
+\end{array} \right)$. Рассмотрим дифференциальное уравнение
+$$
+    \frac{d\vec y}{dt} = \vec f (t,\vec y), \eqno (1)
+$$
+где $\vec f$ определена в замкнутой области $\vec G$ \\
+
+\Def Функция $\vec \varphi (t) - $ \emph{$\varepsilon $-приближенное решение}
+($ \varepsilon \geq 0 $) уравнения (1) тогда и только тогда, когда выполняется:
+
+\begin{enumerate}
+  \item $ \vec r (t) $ определена на некотором $[\alpha,\beta], \alpha < \beta $
+  \item $ \vec \varphi (t) $ непрерывна на $ [\alpha,\beta] $
+  \item $ \vec r (t) $ кусочно непрерывна на $  [\alpha,\beta] $
+  \item на $  [\alpha,\beta] $ в точках непрерывности $ \vec \varphi' (t) $ имеет место
+$$
+\left\vert \frac{d \vec \varphi (t)}{dt} - \vec f (t,\vec \varphi (t)) \right\vert
+\leqslant \varepsilon
+$$
+\end{enumerate}
+
+\Th Пусть $ \vec \varphi_1 (t) $ и $ \vec \varphi_2 (t) $~--- два $ \varepsilon $-приближенных решения уравнения $(1)$.
+Пусть выполнены следующие условия:
+ 
+\begin{enumerate}
+  \item $ \vec \varphi_1 (t_0) = \vec \varphi_2 (t_0) = \vec y_0 $
+  \item Графики $ \vec \varphi_1 (t) $ и $ \vec \varphi_2 (t) $ не выходят из цилиндра
+$Q = \lbrace \vert t - t_0 \vert \leq \alpha , \vert \vec y - \vec y_0 \vert \leq \beta \rbrace $
+  \item $ \vec f $ и $ \ud{\vec f}{\vec y} $ непрерывны в некоторой области $ \vec G $, $ Q \subset \vec G $
+\end{enumerate}
+Обозначим $ \K = \max_{Q} \left\vert \ud{\vec f}{\vec y} \right\vert $. Тогда
+$$
+    \vec \varphi_1 (t) - \vec \varphi_2 (t) \leq 2 \varepsilon \alpha e^{\K\alpha}
+$$
+для тех $t$, для которых  $ \vec \varphi_1 (t) $ и $ \vec \varphi_2 (t) $ определены.
+
+\Proof
+\Pic{Chapter3/pic/1.png}
+$$
+    \vec \varphi'_1(t) = \vec f(t,\vec{\vphantom{f} \varphi_1} (t)) + \vec  \delta_1 (t)
+$$
+в точках непрерывности $ \vec \varphi_1$,
+$$
+    \vert \vec \delta_1 (t) \vert \leq \varepsilon
+$$
+
+$$
+    \vec \varphi_1 (t) = \vec \varphi_1 (t_0) +
+\int\limits_{t_0}^{t} \vec f (t,\vec \varphi_1 (\tau)) d \tau +
+\int\limits_{t_0}^{t} \vec \delta_1 (\tau) d\tau
+$$
+$$
+    \vec \varphi_2 (t) = \vec \varphi_2 (t_0) +
+\int\limits_{t_0}^{t} \vec f (t,\vec \varphi_1 (\tau)) d \tau +
+\int\limits_{t_0}^{t} \vec \delta_2 (\tau) d\tau,
+$$
+$$
+    \left\vert \vec \delta (\tau)\right\vert \leq \varepsilon
+$$
+$$
+    \vec \varphi_1 (t) \vec \varphi_2 (t)  =
+\int\limits_{t_0}^{t} \left(\vec f (t,\vec \varphi_1 (\tau)) - \vec f (t,\vec \varphi_2 (\tau))\right) d \tau +
+\int\limits_{t_0}^{t} (\vec \delta_1 (\tau) - \vec \delta_2 (\tau) )d\tau
+$$
+$$
+    z(t) = \vert \vec \varphi_1 (t) - \vec \varphi_2 (t) \vert
+$$
+$$
+    \left\vert\int\limits_{t_0}^{t} (\vec \delta_1 (\tau) - \vec \delta_2 (\tau) )d\tau \right\vert
+\leq 2\varepsilon \alpha
+$$
+$$
+    \Big\vert \vec f (t,\vec \varphi_1 (\tau)) - \vec f (t,\vec \varphi_2 (\tau) )\Big\vert
+\leqslant \K \Big\vert \vec \varphi_1 (t) - \vec \varphi_2 (t) \Big\vert = \K \vec z (t)
+$$
+$$
+    \vec \varphi_1 (t) - \vec \varphi_2 (t)
+\leq \int\limits_{t_0}^{t} \left(\vec f (t,\vec \varphi_1 (\tau)) - \vec f (t,\vec \varphi_2 (\tau))\right) d \tau + \int\limits_{t_0}^{t} \Big(\vec \delta_1 (\tau) - \vec \delta_2 (\tau) \Big)d\tau
+$$
+$$
+    z(t) \leq 2 \varepsilon  \alpha +
+\K \int\limits_{t_0}^{t} \vec z(\tau) d\tau
+$$
+Мы взяли для определенности $ t \geq t_0 $.
+$$
+    z(t) \leqslant 2\varepsilon \alpha e^{\K(t-t_0)} \leqslant 2 \varepsilon \alpha e^{\K\alpha}
+$$

@@ -1,0 +1,181 @@
+% 25.10.2011
+
+Рассмотрим дифференциальное уравнение
+$$
+    \df{\mathrm{d}\vec{y}}{\mathrm{d}t} = A\vec{y} + \vec{f}(t), \eqno (1)
+$$
+где $\alpha \leqslant t \leqslant \beta$, $A =  \left \| \begin{array}{ccc}
+ a_{11}  & \ldots & a_{1n} \\
+\hdotsfor{3} \\
+a_{n1} & \ldots & a_{nn}
+\end{array} \right \| = \text{const};\,
+\vec{y} =
+\left \| \begin{array}{c}
+y_1\\
+\vdots \\
+y_n
+\end{array} \right \|
+,\,
+\vec{f} =
+\left \| \begin{array}{c}
+f_1\\
+\vdots \\
+f_n
+\end{array} \right \|$
+
+\textbf{Предположение:} $ \vec{f}(t) $ непрерывна на $ [\alpha; \beta] $; $ A, \vec{f}, \vec{y} $ --- комплексные.
+
+Пусть $ A = SBS^{-1} $, где $ S $ --- матрица перехода к новому базису, $ B $ -- верхняя треугольная. Тогда:
+$$
+    \vec{y}(t) = S^{-1}\vec{Y}(t),\, \vec{f}(t) = S^{-1}\vec{F}(t)
+$$
+$$
+(1) \LRA 
+\left\{
+ \begin{array} {l}
+\df{\p Y_1}{\p t} = b_{11}Y_1 + \ldots + b_{1n}Y_n + F_1(t) \\[0.3cm]
+\df{\p Y_2}{\p t} = b_{22}Y_1 + \ldots + b_{2n}Y_n + F_2(t) \\
+\hdotsfor{1}\\
+\df{\p Y_n}{\p t} = b_{nn}Y_n + F_n(t)\\[0.3pt]
+\end{array} \right.
+\eqno (1'):
+$$
+
+\point{3} \textbf{Однородные системы дифференциальных уравнений с постоянными коэффициентами}.
+Рассматривается уравнение
+$$ \df{\mathrm{d}\vec{z}}{\mathrm{d}t} = A\vec{z},\quad -\infty \leqslant t \leqslant \infty \eqno(3) $$
+\Th
+Пусть существует базис $ \vec{g}_1, \ldots, \vec{g}_n $ из собственных векторов
+$ A\vec{g}_r = \lambda_r \vec{g}_r,\, r = \overline{1, n} $. Тогда $ \vec{z}(t)$ -- решение (3) тогда и только тогда, когда
+$$
+    \vec{z}(t) = C_1 e^{\lambda_1 t}\vec{g}_1 + \ldots + C_n e^{\lambda_n t }\vec{g}_n,
+$$
+где $C_1, \ldots, C_n$~--- числа.
+
+\Proof
+\nopagebreak
+Система имеет вид:
+$\left\{\begin{array}{c}
+\df{\mathrm{d}z_1}{\mathrm{d}t} = \lambda_1 z_1,\\
+\hdotsfor{1}\\
+\df{\mathrm{d}z_n}{\mathrm{d}t} = \lambda_n z_n
+\end{array}\right.$ Обозначая $S = \|\vec{g}_1, \ldots, \vec{g}_n\|$, получим $\vec{z}(t) = S\vec{Z}(t)$, или $z_i (t) = C_i e^{\lambda_i t}$.
+$$
+\vec{z}(t) = C_1e^{\lambda_1 t} \left \| \begin{array} {c}
+1 \\
+0\\
+\vdots\\
+0
+\end{array} \right \| +
+C_2e^{\lambda_2 t} \left \| \begin{array} {c}
+0 \\
+1\\
+\vdots\\
+0
+\end{array} \right \| + \ldots +
+C_ne^{\lambda_n t} \left \| \begin{array} {c}
+0 \\
+0\\
+\vdots\\
+1
+\end{array} \right \| ,\, \vec{z}(t) = S\vec{Z}(t)
+$$
+$$
+    \| \vec{g}_1, \ldots, \vec{g}_n \| \cdot
+    \| 0 \ldots 1 \ldots 0 \|^{\top}
+     = \vec{g}_k \,\, \text{ (на~$k-$ом месте стоит 1)} $$
+\Th
+Пусть система линейных однородных дифференциальных уравнений (3) такова,
+что характеристическое уравнение $\det(A - \lambda E) = 0 $ имеет корни $ \lambda_1, \ldots, \lambda_m $ кратности $ k_1, \ldots, k_m $.
+Тогда
+$$
+    \vec{z}(t)  \text{ -- решение (3)} \RA \vec{z}(t) = \vec{q}_1(t) e^{\lambda_1 t} + \ldots + \vec{q}_m(t) e^{\lambda_m t},
+$$
+где $ \vec{q}_r(t) = \vec{q}_{r_0} + \vec{q}_{r_1} t + \ldots + \vec{q}_{r_{k_r - 1}} t^{k_r - 1} $.
+
+\Proof
+$$
+\left \{
+\begin{array}{l}
+\df{\mathrm{d}z_1}{\mathrm{d}t} = b_{11}z_1 + \ldots + b_{1n}z_n\\
+\hdotsfor{1}\\
+\df{\mathrm{d}z_n}{\mathrm{d}t} = b_{nn}z_n
+\end{array}
+\right.
+\eqno(3') $$ \par
+$ b_{11}, b_{22}, b_{33}, \ldots $ -- решения характеристического уравнения $ \det(A - \lambda E) = 0 $.
+
+Доказываем утверждение в новом базисе, затем возвращаемся в старый:
+$$
+    \vec{z}(t) = S\vec{Z}(t).
+$$
+Не сказано, что $ \vec{z}(t)$ -- решение. Это значит, что
+\emph{выражение любого решения представимо в таком виде, но не любое такое выражение -- решение}.
+
+Чтобы найти $ \vec{q}_i $ в старом базисе, используется метод неопределенных коэффициентов.
+
+\point{4} \textbf{(1) и (3)}
+$$
+    \df{\id \vec y}{\id t} = A \vec y + \vec f(t) \eqno (1)
+$$
+$$
+    \df{\id \vec z}{\id t} = A \vec z \eqno (3)
+$$
+\Th
+Пусть $ \vec{y}_*(t) $ -- какое-либо решение (1), $ \vec{y}(t) = \vec{y}_*(t) + \vec{z}(t)$. Тогда
+\begin{center}
+$ \vec{y}(t) $ -- решение (1) $ \Leftrightarrow $ $ \vec{z}(t) $~--- решение (3).
+\end{center}
+
+\Th
+Пусть
+$$
+    \vec{f}(t) = \vec{f}_1(t) + \ldots + \vec{f}_n(t),
+$$
+$$
+    \df{\mathrm{d}\vec{y}_k}{\mathrm{d}t} = A\vec{y}_k + f_k(t),\, k = \overline{1,N};\,\,
+\vec{y}(t) = \vec{y}_1(t) + \ldots + \vec{y}_n(t).
+$$
+Тогда $ \vec{y}(t) $~--- решение (1).
+
+\textbf{Далее $\vec{f}(t)$~--- квазимногочлен.}
+
+\Th
+Пусть
+$$
+    \vec{f}(t) = \vec{q}(t)e^{\mu t}, \text{ где}
+$$
+$$
+    \vec{q}(t) = \vec{q}_0 + t\vec{q}_1(t) + \ldots + t^n \vec{q}_n(t),\,\, \vec{q}_0, \ldots, \vec{q}_n, \mu \text{ --- константы.}
+$$
+Пусть $ \mu $~--- $ k $-кратный корень характеристического уравнения $ \det(A - \lambda E) = 0 $.
+
+Тогда существует решение (1), имеющее вид:
+$$
+    \vec{y}(t) = \vec{r}(t)e^{\mu t},\,\, \text{где}
+$$
+$$
+    \vec{r}(t) = r_0 + t\vec{r}_1(t) + \ldots + t^{k + n}\vec{r}_{k + n}(t),\,\,
+ \vec{r}_s = \mathrm{const}.
+$$
+\Proof
+Перейдем к новой системе координат, где матрица преобразования имеет верхнетреугольную форму $(1')$. Выкладки в исходной системе координат,
+методом неопределенных коэффициентов.
+
+\point{5} \textbf{Пусть все вещественно.}
+
+$ \det(A - \lambda E) = 0 $ имеет вещественные корни и пары комплексно сопряженных корней $ \alpha + i\beta $ и $ \alpha - i\beta $ одинаковой кратности.
+$$
+    e^{(\alpha + i\beta)t} = e^{\alpha t}(\cos \beta t + i\sin \beta t).
+$$
+
+Если $ \lambda $~--- вещественное:
+$$
+    e^{\lambda t} \vec r(t)
+$$
+В случае комплексных корней:
+$$
+    \lambda_1 = \alpha + i\beta, \lambda_2 = \alpha + i\beta \such
+      \quad \vec{q}_1(t)e^{\lambda_1 t} + \vec q_2 (t) e^{\lambda_2 t} =
+e^{\alpha t}(\vec{r}(t)\cos\beta t + \vec{s}(t)\sin \beta t)
+$$

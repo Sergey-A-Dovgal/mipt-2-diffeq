@@ -1,0 +1,237 @@
+%14.02.2012
+
+\subsection{Теорема существования и единственности решения задачи Коши.}
+%Edit later
+
+\Rem В этом параграфе все величины вещественные. Далее будем иметь дело с наборами чисел вида
+$ \left\|\begin{array}{c}
+      z_1 \\
+      \vdots \\
+      z_n
+    \end{array}
+\right\| \eqdef \vec{Z}$, $n$ --- фиксированное для всего параграфа.
+
+Рассмотрим уравнение
+$$
+    \dfrac{\id \vec{y}}{\id t} = \vec{f} (t, \vec{y}),\eqno(1)
+$$
+$f$ определена в замкнутой области $\bar{G}$.
+
+\Def Функция $\vec{y}(t)$~--- решение $(1)$, если:
+\begin{enumerate}
+  \item $\vec{y}(t)$ определена на некотором промежутке $[\alpha, \beta]$, $\alpha < \beta$,
+  \item $\vec{\mathstrut y}'(t)$ непрерывна на $[\alpha, \beta]$,
+  \item $\dfrac{\id \vec{y} (t)}{\id t} = \vec{f} (t, \vec{y} (t))$ на $[\alpha, \beta]$
+  \item Для каждого $\alpha < t < \beta$ точка $(t, \vec{y}' (t))$ --- внутренняя точка $\bar{G}$.
+\end{enumerate}
+
+\Rem Что означает условие 4. Мы отбрасываем случаи, когда внутренние точки графика решения лежат на границе нашей области. Допускаются только случаи, когда они лежат внутри этой замкнутой области.
+
+\point{1} \Th  Пусть $\vec{f}$, $\dfrac{\partial \vec{f}}{\partial \vec{y}}$ непрерывны в $\bar{G}$. Пусть $(t_0, \vec{y_0})$~--- внутренняя точка $\bar{G}$. Тогда:
+\begin{enumerate}
+  \item существует $\alpha > 0$, что на отрезке $[t_0 - \alpha, t_0 + \alpha]$ определено решение уравнения $(1)$, удовлетворяющее условию
+        $$
+            \vec{y}(t_0) = \vec{y_0}    \eqno   (2)
+        $$
+  \item Если $\vec{y_1} (t), \vec{y_2} (t)$~--- какие-либо решения задачи $(1) \land (2)$, то
+  $\vec{y_1}(t) = \vec{y_2} (t)$ на пересечении отрезков их определения.
+\end{enumerate}
+\Rem во первых фиксируется, что при заданных предположениях задача Коши имеет решение. Пункт второй утверждает единственность этого решение. Обратите внимание: утверждение 1 носит локальный характер. Решение существует в окрестности точки. Пункт 2 же носит глобальный характер.
+
+\Proof %этой важнейшей теоремы
+\begin{enumerate}
+  \item Возьмём $U$~--- какая-либо окрестность $(t_0, \vec{y_0})$, такая, что $\bar{U} \subset \bar{G}$.
+      
+      Возьмём $Q \{ (t, \vec y) \such |t-t_0| \leqslant \alpha, \, |\vec{y} - \vec{y_0}| \leqslant \beta\}$,
+      $0 < \alpha, 0 < \beta, \alpha M \leqslant \beta, Q \in \bar{U}$, где $M$~--- максимум нормы $M = \max_{\bar{U}} |\vec{f}|$.
+%      \Pic{Chapter3/pic/2.png}
+      
+      Обозначим $\omega = [t_0 - \alpha, t_0 + \alpha]$, $K = \max_{Q} \left|\dfrac{\partial \vec{f}}{\partial \vec{y}}\right|.$ Мы будем строить решение на отрезке $\omega$ следующим образом. Берём какое-то положительное $h > 0 $, и строим на нашем отрезке сетку:
+        \Pic{Chapter3/pic/2.png}
+        
+      $$
+        t_k = t_0 + kh, \,\, k = 0, \pm 1, \pm 2, \ldots
+      $$
+      Для зафиксированной сетки строим функцию $\vec{\varphi} (t) \such$ (далее всё при $t \geqslant t_0$). Если надо провести рассуждения при меньших $t$, надо сделать замену переменной, поменяв знак.
+      $$
+        \vec{\varphi}(t) = \vec{y_0} + (t-t_0) \vec{f} (t_0, \vec{y_0}) \text{ при $t_0 \leqslant t \leqslant t_1$,}
+      $$
+      $$
+        \vec\varphi(t) = \vec\varphi (t_1) + (t-t_1) \vec{f} \left( t_1, \vec\varphi(t_1) \right) \text{ при $t_1 \leqslant t \leqslant t_2$}
+      $$
+      $$
+        \vec\varphi(t) = \vec\varphi (t_2) + (t-t_2) \vec{f} \left( t_2, \vec\varphi(t_2) \right) \text{ при $t_2 \leqslant t \leqslant t_3$}
+      $$
+      \Rem      
+      Мы строим такой отрезок от $t_0$ до $t_1$, который касается графика решения в точке $(t_0, y_0)$. Мы доходим до точки $t_1$. Берём график решения, если он существует, в этой точке, и доходим до $t_2$. Задавать вопрос <<почему решение существует>>, не нужно. Мы просто строим последовательность значений по этим формулам. Ни на какие соображения мы не ссылаемся.
+      $$
+        \vec\varphi{t_{\ast\ast}} - \vec\varphi(t_\ast) = \int\limits_{t_\ast}^{t_{\ast\ast}} \vec{\varphi}' (t) \id t
+      $$
+      \Pic{Chapter3/pic/3.png}
+      $\vec{\varphi}'$~--- кусочно-непрерывная функция, поэтому можно воспользоваться формулой Ньютона-Лейбница. Поэтому 
+      $$
+        \big| \vec\varphi(t_{\ast\ast}) - \vec\varphi(t_\ast) \big| \leqslant
+      |t_\ast - t_{\ast\ast}| M.
+      $$
+      В частности,
+      $$
+        \big|\vec\varphi(t) - \vec{y_0}\big| \leqslant |t - t_0| M \leqslant \alpha M \leqslant \beta.
+      $$
+      Мы получили кривую, которая через боковые стенки нашего цилиндра не может выйти за пределы нашего цилиндра.
+      \PicStub
+      
+      Следовательно, $\vec\varphi(t)$ определена при $|t - t_0| \leqslant \alpha$.
+
+      Теперь докажем, что $\vec\varphi(t)$ есть $\eps$-приближённое решение $(1)$, $\eps\to 0$ при $h \to 0$. Давайте оценим результат подстановки
+      $$
+        \sigma(t) = \left|\dfrac{\id \vec\varphi(t)}{\id t} - \vec{f} (t, \vec\varphi(t)) \right|
+      $$
+      в точках непрерывности $\vec\varphi'(t)$.
+      
+      $t_r < t < t_{r+1} \such$ $\dfrac{\id \vec\varphi(t)}{\id t} = \vec{f} (t_2, \vec\varphi(t_2))$.
+      $$
+        \sigma(t) = \left| \vec{f} (t_2, \vec\varphi(t_2)) - \vec{f} (t,\vec\varphi(t)) \right|
+      $$
+      $|t-t_2| \leqslant h$, $|\vec\varphi(t) - \vec\varphi(t_2)|\leqslant M h$,
+      $\vec{f}$~--- равномерно непрерывна в $Q$. $\RA$
+      
+      $\sigma(t) \leqslant \eps$, где $\eps \to 0$ при $h \to 0$.
+      
+      $h_1, h_2, \ldots, h_s > 0, h_s \to 0$ при $s \to \infty$.
+      
+      $\vec{\varphi_1} (t)$ --- $\eps_s$- приближённое решение $\eps_s \to 0$ при $s \to \infty$.
+      $$
+        \left| \vec{\varphi_s}(t) - \vec{\varphi_p} (t) \right| \leqslant
+        2 \eps \alpha e^{k\alpha},
+      $$
+      $\eps = \max (\eps_s, \eps_p)$.
+      Ссылаемся на теорему, доказанную во втором параграфе.
+      $$
+        \vec{\varphi_s} (t_0) = \vec{\varphi_p} (t_0) = \vec{y_0}.
+      $$
+      Используя критерий Коши, получаем
+      $$
+        \vec{\varphi_1} (t) \rightrightarrows_{\text{на $\omega$}} \vec{\psi}(t)\text{ при }s\to \infty.
+      $$ 
+      $$
+        \vec{\psi}(t)\text{ непрерывна,}\quad \vec\psi(t) = \vec{y_0}.
+      $$
+      $$
+        \dfrac{\id \vec{\varphi_s}(t)}{\id t} = \vec{f} (t, \vec{\varphi_s}(t))+ \dta_s (t)
+      $$
+      в точках непрерывности $\vec{\varphi_s}' (t)$.
+      $$
+        \vec{\varphi_s}(t) = \vec{y_0} + \int\limits_{t_0}^{t} \vec{f}(\tau, \vec{\varphi_s}(\tau))\id \tau + \int\limits_{t_0}^t \dta_s (\tau) \id \tau
+      $$
+      $$
+        \vec{f} (t, \vec{\varphi_s}(t))\rightrightarrows_{\text{на }\omega}
+        \vec{f}(t, \vec\psi(t)) \eqno(3)
+      $$
+      $$
+        \vec\psi(t) = \vec{y_0} + \int\limits_{t_0}^t \vec{f}(\tau, \vec\psi(\tau))\id\tau
+        \eqno(4)
+      $$
+      $$
+        \dfrac{\id \vec\psi(t)}{\id t} = \vec{f} (t, \vec\psi(t)), \quad \vec\psi(t_0) = \vec{y_0}
+      $$
+      Осталось только проверить, что всякая внутренняя точка графика является внутренней точкой области.
+      $$
+        |t - t_0| < \alpha \RA |\vec{\varphi}(t)| < M\alpha
+      $$
+      %break
+   \item      Доказательство единственности решения. Докажем от противного. Пусть существуют два решения задачи $(1) \land (2)$ $\vec{y_1}(t)$ и $\vec{y_2}(t)$,
+      $\vec{y_1}(\Hat{t}) \neq \vec{y_2}(\Hat{t})$.
+      
+      Возьмём $S = \{ t \such \vec{y_1} (t) = \vec{y_2} (t) \} \cap [t_0, \Hat{t}] $.
+      
+      $\Hat{t}_0$ --- самая правая точка замкнутого ограниченного множества $S$.
+      $$
+        \Hat{y}_1 (\Hat{t}_0) = \Hat{y}_2 (\Hat{t}_0), \quad
+        \vec{y}_1 (t) \neq \vec{y}_2 (t) \text{ при } \Hat{t}_0 < t \leqslant \Hat{t}.
+      $$
+      $(\Hat{t}_0), \Hat{y}_1 (\Hat{t}_0)$ (она же $(\Hat{t}_0), \Hat{y}_2 (\Hat{t}_0)$ ) внутренняя точка $\bar{G}$. Для этой точки строим
+      $
+        \Hat{Q}, \Hat{M}, \Hat{K}
+      $.
+      
+      \PicStub
+       
+      В $\Hat{Q}$ $\vec{y}_1 (t)$ и $\vec{y}_2 (t)$~--- 0-приближённые решения (точные решения), $\vec{y}_1 (\Hat{t}_0) = \vec{y}_2 (\Hat{t}_0)$.
+      
+      Поэтому $\big| \vec{y}_1 (t) - \vec{y}_2 (t) \big| \leqslant 2 \Hat{\alpha} \cdot 0 \cdot e^{\Hat k \Hat \alpha} = 0$. Противоречие.
+  
+\end{enumerate}
+
+\point{2}
+\Th (о продолжении решения) Пусть выполняются условия теоремы \textbf{п.1.} Пусть $\bar{G}$ ограничено. Тогда решение задачи $(1) \land (2)$ может быть продолжено так, чтобы концы его графика лежали на границе $\bar{G}$.
+
+\Proof
+$$
+    M = \max_{\bar{G}} |\vec{f}|, \quad M > 0 \,(\text{для $M = 0$ очевидно})
+$$
+$(t_0, \vec{y_0});$ $Q = \{|t - t_0| \leqslant \alpha, |\vec{y} - \vec{y_0}| \leqslant M\alpha\}$.
+$$
+    \alpha \such \alpha\sqrt{1 + M^2} = \rho,
+$$
+где $\rho$~--- расстояние от $(t_0, \vec{y_0})$ от границы $\bar{G}$.
+
+\Pic{Chapter3/pic/4.png}
+
+Далее $t \geqslant t_0$. Мы построили решение на отрезке $[t_0, t_0 + \alpha]$ (см конструкцию, фигурирующую в доказательстве предыдущей теоремы).
+
+Если правый конец достиг границы, то продолжать конструкцию незачем. Но пуст правый конец, то есть точка $(t + \alpha, \vec{y}(t + \alpha))$ не является граничной. Возьмём эту точку на рисунке. Она является внутренней, поэтому мы можем продолжить решение направо. Берём точку $(t + \alpha, \vec{y}(t_0 + \alpha))$ в качестве начальной,
+$
+    [t_0 + \alpha, t_0 + \alpha + \alpha_1]
+$, где $\alpha_1$ выбирается из следующих соображений:
+$$
+    \alpha_1 \such \alpha_1 \sqrt{1 + M^2} = \rho_1,
+$$
+где $\rho_1$~--- расстояние от точки $(t + \alpha, \vec{y}(t_0 + \alpha))$ до границы $\bar{G}$, и так далее.
+
+В итоге получаем последовательность отрезков, на которую распространяем наше решение.
+$$
+    [t_0, t_0 +\alpha], [t_0, t_0 + \alpha + \alpha_1], [t_0, t_0 + \alpha + \alpha_1 + \alpha_2], \ldots
+$$
+$\rho_k$ --- расстояние от точки $\Big(t_0 + \alpha + \ldots + \alpha_{k-1},
+\vec{y}(t_0 + \alpha + \ldots + \alpha_{k-1})\Big)$.
+
+Докажем, что эти точки стремятся к границе.
+$$
+    \sqrt{1 + M^2} \sum_k \alpha_k = \sum \rho_k, \quad \sum_k \alpha_k \text{ сходится}.
+$$
+Следовательно, $\rho_k \to 0$ при $k \to \infty$.
+
+В утверждении теоремы сказано, что точка должна \emph{лежать} на границе, а не просто стремиться.
+Мы получили решение на $[t_0, t_0 +\Hat{\alpha})$, где $\Hat{\alpha} = \alpha + \alpha_1 + \alpha_2 + \ldots$. На этом полуотрезке имеет место формула
+$$
+    \vec{y}(t) = \vec{y_0} + \int\limits_{t_0}^t \vec{f} (\tau, \vec{y} (\tau)) \id \tau
+$$
+Обратим внимание на обстоятельство:
+$$
+    \left|\int_{t_0}^t \vec{f} (\tau, \vec{y}(\tau))\id \tau \right| \leqslant
+    \Big|t_{\ast\ast} - t_\ast \Big|M
+$$
+По критерию Коши существует
+$$
+    \lim_{t\to t_0 + \Hat{\alpha}} \int\limits_{t_0}^t \vec{f} (\tau, \vec y (\tau))\id \tau
+$$
+Естественным образом определяем решение по формуле:
+$$
+    \vec{y} (t_0 + \Hat{\alpha}) = \vec{y_0} + \lim_{t\to t_0 + \Hat{\alpha}}
+    \int\limits_{t_0}^t \vec{f} (\tau, \vec y (\tau))\id \tau
+$$
+$$
+    \vec{y}(t) \text{ определена при } t_0 \leqslant t \leqslant t_0 + \Hat \alpha,
+$$
+непрерывна, и на отрезке $[t_0, t_0 + \Hat\alpha]$ имеет место
+$\vec{y}'(t) = \vec f (t, \vec y (t))$.
+
+\Rem\begin{enumerate}
+      \item Если имеем уравнение вида
+      $$
+        y^{(n)} = f(t, y, y', \ldots, y^{(n-1)}), \eqno(5)
+      $$
+      то заменой $z_1 = y'$, $z_2 = y''$, $\ldots$, $z_{n-1} = y^{(n-1)}$
+      уравнение сводится к системе
+      $y' = z_1, z'_1 = z_2, \ldots, z'_{n-1} = f(t, y, z_1, \ldots, z_{n-1})$.
+      \textbf{Обязательная задача.} Используя результаты пунктов 1 и 2, сформулировать соответствующие теоремы для уравнения $(5)$

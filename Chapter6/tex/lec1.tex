@@ -1,0 +1,82 @@
+\section{Глава 6. Линейные уравнения с переменными коэффициентами}
+
+$$
+    \dfrac{\id \vec y}{\id t} = A(t) \vec y + \vec f(t),
+    \, \vec y = \left\| \stolb{y_1}{\vdots}{y_n}\right\|,
+    \, \vec f = \left\| \stolb{f_1}{\vdots}{f_n}\right\| \eqno (\ast)
+$$
+$$
+    A = \left\|
+    \begin{array}{ccc}
+      a_{11} & \ldots & a_{1n} \\
+      \cdots & \cdots & \cdots \\
+      a_{n1} & \ldots & a_{nn} ;
+    \end{array}
+    \right\|
+$$
+$A$ и $\vec f$ заданы, $\vec y(t)$~--- искомая функция, $t$~--- независимая переменная.
+$t \in \RR$; $A, \vec f, \vec y$~--- комплексные.
+
+$A = B + i C$, $\vec f = \vec g + i \vec h$, $\vec y = \vec u + i \vec v$;
+
+$B, C, \vec g, \vec h, \vec u, \vec v$~--- вещественные.
+$$
+    (\ast) \LRA
+    \left[
+        \begin{array}{c}
+          \dfrac{\id \vec u}{\id t} = B \vec u - C \vec v + \vec g \\
+          \dfrac{\id \vec v}{\id t} = C \vec u + B \vec v + \vec h
+        \end{array}
+    \right.
+$$
+
+\subsection{Уточнение исследования задачи Коши}
+
+\Th Пусть $A(t)$ и $\vec f(t)$ непрерывны на $[\alpha, \beta]$. Пусть $t_0 \in [\alpha, \beta]$ 
+и $\vec y_0$~--- произвольный вектор. Тогда существует и притом единственное решение уравнения $(\ast)$, удовлетворяющее условию
+$$
+    \vec y(t_0) = \vec y_0 \eqno (1)
+$$
+\underline{и определённые на всём $[\alpha, \beta]$.}
+
+\Rem Ценность этого утверждения заключается в подчёркнутой части.
+
+\Proof  $|A(t)| \leqslant a_1 |\vec f (t)| \leqslant b$
+$$
+    \vec y(t) = \vec y_0 +
+    \int_{t_0}^t \big( A(\tau)\vec y(\tau) + \vec f(\tau) \big) \id \tau
+$$
+При $t \geqslant t_0$: (если не выполняется, делаем замену $t$ на $-t$)
+$$
+    |\vec y (t)| \leqslant |\vec y_0| + \int_{t_0}^t \big(
+        a|\vec y(\tau)| + b \big) \id \tau.
+$$
+$$
+    |\vec y(t)| \leqslant |\vec y_0| + b(\beta - \alpha) + a
+    \int_{t_0}^t |\vec y(\tau)| \id \tau
+$$
+По неравенству Гронуолла (см. \S 1 Главы 3) получаем
+$$
+    y(t) \leqslant
+    \big(
+        |\vec y_0| + b(\beta - \alpha)
+    \big) e^{ a|t - t_0| }
+    \leqslant
+    \big(
+        |\vec y_0| + b(\beta - \alpha)
+    \big) e^{a(\beta - \alpha)} = C_1
+$$
+$$
+    D\such \{
+        \alpha \leqslant t \leqslant \beta, |\vec y| \leqslant C_2
+    \}, C_2 > C_1.
+$$
+По теореме о продолжении решения (см. Главу 3), получаем, что решение может быть продолжено
+на весь отрезок.
+
+Следовательно, решение определено при $[t_0, \beta]$. Теорема доказана.
+
+Рассмотрим уравнение $y' = 1 + y^2$. Это уравнение с разделяющимися переменными, его решение
+$y = \tg (t+c)$
+
+\Pic{Chapter6/pic/1.png} % Без имени 6

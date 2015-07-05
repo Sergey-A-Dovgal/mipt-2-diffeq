@@ -1,0 +1,728 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.24)  25 APR 2013 08:19
+entering extended mode
+**Diff.tex
+(D:\Text\LaTeX\Diff\Complete\Diff.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, russian, load
+ed.
+(D:\MIKTEX\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(D:\MIKTEX\tex\latex\base\size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (D:\Text\LaTeX\Diff\Complete\mystyle.sty
+Package: mystyle 
+(D:\MIKTEX\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(D:\MIKTEX\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(D:\MIKTEX\tex\latex\ams\math\amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(D:\MIKTEX\tex\latex\ams\math\amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(D:\MIKTEX\tex\latex\ams\math\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen103
+))
+(D:\MIKTEX\tex\latex\ams\math\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(D:\MIKTEX\tex\latex\ams\math\amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks16
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks17
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(D:\MIKTEX\tex\latex\base\inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
+ (D:\MIKTEX\tex\latex\cyrillic\cp1251.def
+File: cp1251.def 1999/11/16 v1.0d Input encoding file
+)) (D:\MIKTEX\tex\latex\base\fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(D:\MIKTEX\tex\latex\cyrillic\t2aenc.def
+File: t2aenc.def 2005/09/27 v1.0i Cyrillic encoding definition file
+)
+LaTeX Font Info:    Try loading font information for T2A+cmr on input line 100.
+
+
+(D:\MIKTEX\tex\latex\cyrillic\t2acmr.fd
+File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+))
+(D:\MIKTEX\tex\generic\babel\babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(D:\MIKTEX\tex\latex\00miktex\bblopts.cfg
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+(D:\MIKTEX\tex\generic\babel\russianb.ldf
+Language: russianb 2008/03/21 v1.1r Russian support from the babel system
+
+(D:\MIKTEX\tex\generic\babel\babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count99
+\U@D=\dimen112
+)
+Package babel Info: Making " an active character on input line 199.
+))
+(D:\MIKTEX\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\MIKTEX\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+(D:\MIKTEX\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\MIKTEX\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(D:\MIKTEX\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(D:\MIKTEX\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2010/02/14 v0.04n Graphics/color for pdfTeX
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+\c@Theorem=\count101
+\c@Corollary=\count102
+\c@Rk=\count103
+)
+No file Diff.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+(D:\MIKTEX\tex\context\base\supp-pdf.tex
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count104
+\scratchdimen=\dimen115
+\scratchbox=\box28
+\nofMPsegments=\count105
+\nofMParguments=\count106
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count107
+\MPscratchDim=\dimen116
+\MPnumerator=\count108
+\everyMPtoPDFconversion=\toks24
+) (D:\Text\LaTeX\Diff\Complete\preface.tex
+LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 12.
+
+
+(D:\MIKTEX\tex\latex\cyrillic\t2acmtt.fd
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+Underfull \hbox (badness 2150) in paragraph at lines 28--29
+[]\T2A/cmr/bx/n/12 Ответ: \T2A/cmr/m/n/12 Ра-зум-ная мысль за-клю-ча-ет-ся в то
+м, что-бы кол-лек-ци-о-ни-ро-вать опе-чат-ки на
+ []
+
+[1{D:/MIKTEX/pdftex/config/pdftex.map}
+
+])
+(D:\Text\LaTeX\Diff\Complete\Chapter1\tex\lec1.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 11.
+
+(D:\MIKTEX\tex\latex\amsfonts\umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 11.
+ (D:\MIKTEX\tex\latex\amsfonts\umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+<Chapter1/pic/1.png, id=13, 478.03593pt x 336.50719pt>
+File: Chapter1/pic/1.png Graphic file (type png)
+
+<use Chapter1/pic/1.png> [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 51.
+ (D:\MIKTEX\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 51.
+
+<Chapter1/pic/2.png, id=22, 721.94719pt x 356.0803pt>
+File: Chapter1/pic/2.png Graphic file (type png)
+ <use Chapter1/pic/2.png>
+[3 <D:/Text/LaTeX/Diff/Complete/Chapter1/pic/1.png (PNG copy)>] [4 <D:/Text/LaT
+eX/Diff/Complete/Chapter1/pic/2.png (PNG copy)>]
+<Chapter1/pic/3.png, id=32, 614.295pt x 320.69812pt>
+File: Chapter1/pic/3.png Graphic file (type png)
+ <use Chapter1/pic/3.png>
+<Chapter1/pic/4.png, id=33, 374.90062pt x 331.2375pt>
+File: Chapter1/pic/4.png Graphic file (type png)
+ <use Chapter1/pic/4.png>
+[5 <D:/Text/LaTeX/Diff/Complete/Chapter1/pic/3.png (PNG copy)>]
+<Chapter1/pic/5.png, id=38, 612.03656pt x 311.66437pt>
+File: Chapter1/pic/5.png Graphic file (type png)
+
+<use Chapter1/pic/5.png>) (D:\Text\LaTeX\Diff\Complete\Chapter1\tex\lec2.tex
+[6 <D:/Text/LaTeX/Diff/Complete/Chapter1/pic/4.png (PNG copy)> <D:/Text/LaTeX/D
+iff/Complete/Chapter1/pic/5.png (PNG copy)>]
+<Chapter1/pic/6.png, id=42, 1076.52188pt x 712.16063pt>
+File: Chapter1/pic/6.png Graphic file (type png)
+
+<use Chapter1/pic/6.png> [7 <D:/Text/LaTeX/Diff/Complete/Chapter1/pic/6.png (PN
+G copy)>] <Chapter1/pic/7.png, id=47, 692.5875pt x 578.16pt>
+File: Chapter1/pic/7.png Graphic file (type png)
+
+<use Chapter1/pic/7.png> [8] [9 <D:/Text/LaTeX/Diff/Complete/Chapter1/pic/7.png
+ (PNG copy)>]) (D:\Text\LaTeX\Diff\Complete\Chapter1\tex\lec3.tex [10] [11])
+(D:\Text\LaTeX\Diff\Complete\Chapter1\tex\lec4.tex [12] [13] [14] [15])
+(D:\Text\LaTeX\Diff\Complete\Chapter1\tex\lec5.tex [16] [17] [18])
+(D:\Text\LaTeX\Diff\Complete\Chapter1\tex\lec6.tex
+Overfull \hbox (257.46075pt too wide) has occurred while \output is active
+\T2A/cmr/bx/sl/12 џ7.  \T2A/cmr/m/sl/12 Первая краевая задача. Линейные диффере
+нциальные уравнения второго порядка. Задачи с сингулярно входящим малым парамет
+ром. \T2A/cmr/m/n/12 19
+ []
+
+[19] <Chapter1/pic/8.png, id=91, 888.31876pt x 629.35126pt>
+File: Chapter1/pic/8.png Graphic file (type png)
+
+<use Chapter1/pic/8.png> [20 <D:/Text/LaTeX/Diff/Complete/Chapter1/pic/8.png (P
+NG copy)>] <Chapter1/pic/9.png, id=95, 912.40875pt x 587.19376pt>
+File: Chapter1/pic/9.png Graphic file (type png)
+
+<use Chapter1/pic/9.png> <Chapter1/pic/10.png, id=96, 879.285pt x 605.26125pt>
+File: Chapter1/pic/10.png Graphic file (type png)
+
+<use Chapter1/pic/10.png>
+Underfull \vbox (badness 3954) has occurred while \output is active []
+
+
+Overfull \hbox (257.46075pt too wide) has occurred while \output is active
+\T2A/cmr/bx/sl/12 џ7.  \T2A/cmr/m/sl/12 Первая краевая задача. Линейные диффере
+нциальные уравнения второго порядка. Задачи с сингулярно входящим малым парамет
+ром. \T2A/cmr/m/n/12 21
+ []
+
+[21 <D:/Text/LaTeX/Diff/Complete/Chapter1/pic/9.png (PNG copy)>] [22 <D:/Text/L
+aTeX/Diff/Complete/Chapter1/pic/10.png (PNG copy)>]
+<Chapter1/pic/11.png, id=103, 1232.35406pt x 605.26125pt>
+File: Chapter1/pic/11.png Graphic file (type png)
+
+<use Chapter1/pic/11.png>) (D:\Text\LaTeX\Diff\Complete\Chapter1\tex\lec7.tex
+Overfull \hbox (257.46075pt too wide) has occurred while \output is active
+\T2A/cmr/bx/sl/12 џ7.  \T2A/cmr/m/sl/12 Первая краевая задача. Линейные диффере
+нциальные уравнения второго порядка. Задачи с сингулярно входящим малым парамет
+ром. \T2A/cmr/m/n/12 23
+ []
+
+[23] [24 <D:/Text/LaTeX/Diff/Complete/Chapter1/pic/11.png (PNG copy)>] [25]
+[26]
+
+LaTeX Warning: Command \cyru invalid in math mode on input line 223.
+
+Missing character: There is no у in font cmr12!
+
+Overfull \hbox (69.33614pt too wide) has occurred while \output is active
+\T2A/cmr/bx/sl/12 џ9.  \T2A/cmr/m/sl/12 Системы линейных обыкновенных дифференц
+иальных уравнений с постоянными коэффициентами. \T2A/cmr/m/n/12 27
+ []
+
+[27]) (D:\Text\LaTeX\Diff\Complete\Chapter1\tex\lec8.tex [28]
+Overfull \hbox (69.33614pt too wide) has occurred while \output is active
+\T2A/cmr/bx/sl/12 џ9.  \T2A/cmr/m/sl/12 Системы линейных обыкновенных дифференц
+иальных уравнений с постоянными коэффициентами. \T2A/cmr/m/n/12 29
+ []
+
+[29]) (D:\Text\LaTeX\Diff\Complete\Chapter1\tex\lec9.tex
+Underfull \hbox (badness 10000) in paragraph at lines 28--30
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+
+Overfull \hbox (236.6245pt too wide) has occurred while \output is active
+\T2A/cmr/bx/sl/12 џ10.  \T2A/cmr/m/sl/12 Матричные формулы решений обыкновенной
+ системы линейных дифференциальных уравнений с постоянными коэффициентами. \T2A
+/cmr/m/n/12 31
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+
+ []
+
+
+LaTeX Warning: Command \CYRA invalid in math mode on input line 145.
+
+Missing character: There is no А in font cmr12!
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
+
+ []
+
+
+Overfull \hbox (236.6245pt too wide) has occurred while \output is active
+\T2A/cmr/bx/sl/12 џ10.  \T2A/cmr/m/sl/12 Матричные формулы решений обыкновенной
+ системы линейных дифференциальных уравнений с постоянными коэффициентами. \T2A
+/cmr/m/n/12 33
+ []
+
+[33]
+Underfull \hbox (badness 2913) in paragraph at lines 259--261
+[]$\OML/cmm/m/it/12 f$ \T2A/cmr/m/n/12 -- функ-ция ко-неч-но-го по-ряд-ка ро-ст
+а, то есть $\OMS/cmsy/m/n/12 9$ \T2A/cmr/m/n/12 ве-ще-ствен-ные чис-ла $\OML/cm
+m/m/it/12 ;  M$\T2A/cmr/m/n/12 :
+ []
+
+LaTeX Font Info:    Try loading font information for U+euf on input line 263.
+(D:\MIKTEX\tex\latex\amsfonts\ueuf.fd
+File: ueuf.fd 2009/06/22 v3.00 Euler Fraktur
+))
+(D:\Text\LaTeX\Diff\Complete\Chapter1\tex\lec10.tex [34] [35] [36] [37])
+(D:\Text\LaTeX\Diff\Complete\Chapter2\tex\lec1.tex [38] [39] [40]
+<Chapter2/pic/1.png, id=164, 974.13937pt x 529.98pt>
+File: Chapter2/pic/1.png Graphic file (type png)
+ <use Chapter2/pic/1.png>
+[41 <D:/Text/LaTeX/Diff/Complete/Chapter2/pic/1.png (PNG copy)>]
+File: Chapter1/pic/3.png Graphic file (type png)
+
+<use Chapter1/pic/3.png> [42])
+(D:\Text\LaTeX\Diff\Complete\Chapter2\tex\lec2.tex [43] [44]
+<Chapter2/pic/2.png, id=178, 722.7pt x 638.385pt>
+File: Chapter2/pic/2.png Graphic file (type png)
+ <use Chapter2/pic/2.png>
+[45 <D:/Text/LaTeX/Diff/Complete/Chapter2/pic/2.png (PNG copy)>]
+<Chapter2/pic/3.png, id=182, 1041.8925pt x 249.93375pt>
+File: Chapter2/pic/3.png Graphic file (type png)
+
+<use Chapter2/pic/3.png> <Chapter2/pic/4.png, id=183, 325.215pt x 289.08pt>
+File: Chapter2/pic/4.png Graphic file (type png)
+
+<use Chapter2/pic/4.png> [46 <D:/Text/LaTeX/Diff/Complete/Chapter2/pic/3.png (P
+NG copy)> <D:/Text/LaTeX/Diff/Complete/Chapter2/pic/4.png (PNG copy)>]
+<Chapter2/pic/5.png, id=187, 778.40813pt x 289.08pt>
+File: Chapter2/pic/5.png Graphic file (type png)
+ <use Chapter2/pic/5.png>)
+(D:\Text\LaTeX\Diff\Complete\Chapter2\tex\lec3.tex [47 <D:/Text/LaTeX/Diff/Comp
+lete/Chapter2/pic/5.png (PNG copy)>] [48]
+Underfull \vbox (badness 3148) has occurred while \output is active []
+
+ [49]
+[50] [51]) (D:\Text\LaTeX\Diff\Complete\Chapter2\tex\lec4.tex [52] [53]
+<Chapter2/pic/6.png, id=210, 1053.1847pt x 639.89063pt>
+File: Chapter2/pic/6.png Graphic file (type png)
+
+<use Chapter2/pic/6.png>
+<Chapter2/pic/7.png, id=211, 876.27374pt x 234.8775pt>
+File: Chapter2/pic/7.png Graphic file (type png)
+
+<use Chapter2/pic/7.png> [54 <D:/Text/LaTeX/Diff/Complete/Chapter2/pic/6.png (P
+NG copy)>] <Chapter2/pic/8.png, id=215, 916.92563pt x 368.87813pt>
+File: Chapter2/pic/8.png Graphic file (type png)
+
+<use Chapter2/pic/8.png> <Chapter2/pic/9.png, id=216, 885.3075pt x 674.52pt>
+File: Chapter2/pic/9.png Graphic file (type png)
+
+<use Chapter2/pic/9.png> [55 <D:/Text/LaTeX/Diff/Complete/Chapter2/pic/7.png (P
+NG copy)> <D:/Text/LaTeX/Diff/Complete/Chapter2/pic/8.png (PNG copy)> <D:/Text/
+LaTeX/Diff/Complete/Chapter2/pic/9.png (PNG copy)>]
+<Chapter2/pic/10.png, id=221, 1143.52219pt x 846.91406pt>
+File: Chapter2/pic/10.png Graphic file (type png)
+
+<use Chapter2/pic/10.png> [56 <D:/Text/LaTeX/Diff/Complete/Chapter2/pic/10.png 
+(PNG copy)>] <Chapter2/pic/11.png, id=225, 1096.095pt x 822.07124pt>
+File: Chapter2/pic/11.png Graphic file (type png)
+
+<use Chapter2/pic/11.png> [57 <D:/Text/LaTeX/Diff/Complete/Chapter2/pic/11.png 
+(PNG copy)>]) (D:\Text\LaTeX\Diff\Complete\Chapter3\tex\lec1.tex [58] [59]
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
+
+ []
+
+[61] <Chapter3/pic/1.png, id=243, 966.61125pt x 822.07124pt>
+File: Chapter3/pic/1.png Graphic file (type png)
+
+<use Chapter3/pic/1.png> [62 <D:/Text/LaTeX/Diff/Complete/Chapter3/pic/1.png (P
+NG copy)>]) (D:\Text\LaTeX\Diff\Complete\Chapter3\tex\lec2.tex [63]
+<Chapter3/pic/2.png, id=250, 939.51pt x 773.89125pt>
+File: Chapter3/pic/2.png Graphic file (type png)
+ <use Chapter3/pic/2.png>
+[64 <D:/Text/LaTeX/Diff/Complete/Chapter3/pic/2.png (PNG copy)>]
+<Chapter3/pic/3.png, id=254, 1090.0725pt x 520.94624pt>
+File: Chapter3/pic/3.png Graphic file (type png)
+
+<use Chapter3/pic/3.png>
+Underfull \hbox (badness 2799) in paragraph at lines 71--72
+[]$[]$ \T2A/cmr/m/n/12 --- кусочно-непрерывная функ-ция, по-это-му мож-но вос-п
+оль-зо-вать-ся фор-му-лой
+ []
+
+[65 <D:/Text/LaTeX/Diff/Complete/Chapter3/pic/3.png (PNG copy)>] [66]
+<Chapter3/pic/4.png, id=261, 897.3525pt x 758.835pt>
+File: Chapter3/pic/4.png Graphic file (type png)
+ <use Chapter3/pic/4.png>
+[67 <D:/Text/LaTeX/Diff/Complete/Chapter3/pic/4.png (PNG copy)>])
+(D:\Text\LaTeX\Diff\Complete\Chapter3\tex\lec3.tex
+<Chapter3/pic/5.png, id=266, 935.74594pt x 758.835pt>
+File: Chapter3/pic/5.png Graphic file (type png)
+ <use Chapter3/pic/5.png>
+[68]
+Overfull \hbox (119.58496pt too wide) has occurred while \output is active
+\T2A/cmr/bx/sl/12 џ4.  \T2A/cmr/m/sl/12 Исследование зависимости решения от пар
+аметров, входящих в правую часть уравнения и начальных данных \T2A/cmr/m/n/12 6
+9
+ []
+
+[69 <D:/Text/LaTeX/Diff/Complete/Chapter3/pic/5.png (PNG copy)>] [70]
+Overfull \hbox (119.58496pt too wide) has occurred while \output is active
+\T2A/cmr/bx/sl/12 џ4.  \T2A/cmr/m/sl/12 Исследование зависимости решения от пар
+аметров, входящих в правую часть уравнения и начальных данных \T2A/cmr/m/n/12 7
+1
+ []
+
+[71] [72]) (D:\Text\LaTeX\Diff\Complete\Chapter3\tex\lec4.tex
+<Chapter3/pic/6.png, id=282, 1147.28625pt x 843.15pt>
+File: Chapter3/pic/6.png Graphic file (type png)
+ <use Chapter3/pic/6.png>
+[73] [74 <D:/Text/LaTeX/Diff/Complete/Chapter3/pic/6.png (PNG copy)>]
+<Chapter3/pic/7.png, id=290, 1700.60344pt x 833.36343pt>
+File: Chapter3/pic/7.png Graphic file (type png)
+
+<use Chapter3/pic/7.png>
+File: Chapter1/pic/2.png Graphic file (type png)
+ <use Chapter1/pic/2.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [75 <D:/Text/LaTeX/Diff/Complete/Chapter3/pic/7.png (PNG copy)>]
+<Chapter3/pic/8.png, id=294, 767.86874pt x 523.9575pt>
+File: Chapter3/pic/8.png Graphic file (type png)
+
+<use Chapter3/pic/8.png>
+File: Chapter1/pic/3.png Graphic file (type png)
+ <use Chapter1/pic/3.png>
+<Chapter3/pic/9.png, id=295, 782.925pt x 852.18375pt>
+File: Chapter3/pic/9.png Graphic file (type png)
+ <use Chapter3/pic/9.png>
+[76 <D:/Text/LaTeX/Diff/Complete/Chapter3/pic/8.png (PNG copy)>]
+<Chapter3/pic/10.png, id=299, 930.47626pt x 855.195pt>
+File: Chapter3/pic/10.png Graphic file (type png)
+
+<use Chapter3/pic/10.png> <Chapter3/pic/11.png, id=300, 825.0825pt x 770.88pt>
+File: Chapter3/pic/11.png Graphic file (type png)
+
+<use Chapter3/pic/11.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [77 <D:/Text/LaTeX/Diff/Complete/Chapter3/pic/9.png (PNG copy)> <D:/Text/LaTeX
+/Diff/Complete/Chapter3/pic/10.png (PNG copy)>]
+<Chapter3/pic/12.png, id=304, 936.49875pt x 551.05875pt>
+File: Chapter3/pic/12.png Graphic file (type png)
+
+<use Chapter3/pic/12.png> [78 <D:/Text/LaTeX/Diff/Complete/Chapter3/pic/11.png 
+(PNG copy)>] <Chapter3/pic/13.png, id=308, 912.40875pt x 623.32875pt>
+File: Chapter3/pic/13.png Graphic file (type png)
+
+<use Chapter3/pic/13.png>
+<Chapter3/pic/14.png, id=309, 1318.9275pt x 361.35pt>
+File: Chapter3/pic/14.png Graphic file (type png)
+
+<use Chapter3/pic/14.png> [79 <D:/Text/LaTeX/Diff/Complete/Chapter3/pic/12.png 
+(PNG copy)> <D:/Text/LaTeX/Diff/Complete/Chapter3/pic/13.png (PNG copy)>])
+(D:\Text\LaTeX\Diff\Complete\Chapter4\tex\lec1.tex [80 <D:/Text/LaTeX/Diff/Comp
+lete/Chapter3/pic/14.png (PNG copy)>]
+<Chapter4/pic/1.png, id=317, 1002.74625pt x 843.15pt>
+File: Chapter4/pic/1.png Graphic file (type png)
+ <use Chapter4/pic/1.png>
+<Chapter4/pic/2.png, id=318, 713.66624pt x 680.5425pt>
+File: Chapter4/pic/2.png Graphic file (type png)
+
+<use Chapter4/pic/2.png> [81 <D:/Text/LaTeX/Diff/Complete/Chapter4/pic/1.png (P
+NG copy)> <D:/Text/LaTeX/Diff/Complete/Chapter4/pic/2.png (PNG copy)>]
+<Chapter4/pic/3.png, id=322, 1650.91782pt x 1203.7472pt>
+File: Chapter4/pic/3.png Graphic file (type png)
+
+<use Chapter4/pic/3.png> [82 <D:/Text/LaTeX/Diff/Complete/Chapter4/pic/3.png (P
+NG copy)>] <Chapter4/pic/4.png, id=326, 1102.1175pt x 966.61125pt>
+File: Chapter4/pic/4.png Graphic file (type png)
+
+<use Chapter4/pic/4.png> <Chapter4/pic/5.png, id=327, 1096.095pt x 957.5775pt>
+File: Chapter4/pic/5.png Graphic file (type png)
+
+<use Chapter4/pic/5.png> [83 <D:/Text/LaTeX/Diff/Complete/Chapter4/pic/4.png (P
+NG copy)> <D:/Text/LaTeX/Diff/Complete/Chapter4/pic/5.png (PNG copy)>]
+<Chapter4/pic/6.png, id=331, 963.6pt x 773.89125pt>
+File: Chapter4/pic/6.png Graphic file (type png)
+ <use Chapter4/pic/6.png>
+<Chapter4/pic/7.png, id=332, 1008.76875pt x 740.0147pt>
+File: Chapter4/pic/7.png Graphic file (type png)
+
+<use Chapter4/pic/7.png> [84 <D:/Text/LaTeX/Diff/Complete/Chapter4/pic/6.png (P
+NG copy)>] <Chapter4/pic/8.png, id=336, 778.40813pt x 691.83469pt>
+File: Chapter4/pic/8.png Graphic file (type png)
+
+<use Chapter4/pic/8.png> [85 <D:/Text/LaTeX/Diff/Complete/Chapter4/pic/7.png (P
+NG copy)> <D:/Text/LaTeX/Diff/Complete/Chapter4/pic/8.png (PNG copy)>]
+<Chapter4/pic/9.png, id=341, 1327.96124pt x 493.845pt>
+File: Chapter4/pic/9.png Graphic file (type png)
+
+<use Chapter4/pic/9.png>) (D:\Text\LaTeX\Diff\Complete\Chapter4\tex\lec2.tex
+[86 <D:/Text/LaTeX/Diff/Complete/Chapter4/pic/9.png (PNG copy)>]
+<Chapter4/pic/10.png, id=345, 1495.08563pt x 775.39688pt>
+File: Chapter4/pic/10.png Graphic file (type png)
+
+<use Chapter4/pic/10.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [87]
+[88 <D:/Text/LaTeX/Diff/Complete/Chapter4/pic/10.png (PNG copy)>] [89]
+<Chapter4/pic/11.png, id=355, 1818.04219pt x 505.13719pt>
+File: Chapter4/pic/11.png Graphic file (type png)
+
+<use Chapter4/pic/11.png>) (D:\Text\LaTeX\Diff\Complete\Chapter5\tex\lec1.tex
+Underfull \vbox (badness 2073) has occurred while \output is active []
+
+ [90 <D:/Text/LaTeX/Diff/Complete/Chapter4/pic/11.png (PNG copy)>]
+<Chapter5/pic/1.png, id=359, 746.79pt x 769.37437pt>
+File: Chapter5/pic/1.png Graphic file (type png)
+ <use Chapter5/pic/1.png>
+[91]
+Overfull \hbox (436.52411pt too wide) has occurred while \output is active
+\T2A/cmr/m/n/12 92  \T2A/cmr/m/sl/12 ГЛАВА 5. ПЕРВЫЕ ИНТЕГРАЛЫ. ЛИНЕЙНЫЕ ОДНОРО
+ДНЫЕ ДИФФЕРЕНЦИАЛЬНЫЕ УРАВНЕНИЯ С ЧАСТНЫМИ ПРОИЗВОДНЫМИ ПЕРВОГО ПОРЯДКА.
+ []
+
+[92 <D:/Text/LaTeX/Diff/Complete/Chapter5/pic/1.png (PNG copy)>] [93]
+<Chapter5/pic/2.png, id=370, 678.28406pt x 745.28438pt>
+File: Chapter5/pic/2.png Graphic file (type png)
+
+<use Chapter5/pic/2.png>
+Overfull \hbox (436.52411pt too wide) has occurred while \output is active
+\T2A/cmr/m/n/12 94  \T2A/cmr/m/sl/12 ГЛАВА 5. ПЕРВЫЕ ИНТЕГРАЛЫ. ЛИНЕЙНЫЕ ОДНОРО
+ДНЫЕ ДИФФЕРЕНЦИАЛЬНЫЕ УРАВНЕНИЯ С ЧАСТНЫМИ ПРОИЗВОДНЫМИ ПЕРВОГО ПОРЯДКА.
+ []
+
+[94 <D:/Text/LaTeX/Diff/Complete/Chapter5/pic/2.png (PNG copy)>])
+(D:\Text\LaTeX\Diff\Complete\Chapter5\tex\lec2.tex [95]
+<Chapter5/pic/3.png, id=377, 820.56563pt x 745.28438pt>
+File: Chapter5/pic/3.png Graphic file (type png)
+
+<use Chapter5/pic/3.png>
+Overfull \hbox (436.52411pt too wide) has occurred while \output is active
+\T2A/cmr/m/n/12 96  \T2A/cmr/m/sl/12 ГЛАВА 5. ПЕРВЫЕ ИНТЕГРАЛЫ. ЛИНЕЙНЫЕ ОДНОРО
+ДНЫЕ ДИФФЕРЕНЦИАЛЬНЫЕ УРАВНЕНИЯ С ЧАСТНЫМИ ПРОИЗВОДНЫМИ ПЕРВОГО ПОРЯДКА.
+ []
+
+[96 <D:/Text/LaTeX/Diff/Complete/Chapter5/pic/3.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+[]\T2A/cmr/m/n/12 Если мы по-лу-чи-ли неко-то-рое ко-ли-че-ство неза-ви-си-мых 
+пер-вых ин-те-гра-лов
+ []
+
+[97] <Chapter5/pic/4.png, id=385, 255.20343pt x 157.33781pt>
+File: Chapter5/pic/4.png Graphic file (type png)
+
+<use Chapter5/pic/4.png>
+Overfull \hbox (436.52411pt too wide) has occurred while \output is active
+\T2A/cmr/m/n/12 98  \T2A/cmr/m/sl/12 ГЛАВА 5. ПЕРВЫЕ ИНТЕГРАЛЫ. ЛИНЕЙНЫЕ ОДНОРО
+ДНЫЕ ДИФФЕРЕНЦИАЛЬНЫЕ УРАВНЕНИЯ С ЧАСТНЫМИ ПРОИЗВОДНЫМИ ПЕРВОГО ПОРЯДКА.
+ []
+
+[98 <D:/Text/LaTeX/Diff/Complete/Chapter5/pic/4.png (PNG copy)>])
+(D:\Text\LaTeX\Diff\Complete\Chapter5\tex\lec3.tex
+<Chapter5/pic/5.png, id=389, 1595.20969pt x 697.10437pt>
+File: Chapter5/pic/5.png Graphic file (type png)
+
+<use Chapter5/pic/5.png>
+Overfull \hbox (61.6638pt too wide) has occurred while \output is active
+\T2A/cmr/bx/sl/12 џ2.  \T2A/cmr/m/sl/12 Линейные однородные дифференциальные ур
+авнения с частными производными первого порядка. \T2A/cmr/m/n/12 99
+ []
+
+[99 <D:/Text/LaTeX/Diff/Complete/Chapter5/pic/5.png (PNG copy)>]
+Overfull \hbox (442.39767pt too wide) has occurred while \output is active
+\T2A/cmr/m/n/12 100  \T2A/cmr/m/sl/12 ГЛАВА 5. ПЕРВЫЕ ИНТЕГРАЛЫ. ЛИНЕЙНЫЕ ОДНОР
+ОДНЫЕ ДИФФЕРЕНЦИАЛЬНЫЕ УРАВНЕНИЯ С ЧАСТНЫМИ ПРОИЗВОДНЫМИ ПЕРВОГО ПОРЯДКА.
+ []
+
+[100] <Chapter5/pic/6.png, id=396, 1477.77094pt x 460.72125pt>
+File: Chapter5/pic/6.png Graphic file (type png)
+
+<use Chapter5/pic/6.png>
+<Chapter5/pic/7.png, id=397, 524.71031pt x 435.87843pt>
+File: Chapter5/pic/7.png Graphic file (type png)
+
+<use Chapter5/pic/7.png>
+Overfull \hbox (67.53737pt too wide) has occurred while \output is active
+\T2A/cmr/bx/sl/12 џ2.  \T2A/cmr/m/sl/12 Линейные однородные дифференциальные ур
+авнения с частными производными первого порядка. \T2A/cmr/m/n/12 101
+ []
+
+[101 <D:/Text/LaTeX/Diff/Complete/Chapter5/pic/6.png (PNG copy)>])
+(D:\Text\LaTeX\Diff\Complete\Chapter6\tex\lec1.tex [102 <D:/Text/LaTeX/Diff/Com
+plete/Chapter5/pic/7.png (PNG copy)>]
+<Chapter6/pic/1.png, id=404, 1581.65906pt x 726.46407pt>
+File: Chapter6/pic/1.png Graphic file (type png)
+
+<use Chapter6/pic/1.png>) (D:\Text\LaTeX\Diff\Complete\Chapter6\tex\lec2.tex
+[103 <D:/Text/LaTeX/Diff/Complete/Chapter6/pic/1.png (PNG copy)>] [104]
+Overfull \hbox (70.47827pt too wide) has occurred while \output is active
+\T2A/cmr/bx/sl/12 џ2.  \T2A/cmr/m/sl/12 Системы нормальных дифференциальных ура
+внений (линейных) с переменными коэффициентами \T2A/cmr/m/n/12 105
+ []
+
+[105]
+Overfull \hbox (11.22809pt too wide) detected at line 134
+\OML/cmm/m/it/12 W[] \OT1/cmr/m/n/12 = [] [] \OMS/cmsy/m/n/12  \OML/cmm/m/it/1
+2 z[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 W[] \OMS/cmsy/m/n/12  [] [] \OT1/c
+mr/m/n/12 = [] \OML/cmm/m/it/12 W[]a[]z[] \OT1/cmr/m/n/12 = []([] \OML/cmm/m/it
+/12 W[]z[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 = [] \OML/cmm/m
+/it/12 W[]a[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 W[]A
+ []
+
+[106]) (D:\Text\LaTeX\Diff\Complete\Chapter6\tex\lec3.tex [107] [108] [109]
+[110] [111]) (D:\Text\LaTeX\Diff\Complete\Chapter6\tex\lec4.tex [112] [113]
+<Chapter6/pic/2.png, id=440, 1192.455pt x 286.06876pt>
+File: Chapter6/pic/2.png Graphic file (type png)
+
+<use Chapter6/pic/2.png>
+<Chapter6/pic/3.png, id=441, 1026.08344pt x 426.84468pt>
+File: Chapter6/pic/3.png Graphic file (type png)
+
+<use Chapter6/pic/3.png>
+Underfull \vbox (badness 2245) has occurred while \output is active []
+
+ [114 <D:/Text/LaTeX/Diff/Complete/Chapter6/pic/2.png (PNG copy)>] [115 <D:/Tex
+t/LaTeX/Diff/Complete/Chapter6/pic/3.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 149--157
+[]\T2A/cmr/m/n/12 Докажем пер-вое из утвер-жде-ний. Рас-смот-рим ну-ли сле-ду-ю
+-щих ре-ше-ний:
+ []
+
+<Chapter6/pic/4.png, id=449, 797.98125pt x 325.215pt>
+File: Chapter6/pic/4.png Graphic file (type png)
+ <use Chapter6/pic/4.png>
+[116 <D:/Text/LaTeX/Diff/Complete/Chapter6/pic/4.png (PNG copy)>])
+(D:\Text\LaTeX\Diff\Complete\Diff.toc [117]
+Underfull \vbox (badness 1303) has occurred while \output is active []
+
+ [118])
+\tf@toc=\write3
+
+<finalpicture.png, id=459, 1716.4125pt x 921.4425pt>
+File: finalpicture.png Graphic file (type png)
+ <use finalpicture.png>
+[119 <D:/Text/LaTeX/Diff/Complete/finalpicture.png (PNG copy)>]
+(D:\Text\LaTeX\Diff\Complete\Diff.aux) ) 
+Here is how much of TeX's memory you used:
+ 3167 strings out of 495059
+ 40842 string characters out of 3179518
+ 98156 words of memory out of 3000000
+ 6240 multiletter control sequences out of 15000+200000
+ 26186 words of font info for 70 fonts, out of 3000000 for 9000
+ 198 hyphenation exceptions out of 8191
+ 34i,17n,26p,1534b,441s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <D:\MIKTEX\fonts\pk\ljfour\lh\lh-t2a\d
+pi600\larm2488.pk> <D:\MIKTEX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm0800.pk> <D:
+\MIKTEX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1728.pk> <D:\MIKTEX\fonts\pk\ljfou
+r\lh\lh-t2a\dpi600\labx1728.pk> <D:\MIKTEX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lat
+t1200.pk> <D:\MIKTEX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk> <D:\MIKTEX\f
+onts\pk\ljfour\lh\lh-t2a\dpi600\lati1200.pk> <D:\MIKTEX\fonts\pk\ljfour\lh\lh-t
+2a\dpi600\labx1440.pk> <D:\MIKTEX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm2074.pk>
+ <D:\MIKTEX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk> <D:\MIKTEX\fonts\pk\l
+jfour\lh\lh-t2a\dpi600\lasl1200.pk> <D:\MIKTEX\fonts\pk\ljfour\lh\lh-t2a\dpi600
+\labl1200.pk><D:/MIKTEX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MIKTEX/fo
+nts/type1/public/amsfonts/cmextra/cmex8.pfb><D:/MIKTEX/fonts/type1/public/amsfo
+nts/cm/cmmi12.pfb><D:/MIKTEX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MIKTE
+X/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MIKTEX/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb><D:/MIKTEX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MIKTEX/f
+onts/type1/public/amsfonts/cm/cmr8.pfb><D:/MIKTEX/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><D:/MIKTEX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MIKTEX/fon
+ts/type1/public/amsfonts/cm/cmsy8.pfb><D:/MIKTEX/fonts/type1/public/amsfonts/eu
+ler/eufm10.pfb><D:/MIKTEX/fonts/type1/public/amsfonts/symbols/msam10.pfb><D:/MI
+KTEX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Diff.pdf (119 pages, 3555504 bytes).
+PDF statistics:
+ 1056 PDF objects out of 1200 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 296 words of extra memory for PDF output out of 10000 (max. 10000000)
+

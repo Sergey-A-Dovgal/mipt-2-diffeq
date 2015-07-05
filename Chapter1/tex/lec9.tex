@@ -1,0 +1,294 @@
+% 01.11.2011
+
+\subsection{Матричные формулы решений обыкновенной системы линейных дифференциальных уравнений с постоянными коэффициентами.}
+$$
+    \df{\mathrm{d}\vec{y}}{\mathrm{d}t} = A\vec{y} + \vec{f}(t), \; \alpha \leqslant t \leqslant \beta,
+A =  \left \| \begin{array}{ccc}
+ a_{11}  & \ldots & a_{1n} \\
+\hdotsfor{3} \\
+a_{n1} & \ldots & a_{nn}
+\end{array} \right \| = \text{const};
+\vec{y} =
+\left \| \begin{array}{c}
+y_1\\
+\vdots \\
+y_n
+\end{array} \right \|
+,
+\vec{f} =
+\left \| \begin{array}{c}
+f_1\\
+\vdots \\
+f_n
+\end{array} \right \|
+\eqno (1)
+$$
+$$
+    \df{\mathrm{d}\vec{z}}{\mathrm{d}t} = A\vec{z} \eqno (2)
+$$
+При $n = 1$ имеем такие формулы: $ y(t) = e^{(t - t_0)A} y(t_0) + \displaystyle\int\limits _ {t_0} ^t e^{(t - \tau)A} f(\tau)d\tau $ и $ z(t) = e^{(t - t_0)A} z(t_0) $.\\
+\begin{enumerate}
+\item Введем понятие матричной экспоненты.
+\item Докажем эти формулы.
+\item Дадим удобный способ вычисления $ e^{tA} $.
+\end{enumerate}
+\Th
+Пусть $ B $ -- произвольная комплексная $ n \times n $-матрица. Тогда ряд $ E + \df{B}{1!} + \df{B^2}{2!} + \ldots $ для каждого матричного элемента
+сходится и притом абсолютно.\par
+\Proof
+
+B = $ \left \|
+\begin{array}{ccc}
+b_{11} & \ldots & b_{1n} \\
+\hdotsfor{3} \\
+b_{n1} & \ldots & b_{nn}
+\end{array}
+\right \| $,
+$B^2 = \left \|
+\begin{array}{ccc}
+b_{11}^{(2)} & \ldots & b_{1n}^{(2)} \\
+\hdotsfor{3} \\
+b_{n1}^{(2)} & \ldots & b_{nn}^{(2)}
+\end{array}
+\right \| $
+$ | b_{rs} | \leqslant \beta $\\
+Оценим матричные элементы степеней: $ b_{rs}^{(2)} = \sum \limits _{q = 1} ^ n b_{rq}b_{qs}$; $ | b_{rs}^{(2)} | \leqslant  n\beta^2 $ \\
+$ b_{rs}^{(3)} = \sum \limits _{q = 1} ^ n b_{rq}^{(2)} b_{qs}$; $ | b_{rs}^{(3)} | \leqslant n^2 \beta^3 $, $ | b_{rs}^{(m)} | \leqslant n^{m - 1}\beta^m $\\
+$ \delta_{rs} + \df{b_{rs}}{1!} + \df{b_{rs}^{(2)}}{2!}+ \ldots $; $ \delta_{rs} = \left \{
+\begin{aligned}
+1, r = s\\
+0, r \neq s
+\end{aligned}
+\right.
+$\\
+Этот ряд мажорируется рядом: $ 1 + \df{\beta}{1!} + \df{n\beta^2}{2!} + \df{n^2\beta^3}{3!} + \ldots $ -- сходится по признаку Д'Аламбера.\\
+\Def
+Пусть $B$ -- произвольная комплексная $ n \times n $ матрица.
+$$
+    e^B \eqdef E + \df{B}{1!} + \df{B^2}{2!} + \ldots
+$$
+\textbf{Свойства:}
+\begin{enumerate}
+\item $BC = CB \RA e^B \cdot e^C = e^{B + C} $ \\
+\Proof
+Ряд для $e^B$ и $ e^C $ формально перемножить, собрать члены при одинаковых степенях. Так можно делать, потому что ряды сходятся абсолютно.
+\item $ (e^B)^{-1} = e^{-B} \\
+\Proof \\
+B \cdot (-B) = -B \cdot B \Rightarrow e^B \cdot e^{-B} = e^{B - B} = e^0 = E $
+\end{enumerate}
+Функция $ e^{tA} $ определяется следующим образом: $ e^{tA} = E + \df{tA}{1!} + \df{{tA}^2}{2!} + \ldots $.\\
+\begin{itemize}
+\item[1)] $ e^{t_1A}\cdot e^{t_2A} = e^{(t_1 + t_2)A} $, $ t_1A $ и $ t_2A$ -- перестановочны;
+\item [2)] $ \df{\mathrm{d}e^{tA}}{\mathrm{d}t} = Ae^{tA} = e^{tA}A $, степенной ряд почленно дифференцируемый.
+\end{itemize}
+
+\point{2}
+\Th Рассмотрим уравнение (1). Пусть $ \alpha \leqslant t_0 \leqslant \beta $. Тогда функция
+$$ \vec{y}(t) = \vec{y}_0 e^{(t - t_0)A} + \int \limits _{t_0} ^ t e^{(t - \tau)A} \vec{f}(\tau)\mathrm{d}\tau \eqno (3) $$ является решением (1),
+удовлетворяющим $$ \vec{y} (t_0) = \vec{y}_0. \eqno (4) $$ Каждое решение задачи $ (1) \bigwedge (4) $ совпадает на своём отрезке определения с функцией,
+задаваемой формулой (3); решение задаваемое формулой (3) определено на всём отрезке $ [\alpha, \beta] $. \\
+Для (2): $$ z(t) = \vec{z}_0 e^{A(t - t_0)}, \text{где \,} \vec{z}_0 = \vec{z}(t_0) $$ \par
+\Proof
+$ y(t) = e^{tA}\vec{u}(t) \,\,\,\, \Big(\vec{u}(t) = e^{-tA}\vec{y}(t)\Big) $ \\
+$$\cond{ \df{\mathrm{d}(e^{tA}\vec{u})}{\mathrm{d}t} = Ae^{tA}\vec{u} + \vec{f}}
+\RA \cond{ \df{\mathrm{d}e^{tA}}{\mathrm{d}t}\vec{u} + e^{tA}\df{\mathrm{d}\vec{u}}{\mathrm{d}t} = Ae^{tA}\vec{u} + \vec{f} } \RA $$
+$$ \RA \cond{ A e^{tA}\vec{u} + e^{tA}\df{\mathrm{d}\vec{u}}{\mathrm{d}t} = Ae^{tA}\vec{u} + \vec{f} } \RA  \cond {e^{tA}\df{\mathrm{d}\vec{u}}{\mathrm{d}t} = \vec{f} } \RA \cond{ \df{\mathrm{d}\vec{u}}{\mathrm{d}t} = e^{-tA}\vec{f} } $$
+ $$\vec{u}(t) = \int \limits _{t_0} ^t e^{-\tau A} f(\tau) \mathrm{d}\tau + \vec{C}, \, \vec{C} - \text{произвольная постоянная} $$
+Отсюда $ \vec{y}(t) = e^{tA}\vec{C} + \displaystyle \int \limits _{t_0} ^ t e^{tA}e^{-\tau A} \vec{f}(\tau) \mathrm{d} \tau $, так как
+$ tA \cdot (-\tau A) = (-\tau A) \cdot tA $.
+
+$ \vec{y}(t_0) = \vec{y}_0 = e^{t_0A}\vec{C}, \, \vec{C} = \vec{y}_0 e^{-t_0 A}. $ Таким образом,
+$$ \vec{y}(t) = \vec{y}_0 e^{(t - t_0)A} + \displaystyle \int \limits _{t_0} ^ t e^{(t - \tau)A} \vec{f}(\tau)\mathrm{d}\tau $$
+
+\point{3}
+\textbf{Алгебраический способ вычисления $ e^{tA} $.}
+
+\textbf{Вспомогательные утверждения.}
+\begin{enumerate}
+\item $ A = C B C^{-1} \Rightarrow e^{tA} = C e^{tB} c^{-1} $\\
+\Proof
+$$
+\begin{array}{rl}
+  e^{tA} = & E + t\df{C B C^{-1}}{1!} + t^2 \df{C B C^{-1} C B C^{-1}}{2!} + \ldots \\
+         = & C (E + t\df{B}{1!} + t^2 \df{B^2}{2!} +~\ldots ) C^{-1} = C e^{tB}C^{-1}
+\end{array}
+$$
+\item $ A = C L C^{-1}, \,
+L = \mathrm{diag} (\lam_1, \ldots, \lam_n) $
+Тогда $ e^{tL} = \mathrm{diag} (e^{\lam_1 t}, \ldots, e^{\lam_n t}) $
+
+\Proof
+$$
+    e^{tL} = E + t \df{L}{1!} + t^2 \df{L^2}{2!} + \ldots, \text{ где}
+$$
+$$
+    L^2 = \mathrm{diag} (\lam_1^2, \ldots, \lam_n^2) \text{ и т.д.}
+$$
+Тогда
+$$
+    e^{tL} = \mathrm{diag} \left(
+        1 + t \df{\lambda_1}{1!} + t^2 \df{\lambda_1^2}{2!} + \ldots, \,
+        \ldots,\,
+        1 + t \df{\lambda_n}{1!} + t^2 \df{\lambda_n^2}{2!} + \ldots
+    \right)
+     =
+     \mathrm{diag} \left(
+        e^{\lam_1 t}, \ldots, e^{\lam_n t}
+     \right)
+$$
+\end{enumerate}
+
+\begin{center}
+\point{4} \textbf{Жорданова форма матрицы}
+\end{center}
+\Def Упорядоченный набор векторов $ {\vec{g}_1, \ldots , \vec{g}_k} $ называется \emph{цепочкой, соответствующей собственному значению $ \lambda $}
+линейного преобразования $ А $, если: \\
+$\left\{\begin{array}{l}
+A\vec{g}_1 = \lambda \vec{g}_1, \; \vec{g}_1 \neq \vec{0} \\
+A\vec{g}_2 = \lambda \vec{g}_2 + g_1\\
+\hdotsfor{1} \\
+A\vec{g}_k = \lambda \vec{g}_k + \vec{g}_{k - 1}
+\end{array}\right. $, где векторы $ \vec{g}_2, \ldots, \vec{g}_k $ --- присоединенные к вектору $ \vec{g}_1 $.
+
+\Th (Жордана)
+Пусть А -- линейное преобразование в комплексном линейном пространстве. Тогда существует базис этого пространства, составленный из цепочек (\emph{Жорданов базис}).
+
+$ A =
+\left \|
+\begin{array} {ccc}
+J_1 & & \text{\Huge{0}}\\
+ & \ddots & \\
+\text{\Huge{0}} & & J_N
+\end{array}
+\right \| $, где каждая клетка $ J_r $ соответствует отдельным цепочкам. \\
+$ J_r \eqdef
+\left \|
+\begin{array} {ccc}
+\lambda_r & 1 & \text{\Huge{0}}\\
+ & \ddots & 1 \\
+\text{\Huge{0}} &  & \lambda_r
+\end{array}
+\right \| $ --- Жорданова клетка размера $ k_r \times k_r $. \\
+$ e^{t A} = \left \|
+\begin{array} {ccc}
+e^{t J_1} & & \text{\Huge{0}} \\
+& \ddots & \\
+\text{\Huge{0}} & & e^{t J_N}
+\end{array}
+\right \| $, так как $ A^n =
+\left \|
+\begin{array} {ccc}
+J_1 & & \text{\Huge{0}}\\
+ & \ddots & \\
+\text{\Huge{0}} & & J_N
+\end{array}
+\right \| ^ n =
+\left \|
+\begin{array} {ccc}
+J_1 ^n & & \text{\Huge{0}}\\
+ & \ddots & \\
+\text{\Huge{0}} & & J_N ^n
+\end{array}
+\right \|$ \\
+$ e^{tA} =
+\left \|
+\begin{array} {ccc}
+E & & \text{\Huge{0}}\\
+ & \ddots & \\
+\text{\Huge{0}} & & E
+\end{array}
+\right \| +
+\left \|
+\begin{array} {ccc}
+t\df{J_1}{1!} & & \text{\Huge{0}}\\
+ & \ddots & \\
+\text{\Huge{0}} & & t\df{J_N}{1!}
+\end{array}
+\right \| +
+\left \|
+\begin{array} {ccc}
+t^2\df{J_1^2}{2!} & & \text{\Huge{0}}\\
+ & \ddots & \\
+\text{\Huge{0}} & & t^2\df{J_N^2}{2!}
+\end{array}
+\right \| + \ldots
+$\\
+Найдём $ e^{tJ}.$ $ J = \lambda E + Q,$ где
+$
+Q = \left\|
+    \begin{array}{ccc}
+      0 & 1 & 0 \\
+        & \ddots & 1 \\
+      0 &   & 0
+    \end{array}
+    \right\|
+$; $\quad t\lambda E $ и $ tQ $ --- перестановочны, поэтому
+$$
+    e^{t(\lambda E + Q)} = e^{t\lambda E} \cdot e^{tQ} =
+    e^{t \lambda} E e^{tQ} = e^{t\lambda} \cdot e^{tQ}.
+$$
+При каждом умножении матрицы $ Q $ на себя, <<диагональ>>, содержащая единицы, смещается на единицу в сторону правого левого угла матрицы. Тогда $ Q^{k - 1} =
+\left \|
+\begin{array} {cccc}\
+0 & \ldots & 0 & 1\\
+0 & \ldots & 0 & 0\\
+\hdotsfor{4} \\
+0 & \ldots & 0 & 0
+\end{array}
+\right \|
+$, $ Q_k $ -- нулевая матрица, также $ Q^s = 0 $ при $ s \geq k $. Тогда
+$$ e^{tQ} = E + t \df{Q}{1!} + t^2 \df{Q^2}{2!} + \ldots + t^{k - 1}\df{Q^{k - 1}}{(k - 1)!} $$ -- конечная сумма и \\
+$$ e^{tA} = e^{t\lambda}
+\left \|
+\begin{array}{cccc}
+        1        & t / 1! &  \ldots & \df{t^{k - 1}}{(k - 1)!}\\
+                 & \ddots &         & \vdots \\
+                 &        &  \ddots & t / 1! \\
+ \text{\Huge{0}} &        &         & 1 \\
+\end{array}
+\right \|  $$
+
+\subsection{Элементы операционного исчисления}
+
+\point{1} \textbf{Определение преобразования Лапласа.}
+
+\Def Комплексная функция $ f(t) $ называется \emph{оригиналом}, если:
+\begin{enumerate}
+\item $ f $ -- определена при $ 0 \leqslant t \leqslant \infty $;
+\item $ f $ -- кусочно-непрерывна (может иметь разрывы только первого рода)
+\item $ f $ -- функция конечного порядка роста, то есть $ \exists $ вещественные числа $ \alpha, \, M $: $ |f(t)|~\leq~Me^{\alpha t} $,
+для всех $ 0 \leqslant t \leqslant \infty $
+\end{enumerate}
+
+\Th Пусть $ f(t) $ --- оригинал, $ |f(t)|~\leqslant~Me^{\alpha t} $, $ p $ --- комплексное число, такое что $\Re p > \alpha $.
+
+Тогда
+$ \displaystyle \int \limits _0 ^\infty f(t)e^{pt} \mathrm{d}t $ --- существует.
+
+\Proof
+$$
+    |f(t)e^{-pt}| = |f(t)| |e^{-pt}| \leqslant Me^{\alpha t} e^{-t \Re p} = M e^{-(\Re p - \alpha)t},
+$$
+$ \Re p - \alpha > 0
+\RA \displaystyle \int \limits _0 ^\infty f(t)e^{-(\Re p - \alpha)t} \mathrm{d}t $ сходится, а следовательно
+по признаку сравнения существует и интеграл $ \displaystyle \int \limits _0 ^\infty f(t)e^{pt} \mathrm{d}t $.
+
+\Def Пусть $ f(t) $ -- оригинал, $ |f(t)|~\leq~Me^{\alpha t}$. Функция $\tilde{f}(p)$, определённая для комплексных $ p $
+при $ \Re p - \alpha > 0 $ формулой
+$$
+    \tilde{f}(p) = \displaystyle \int \limits _ 0 ^\infty f(t)e^{-pt} \mathrm{d} t
+$$
+называется \emph{изображением по Лапласу} оригинала $ f(t) $.
+
+\Def
+Переход от $ f(t) $ к $ \tilde{f}(p) $~--- \emph{преобразование Лапласа}.
+
+Далее $\Re p$ достаточно велико. 
+$$
+    f(t) \Lap \tilde f(p) \LRA \left\{
+        \begin{array}{l}
+          f(t)\text{ --- оригинал} \\
+          f(p)\text{ --- соответствующее изображение} \\
+        \end{array}
+    \right.
+$$

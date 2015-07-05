@@ -1,0 +1,231 @@
+%11.10.2011
+\subsection{Первая краевая задача. Линейные дифференциальные уравнения второго порядка.
+Задачи с сингулярно входящим малым параметром.}
+
+\point{1}
+$$
+    y'' + ay' + by = f(t) \eqno (1)
+$$
+$\alpha \leqslant t \leqslant \beta$, $\alpha < \beta$, $f(t)$ непрерывная функция, $a, b$~--- заданные числа.
+
+$a, b$, $f(t)$, $y(t)$~--- комплексные.
+
+\textbf{Задача Коши:} $t_0 \in [\alpha, \beta]$, $y_0$, $y'_0$, $y(t) \such y(t_0) = y_0$, $y'(t_0) = y'_0$.
+
+\textbf{Первая краевая задача для уравнения $(1)$:}
+Заданы числа $y_\alpha$, $y_\beta$. Найти $y(t)$~--- то решение $(1)$, которое удовлетворяет условиям
+$$
+    y(\alpha) = y_\alpha, \quad y(\beta) = y_\beta \eqno (2)
+$$
+Метод решения: представим $y(t)$ в виде $y(t) = y_{\ast} (t) + c_1 z_1 (t) + c_2 z_2(t)$, где $c_1$, $c_2$~--- числа.
+$$
+    z'' + az' + bz = 0, \quad z(t) = c_1 z_1(t) + c_2 z_2 (t), \eqno(3)
+$$
+$$
+\left[
+\begin{array}{c}
+  c_1 z_1 (\alpha) + c_2 z_2 (\alpha) = y_\alpha - y_{\ast} (\alpha) \\
+  c_1 z_1 (\beta)  + c_2 z_2 (\beta)  = y_\beta  - y_\ast   (\beta)
+\end{array}
+\right.
+\eqno (4)
+$$
+$$
+\det \left\| \begin{array}{cc}
+       z_1(\alpha) & z_2(\alpha) \\
+       z_1(\beta)  & z_2(\beta)
+     \end{array}\right\| \ne 0 \RA
+     \exists !\text{ решение (1)} \RA
+     \text{решение краевой задачи $(1)\land(2)$ }\exists!
+$$
+Если $\det \| \cdot \| = 0$, то $\left[
+\begin{array}{l}
+  (4) \text{ не имеет решения} \\
+  \text{решение } \exists \text{ не единственное.}
+\end{array}
+\right.$
+
+\Ex исследовать задачи
+$$
+    y''-y = 1, \quad 0 \leqslant t \leqslant \pi, \quad \begin{array}{c}
+                                                          y(0) = y_0 \\
+                                                          y(\pi) = y_\pi
+                                                        \end{array}
+    \eqno (I)
+$$
+$$
+    y''+y = 1, \quad 0 \leqslant t \leqslant \pi, \quad \begin{array}{c}
+                                                          y(0) = y_0 \\
+                                                          y(\pi) = y_\pi
+                                                        \end{array}
+    \eqno (II)
+$$
+\point{2} Все величины вещественные.
+$$
+    \eps y' + ay = f(t) \eqno (5)
+$$
+$\alpha \leqslant t \leqslant \beta$, $f'(t)$ непрерывна на $[\alpha, \beta]$, $\eps, a$~--- числа, $\eps \ne 0$, $a \ne 0$, $\eps$ мало, $\eps \to 0$.
+$$
+    y(\alpha) = y_\alpha \eqno (6)
+$$
+\Def Если выполняются указанные выше условия ($\eps$ мало), то параметр $\eps$ называется \emph{сингулярным}, или \emph{сингулярно входящим}.
+
+\Th Пусть $\eps > 0$, $a > 0$. Тогда решение $y(t)$ задачи $(5) \land (6)$ может быть представлено в виде
+$$
+    y(t) = \dfrac{f(t)}{a} + \left(y_\alpha - \dfrac{f(\alpha)}{a}\right)e^{- a /\eps \cdot(t-\alpha)} + u(t),\eqno(7)
+$$
+где $\big| u(t) \big| \leqslant \dfrac{\eps}{a^2} \max |f'|$.
+
+\Pic{Chapter1/pic/8.png}
+
+\Proof Составим функцию
+$$
+    W(t) \eqdef y(t) - \dfrac{f(t)}{a},
+$$
+$$
+    W'(t) + \dfrac{a}{\eps} W = -\dfrac{f'(t)}{a} \eqno (8)
+$$
+$$
+    W(\alpha) = y_\alpha - \dfrac{f(\alpha)}{a}
+$$
+$$
+    W(t) = \left( y_\alpha - \dfrac{f(\alpha)}{a} \right)e^{- a / \eps \cdot (t\alpha)} -
+    \underbrace{\displaystyle\int\limits_{\alpha}^t \dfrac{e^ {- a / \eps \cdot (t-\tau)}f'(\tau)}{a}\id \tau}_
+    {\text{обозначим }u(t)} \quad
+    \text{(см. }\S 6, \, (6) )
+$$
+$$
+    u(t) \leqslant \int\limits_{\alpha}^t \dfrac{e^{-a/ \eps \cdot (t-\tau)}\max|f'|}{a}\id \tau =
+    \dfrac{\eps}{a^2} \max|f'|\left( 1 - e^{-a/ \eps \cdot (t-\alpha)} \right) \leqslant
+    \dfrac{\eps}{a^2} \max|f'|
+$$
+\textbf{Дополнение к теореме:}
+
+Рассуждение прокатывает, если $\dfrac{\eps}{a} > 0$, начальное условие на левом конце. Кроме того, если $\dfrac{\eps}{a} < 0$ и начальное условие на правом конце, совершая замену $t \to -t$, теорема верна.
+
+\Pic{Chapter1/pic/9.png}
+
+Если $\dfrac{\eps}{a} < 0$, начальное условие на левом конце, или $\dfrac{\eps}{a} > 0$ и начальное условие на правом конце, то решение на соответствующем конце быстро растёт, и это \emph{не тот случай, который мы изучаем}.
+
+\textbf{Пример:} $\eps y' - y = 0$, $\eps > 0$, $y'(\alpha) = 1$. Решение: $y = e^{(t-\alpha)/\eps}$.
+
+\Pic{Chapter1/pic/10.png}
+
+\point{3} В этом пункте все величины вещественные.
+$$
+    \eps y'' + ay' + b y = f(t) \eqno (9)
+$$
+$\alpha \leqslant t \leqslant \beta$, $f'(t)$ непрерывна на $[\alpha, \beta]$, $\eps \ne 0$, $a \ne 0$.
+$$
+    y(\alpha) = y_\alpha, \qquad y(\beta) = y_\beta \eqno  (10_\alpha), \,\, (10_\beta)
+$$
+$$
+    ay' + by = f(t) \eqno (11)
+$$
+\Th Пусть $\eps > 0$, $a > 0$. Тогда для достаточно малого $\eps$ решение $y(t)$ задачи $(9)\land (10_\alpha) \land (10_\beta)$ существует и единственно. Оно может быть при $\eps \to 0$ представлено в виде
+$$
+    y(t) = \Hat{y} (t) + \big(y_\alpha - \Hat{y}(\alpha)\big) e^{-a/\eps\cdot (t-\alpha)} + u(t),
+$$
+где \underline{$\Hat{y}(t)$~--- решение $(11)\land(10_\beta)$}, а $u(t) = O(\eps)$. $O(\cdot)$ означает оценку, равномерную на
+$[\alpha,\beta]$.
+
+\Proof Обозначим
+$$
+    W(t) \eqdef y(t) - \Hat{y} (t)
+$$
+Несложными вычислениями получаем равенства:
+$$
+    W'' + \dfrac{a}{\eps} W' + \dfrac{b}{\eps} W = -\Hat{y}'' (t) \qquad
+    \left( \Hat{y}'' = \dfrac{f' - b\Hat{y}}{a} \right)           \eqno (12)
+$$
+Стандартный метод решения задач: находим частное решение, затем общее решение.
+
+Пусть $W_\ast (t)$~--- то решение $(12)$, для которого выполнены условия
+$$
+    W_\ast(\alpha) = 0, \qquad W'_\ast (\alpha) = 0 \eqno (13)
+$$
+Покажем, что $W_\ast (t) = O(\eps)$. Составим характеристическое уравнение:
+$$
+    \lam^2 + \dfrac{a}\eps \lam + \dfrac b \eps = 0.
+$$
+Его корни:
+$$
+    \lam_1 = \dfrac{-a + \sqrt{a^2 - 4b\eps}}{2\eps}, \qquad \lam_2 = \dfrac{-a - \sqrt{a^2 - 4b\eps}}{2\eps}
+$$
+$$
+    \lam_1 = -\dfrac ba + O(\eps), \qquad \lam_2 \to \infty \quad \big( \lam_2 \eps = -a + O(\eps) \big)
+$$
+Запишем $(12)$ в следующем виде:
+$$
+    (12) \LRA (\D - \lam_1)(\D - \lam_2)W_\ast = -\Hat{y}'', \qquad \D \eqdef \dfrac{\id}{\id t}
+$$
+$$
+\left\{
+\begin{array}{l}
+  (14) \qquad (\D - \lam_1) v = -\Hat{y}'' \\
+  (15) \qquad (\D - \lam_2) W_\ast = v
+\end{array}
+\right.
+$$
+$$
+    \text{Из $(13)$ и $(15)$} \RA v(\alpha) = 0 \eqno (16)
+$$
+$
+    \text{Из $(14)$} \RA v = O(1), \qquad v' = O(1)
+$
+
+$
+    (15) \LRA \eps W'_\ast + \mu W_\ast = \eps v, \quad \mu = -\eps \lam_2 = a + O(\eps)
+$
+
+Так как $W_\ast (\alpha) = 0$, то используя формулу для решения уравнения $(15)$ в виде $(7)$, получаем $W_\ast = O(\eps)$.
+
+Подберём общее решение, удовлетворяющее начальным условиям: \underline{$W(t) = W_\ast (t) + z(t)$}.
+$$
+\left\{
+\begin{array}{l}
+    z'' + \dfrac a\eps z' + \dfrac b\eps z = 0\\
+    z(\alpha) = y_\alpha - \Hat{y} (\alpha), \qquad z(\beta) = -W_\ast (\beta)
+\end{array}
+\right. \eqno (17)
+$$
+$$
+    z(t) = C_1 e^{\lam_1 (t-\alpha)} + C_2 e^{-\mu / \eps \cdot (t-\alpha)}
+$$
+$$
+\left\{
+\begin{array}{l}
+  C_1 + C_2 = y_\alpha -\Hat{y} (\alpha) \\
+  C_1 e^{\lam_1 (\beta - \alpha)} + C_2 e^{-\mu/\eps \cdot (\beta - \alpha)} = -W_\ast (\beta)
+\end{array}
+\right.  \eqno (18)
+$$
+$$
+    \det\|\cdot\| = \det\left\|
+    \begin{array}{cc}
+      1 & 1 \\
+      e^{\lam_1 (\beta - \alpha)} & e^{-\mu/\eps \cdot (\beta - \alpha)} {}_{[\to 0]}
+    \end{array}
+    \right\| \ne 0 \text{ для достаточно  малых }\eps.
+$$
+Тем самым, система $(18)$ имеет, и при том единственное, решение.
+Если уравнение $(17)$ имеет единственное решение, то исходная краевая задача $(9)\land(10_\alpha)\land(10_\beta)$ для достаточно малых $\eps$ имеет единственное решение.
+$$
+    C_1 = O(\eps), \qquad C_2 = y_\alpha - \Hat{y} (\alpha) + O(\eps)
+$$
+В качестве упражнения читателю предоставляется следующее:
+$$
+    q(t) \eqdef \underline{e^{-\mu/\eps \cdot (t-\alpha)} - e^{-a/\eps \cdot (t-\alpha)} = O(\eps)},
+    \text{ где } \mu = a + O(\eps)
+$$
+$$
+    u(t) = W_\ast (t) + C_1 e^{\lam_1 (t - \alpha)} + \big(y_\alpha - \Hat{y} (\alpha) \big)q(t) +
+    \big( C_2 - y_\alpha + \Hat{y}(\alpha) \big)e^{-\mu/\eps \cdot (t-\alpha)} = O(\eps).
+$$
+Справедливость последнего равенства легко проверяется раскрытием скобок. Доказательство завершено.
+
+\Rem Фактически рассмотрен случай $\eps a > 0$. Если $\eps a < 0$, то надо сделать замену $t \mapsto -t$.
+На рисунке изображено решение $(11) \land (10_\alpha) \,\, \Hat{y} (t)$ и $y(t)$.
+
+\Pic{Chapter1/pic/11.png}
+

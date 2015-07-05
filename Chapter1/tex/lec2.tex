@@ -1,0 +1,188 @@
+% 13.09.2011
+\Th Пусть в прямоугольнике $G = \{\alpha < t < \beta, \gamma < y < \dta \}$
+заданы $p(x,y)$, $q(x,y)$, и, кроме того, $p$, $q$, $\ud{p}{y}$, $\ud{q}{x}$ непрерывны в $G$.
+Тогда два утверждения равносильны:
+$$
+    \Big\{ \exists U(x,y) \such \id U(x,y) = p(x,y) \id x + q(x,y) \id y \Big\} \LRA
+    \Big\{ \ud{p(x,y)}{y} = \ud{q(x,y)}{x} \Big\}
+$$
+\Proof
+\begin{enumerate}
+  \item $\Rightarrow$. Если $\exists U \such \id U = p \id x + q \id y$, то
+  $ p = \ud{U}{x} $, $ q = \ud{U}{y} $.
+
+  Затем $
+    \ud{p}{y} = \ud{}{y} \left( \ud{U}{x} \right), \quad
+    \ud{q}{x} = \ud{}{x} \left( \ud{U}{y} \right). $
+
+Так как обе смешанные производные непрерывны, то
+$
+    \ud{}{y} \left( \ud{U}{x} \right) = \ud{}{x} \left( \ud{U}{y} \right),
+$ откуда $ \ud{p}{y} = \ud{q}{x} $.
+  \item $\Leftarrow$. Пусть $ \ud{p}{y} = \ud{q}{x} $. Построим $U(x,y)$, удовлетворяющую условию.
+  Возьмём в $G$ точку $(x_0, y_0)$.
+  Если $\ud{U(x,y)}{x} = p(x,y)$, то положим
+$$
+    U(x,y) \eqdef \int\limits_{x_0}^x p(\xi, y)\id \xi + \varphi (y).
+$$
+Так как должно выполняться $q = \ud{U}{y}$, то
+$$
+    q(x,y) = \int\limits_{x_0}^x \ud{p(\xi, y)}{y} \id \xi + \varphi'(y) = q(x,y) - q(x_0, y_0) + \varphi'(y).
+$$
+$$
+    \varphi(y) \such \varphi'(y) = q(x_0, y) \RA \varphi(y) = \int\limits_{y_0}^y q(x_0, \eta)\id \eta + C, \text{ C -- const}.
+$$
+$$
+    U(x,y) = \int\limits_{y_0}^y q(x_0, \eta)\id \eta + \int\limits_{x_0}^x p(\xi, y_0)\id \xi + C, \quad C = U(x_0, y_0).
+$$
+Геометрическая интерпретация интегрирования: \Pic{Chapter1/pic/6.png}
+$\ud {p}{y} = \ud{q}{x} $ -- условие интегрируемости выражения $p \id x + q \id y$. (Клод Клеро и Леонард Эйлер)
+\end{enumerate}
+
+\Def $\varphi(x,y)$ -- интегрирующий множитель выражения $p(x,y) \id x + q(x,y) \id y$, если:
+\begin{enumerate}
+  \item $\varphi$ не обращается в 0 в рассматриваемой области
+  \item в рассматриваемой области $\exists U(x,y) \such \id U = \varphi p \id x + \varphi q \id y $.
+\end{enumerate}
+
+\subsection{Некоторые другие простые типы уравнений первого порядка.}
+
+\textbf{В этом параграфе все величины вещественные.}
+
+$
+  (1) \quad  \dfrac{\id y}{\id t} = f\left( \dfrac{y}{t} \right)
+$ --- однородное уравнение.
+
+$f$ определена и непрерывна на $(\alpha, \beta)$. Область значений переменных $t, y$:
+$$
+G = \{ 0 < t, \alpha < \dfrac {y}{t} < \beta \} \cup \{ t < 0, \alpha < \dfrac {y}{t} < \beta \}.
+$$
+\textbf{Метод решения:} $\dfrac{y}{t} = u$ -- новая неявная функция, $t$ -- независимая переменная.
+$$
+    y = ut; \quad u't + u = f(u), \quad t \dfrac{\id u}{\id t} + u = f(u),
+$$
+$$
+    t \id u + (u - f(u))\id t = 0 \text{ -- уравнение с разделяющимися переменными.}
+$$
+$
+    (2) \quad  \dfrac{\id y}{\id t} = a(t)y + f(t) \text{ -- линейное уравнение.}
+$
+$a(t)$, $f(t)$ определены и непрерывны на $[\alpha, \beta]$.
+
+$
+    (3) \quad \dfrac{\id z}{\id t} = a(t)z \text{ -- линейное однородное уравнение, соответствующее уравнению $(2)$.}
+$
+$$
+    \id z - a(t) z \id t = 0.
+$$
+ $z(t) = 0$ --- решение. При $z \ne 0$:
+$$
+    \dfrac{\id z}{z} - a(t)\id t = 0, \quad A(t) = \int a(t)\id t \text{ -- какая-либо первообразная.}
+$$
+$$
+    \textrm{ln} |z| - A(t) = C, \quad z(t) = \pm e^C e^{A(t)}.
+$$
+$\pm e^C$ --- произвольная ненулевая константа. Общее решение: $z(t) = D e^{A(t)}$, $D$~--- произвольная ненулевая константа.
+$$
+    y(t) = e^{A(t)} u(t)
+$$
+$u(t)$ --- новая искомая функция. Так как $y = e^A u$, то $u = e^{-A} y$.
+$$
+    (e^A u)' = a(e^A u) + f, \quad a e^A u + e^A u' = a e^A u + f, \quad e^A u' = f, \quad
+    u' = e^{-A}f.
+$$
+$$
+    u = \int e^{-A(t)} f(t) + C, \quad y(t) = e^{A(t)} \Big( \int e^{-A(t)}f(t) \id t + C \Big).
+$$
+(Метод Лагранжа вариации постоянной).
+
+\Task Написать формулу решения задачи Коши при $\alpha \leqslant t_0 \leqslant \beta, y_0 = y(t_0)$.
+Рекомендации: $A(t) = \int\limits_{t_0}^t a(\xi)\id \xi, \, u = \int\limits_{t_0}^t \ldots + C$. $C$ -- ?
+
+\subsection{Метод введения параметра.}
+
+\textbf{В этом параграфе все величины вещественные.}
+$$
+    f(t, y, y') = 0. \eqno (1)
+$$
+Рассмотрим поверхность в трёхмерном пространстве $(t, y, p)$. $\pi \such f(t, y, p) = 0$. На этой поверхности
+рассмотрим кривую $\ell$, соответствующую решению дифференциального уравнения. $\ell \such \left\{ \begin{array}{c}
+                                        y = y(t) \\
+                                        p = p(t)
+                                      \end{array}
+ \right\}$.
+
+\Pic{Chapter1/pic/7.png}
+
+$\ell$ -- график решения $(1) \LRA \ell \subset \pi$ и на $\ell$ имеет место $\id y = p \id t$, $p = y'$.
+
+\textbf{Задача Коши для $(1)$:}
+\nopagebreak
+\begin{enumerate}
+  \item На $\pi$ задана точка. Найти то решение уравнения $(1)$, график которого проходит через эту точку.
+  \item Заданы числа $t_0, y_0, p_0$, удовлетворяющие условию $f(t_0, y_0, p_0) = 0$. Найти $y(t)$~--- то решение, для которого $y(t_0) = y_0$, $y'(t_0) = p_0$.
+\end{enumerate}
+Частный случай: $y' = g(t,y)$.
+
+Все рассматриваемые функции достаточно гладкие, области определения функций не оговариваются.
+$$
+    f(t,y,p) = 0 \LRA \left\{
+    \begin{array}{c}
+      t = \varphi(\lambda, \mu) \\
+      y = \psi   (\lambda, \mu) \\
+      p = \omega (\lambda, \mu)
+    \end{array}
+    \right.
+$$
+Решаем уравнение $\id y = p \id t$ в координатах $\lambda, \mu$.
+$$
+    \psi'_{\lambda} \id \lambda + \psi'_{\mu}\id \mu =
+    \omega (\varphi'_{\lambda}\id \lambda + \varphi'_{\mu}\id \mu)
+$$
+Получили симметричную форму уравнения, разрешённого относительно производной:
+$$
+    (\psi'_{\lambda} - \omega \varphi'_{\lambda})\id \lambda +
+    (\psi'_{\mu} - \omega \varphi'_{\mu})\id \mu = 0
+$$
+
+\textbf{Примеры:}
+\begin{itemize}
+  \item $A(y')t + B(y')y + C(y') = 0$ --- уравнение Лагранжа.
+
+Предполагаем $B \ne 0$. Тогда уравнение принимает вид:
+$$
+    y = k(y')t + b(y'), \quad y = k(p)t + b(p)
+$$
+Решаем уравнение $\id y = p \id t$ в координатах $p, t$. После дифференцирования: 
+$$
+    k't\id p + k \id t + b' \id p = p \id t
+$$
+$$
+    (k't + b')\id p + (k-p) \id t = 0
+$$
+Если находится $\Hat{p} \such k(\Hat{p}) = \Hat{p}$, то $p = \Hat{p}$~--- решение. При $k \ne 0$:
+$$
+    \dfrac{\id t}{\id p} + \dfrac{k't + b'}{k-p} = 0\text{ --- линейное уравнение.}
+$$
+  \item $f(y, y') = 0$, $f(y,p) = 0 \LRA \left\{
+  \begin{array}{c}
+    y = \psi(\lambda) \\
+    p = \omega(\lambda)
+  \end{array}
+  \right.$
+
+Решаем уравнение $\id y = p \id t$ в координатах $\lambda, t$.
+$$
+    \psi'(\lambda) \id \lambda = \omega(\lambda) \id t
+$$
+Если $y = \psi(\Hat{\lambda}) = 0$, то $\lambda = \Hat{\lambda}$ решение, $y = \psi(\Hat{\lambda})$ -- решение.
+
+При $\omega(\lambda)\ne 0 \Rightarrow t = \displaystyle\int \dfrac{\psi'(\lambda)}{\omega(\lambda)}\id \lambda + C $.
+  \item $f(t, y') = 0$. $f(t, p) = 0 \RA \left\{
+  \begin{array}{c}
+    t = \varphi(\lambda) \\
+    p = \omega(\lambda)
+  \end{array}
+  \right.$
+\end{itemize}
+

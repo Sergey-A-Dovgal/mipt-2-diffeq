@@ -1,0 +1,127 @@
+\ProvidesPackage{mystyle}
+
+\usepackage{amssymb,amsmath}
+\usepackage[cp1251]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+%\usepackage{hyperref}
+
+\renewcommand{\baselinestretch}{1.0}
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\textbf{\S \arabic{subsection}. }}
+\renewcommand\normalsize{\sloppypar}
+
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{-0.3in}
+\setlength{\evensidemargin}{-0.3in}
+\setlength{\textwidth}{7in}
+%Найти теги, которые отвечают за размер колонтитулов и разрешают переносы строки
+
+\def \vs    {\vspace {20pt}}
+\def \LRA   {\quad \Leftrightarrow \quad}
+\def \sLRA  {\Leftrightarrow}
+\def \sRA   {\Rightarrow}
+\def \RA    {\quad \Rightarrow \quad}
+\def \LA    {\quad \Leftarrow \quad}
+\def \CC    {\mathbb {C}}
+\def \RR    {\mathbb {R}}
+\def \NN    {\mathbb {N}}
+\def \QQ    {\mathbb {Q}}
+\def \ZZ    {\mathbb {Z}}
+\def \eqdef {\,\overset{def}{=}\,}
+\def \defdef {\,\overset{def}{\Leftrightarrow}\,}
+\def \I     {\displaystyle\int\limits}
+\def \F     {\mathcal{F}}
+\def \Rg	{\mathrm{Rg}}
+
+\def \Re    {\mathfrak {Re} \, }
+\def \Im    {\mathfrak {Im} \, }
+\def \inttt {\displaystyle \int \limits_{t_1}^{t_2}}
+\def \intxx {\displaystyle \int \limits_{x_1}^{x_2}}
+\def \id    {\,\mathrm{d}}
+\def \tg	{\mathrm{tg}\;}
+\def \vm    {{\vec{\vphantom{b} \mu}}}
+\def \va    {{\vec{\vphantom{b} a}}}
+\def \vphi    {{\varphi}}
+
+\def \such  { \colon }
+\def \K     {\mathcal{K}}
+
+\def \Lap   {\underset{\mathcal{L}}{\longrightarrow}}
+\def \D     {\mathcal{D}}
+\def \L     {\mathcal{L}}
+\def \lam   {\lambda}
+\def \tr    {\mathrm{tr}}
+%% Laplas transformation
+
+\let \eps   \varepsilon
+\let \dta   \delta
+\let \any   \forall
+\let \gma   \gamma
+\let \ex    \exists
+\let \pa	\partial
+\let \lra   \leftrightarrow
+
+%\newcommand {\Task}   [1] {\par \vspace {12pt} \textbf {Задача #1} \par}
+\newcommand {\Picture}[1] {   \centerline{\includegraphics[width = 0.6\textwidth]{pic/#1.png}} }
+
+%\newtheorem {Lem}{Лемма}
+\newtheorem {Theorem}{Теорема}
+\newtheorem {Corollary}{Следствие}
+\newtheorem {Rk}{Замечание}
+%\newtheorem {Proof}{Доказательство}
+\renewcommand \theCorollary {\normalfont}
+%\renewcommand \theProof {\normalfont}
+\newcommand {\Th}[0]        {\textbf{Теорема:} }
+\newcommand {\Rem}[0]       {\textbf{Замечание:} }
+\newcommand {\Proof}[0]     {\textbf{Доказательство:} \nopagebreak }
+%\newcommand {\Pic}[1]       {\par\centerline{[ Тут будет рисунок ] }\par }
+\newcommand {\PicStub}[1]   {\par\vspace{3.2cm}\centerline{[ Тут нет рисунка, нарисуйте его сами ] }\par }
+\newcommand {\Pic}[1]       { \par\centerline{\includegraphics[height = 0.24\textheight]{#1}}\par }
+\newcommand {\Def}[0]       {\textbf{Определение:} }
+\newcommand {\Task}[0]      {\textbf{Задача: }}
+\newcommand {\Lem}[1]	    {\textbf{Лемма #1:}}
+\newcommand {\Quest}[1]     {\textbf{Вопрос: #1}\par}
+\newcommand {\Ans}          {\textbf{Ответ: }}
+\newcommand {\Cor}	    {\textbf{Следствие: }}
+\newcommand {\Stat}	    {\textbf{Утверждение: }}
+\newcommand {\Ex}	    {\textbf{Упражнение: }}
+\newcommand \mmax[1]        {\underset{#1}{max}}
+\newcommand {\cont}         {\ непрерывно}
+\newcommand {\diff}         {\ дифференцируема}
+\newcommand {\cdif}         {\cont \diff}
+\newcommand {\defn}         {\ определена\ }
+\newcommand {\comment}[1]   { }
+\newcommand {\point}[1]     {\textbf{#1. } }
+\newcommand {\condition}[1] {\big\{ #1 \big\}}
+\newcommand {\cond}[1]      {\Big\{ #1 \Big\}}
+\newcommand {\pair}[2]      {\left\|\begin{array}{c}#1\\#2\end{array} \right\|}
+\newcommand {\stolb}[3]		{\begin{array}{c} #1 \\ #2 \\ #3 \end{array}}
+\newcommand {\stolbtwo}[2]  {\pair{#1}{#2}}
+\newcommand {\br}[1]        {\Big[ #1 \Big]}
+\newcommand {\ud}[2]	    {\dfrac{\partial #1}{\partial #2}}
+\newcommand {\skipped}[1]   {\par {\Large \textbf{Лекция #1 пропущена!}}\\ \vs}
+\newcommand {\invest}[1]   {\par {\Large \textbf{Lection #1 under investigation!}}\\ \vs}
+\newcommand {\df} [2] {\dfrac{#1}{#2}}
+\def \p {\partial}
+%\DeclareMathOperator{\dt}{dt}
+
+\setlength{\parindent}{0ex}
+\setlength{\parskip}{1ex} 
+
+\pagestyle{headings}
+
+%\makeatletter
+%  \renewcommand{\@oddhead}{ololo}
+%\makeatother
+%\newcommand{\@makechapterhead}[1]{
+%    {
+%        #1
+%    }
+%}
+\makeatother
+
+\setcounter{tocdepth}{2}
+\renewcommand\contentsname{Оглавление}

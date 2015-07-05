@@ -1,0 +1,171 @@
+\subsection{О нелинейных автономных системах дифференциальных уравнений}
+
+\point{1} Мы рассматриваем общую нелинейную систему
+$$
+    \dfrac{\id \vec y}{\id t} = \vec f(\vec y), \vec y = \left\|\stolb{y_1}{\vdots}{y_n}\right\|,\,
+        \vec f = \left\|\stolb{f_1}{\ldots}{f_n}\right\|; \eqno (1)
+$$
+$t, \vec y, \vec f$~--- вещественные, $\vec f(\vec y)$ определена в области $G$, $\vec f$, $\dfrac{\partial \vec f}{\partial \vec y}$ непрерывна в $G $
+
+Если $\vec a$ положение равновесия, то $\vec y (t) \equiv \vec a$~--- решение $\LRA$ $\vec f(\vec a) = \vec 0$. 
+
+Часто используется следующий приём: $\vec y = \vec a + \vec z$, $|\vec z|$ мало. Тогда
+$$
+    \vec f(\vec y) = \vec f(\vec a + \vec z) = \underbrace{\vec f(\vec a)}_{=0} + \underbrace{\left(
+    \dfrac{\partial \vec f}{\partial \vec y} (\vec a)
+    \right)}_{A}\vec z + \vec g(\vec z),
+\,\,
+|\vec g(\vec z)| = o(|\vec z|).
+$$
+$$
+    \dfrac{\id \vec z}{\id t} = A \vec z + \vec g(\vec z), \eqno (2)
+$$
+$A = \dfrac{\partial \vec f}{\partial \vec y} (\vec a), |\vec g(\vec z)| = o(|\vec z|)$.
+
+$(1) \LRA (2)$.
+$$
+    \dfrac{\id \vec z}{\id t} = A \vec z \eqno (3)
+$$
+
+\Def $(3)$ получено из $(1)$ линеаризацией в окрестности положения равновесия $\vec a$.
+
+Один из основных приёмов исследования поведения решений: прежде всего изучаем уравнение $(3)$, и выясняем нужные нам свойства на этом уравнении, затем \emph{стараемся} перенести эти результаты на уравнение $(2)$.
+
+\point{2} Пусть $n = 2$. (Линейная автономная система второго порядка).
+
+Имеет место следующий нетривиально доказываемый факт:
+
+Траектории уравнения $(1)$ в окрестности положения равновесия ``ведут себя'', если положения равновесия системы $(3)$ невырожденное, качественно так же, как и траектории уравнения $(3)$.
+
+\Pic{Chapter4/pic/10.png}
+
+\point{3} \textbf{Устойчивость по Ляпунову}
+
+\Def Решение $\vec y(t) \equiv \vec a$ и само положение равновесия называется \emph{устойчивым по Ляпунову}, если:
+\begin{enumerate}
+  \item $\exists q > 0$, что при $|\vec y(0)-\vec a| < q$  решение может быть продолжено на $[0, +\infty)$,
+  \item для любого $\eps > 0 \exists \dta > 0, \, \dta \leqslant q$, такое, что
+  если $|\vec y(0) - \vec a| < \dta$, то 
+  $|\vec y(t) - \vec a| < \eps$ при $0 \leqslant t < +\infty$.
+\end{enumerate}
+  
+\Def Устойчивое по Ляпунову решение $\vec y(t) = \vec a$ уравнения $(1)$, и само положение равновесия $\vec a$ называется \emph{асимптотически устойчивым}, если существует такое $0<r\leqslant q$ (обозначение $q$ см. в предыдущем определении), что при $|\vec y(0) - \vec a| < r$ имеет место $\lim\limits_{t\to+\infty} \vec y (t) = \vec a$.
+
+\Ex Рассмотрите те типы, которые были рассмотрены в $\S 2$, и выясните, какие из них являются устойчивыми, а какие к тому же асимптотически устойчивыми.
+
+Прежде всего, мы исследуем систему $(3)$.
+
+\Th Пусть все собственные значения матрицы $A$ лежат в левой полуплоскости.  Тогда решение системы $(3)$ $\vec z(t) \equiv \vec 0$ устойчиво по Ляпунову и асимптотически устойчиво.
+
+\Proof $\vec z(t) = e^{tA} \vec z(0)$ (см. \S 10 главы 1).
+$$
+    A = CBC^{-1}, \quad B = \left\|
+    \begin{array}{ccc}
+      J_1 &        & 0 \\
+          & \ddots &   \\
+      0   &        & J_m 
+    \end{array}
+    \right\|, J_s = \underbrace{\left\|
+    \begin{array}{cccc}
+      \lam_1 & 1      &        & 0 \\
+             & \ddots & \ddots &   \\
+      0      &        & \ddots & 1 \\
+      0      & 0      &        & \lam_s 
+    \end{array}
+    \right\|}_{k_s}
+$$
+$$
+e^{tA} = Ce^{tB}C^{-1}, e^{tB} = \left\|
+\begin{array}{ccc}
+  e^{tJ_1} &  & 0 \\
+   & \ddots &  \\
+  0 &  & e^{tJ_m} 
+\end{array}
+\right\|,
+$$
+$$
+    e^{tJ_s} = e^{\lam_s t} \left\|
+    \begin{array}{cccc}
+      1 & t!/1 & \ldots & \dfrac{t^{k_s - 1}}{(k_s -1)!} \\
+       & \ddots & \ddots & \vdots \\
+      0 &  & \ddots & t!/1 \\
+      0 & 0 &  & 1 
+    \end{array}
+    \right\|, \, \textrm{Re} \lam_s \leqslant \alpha < 0
+$$
+Нам важно лишь только то, что там стоят \emph{какие-то} многочлены.
+$$
+\alpha < \tilde\alpha < 0, \quad |e^{tJ_s}| \leqslant |e^{\lam_s t}| K e^{(\tilde \alpha - \alpha)t} \leqslant e^{\alpha t} K e^{(\tilde \alpha - \alpha)t}=
+$$
+$$
+=Ke^{\tilde\alpha t}; \quad |e^{tA}|\leqslant |C| |e^{tB}||C^{-1}| \leqslant Q e^{\tilde \alpha t}.
+$$
+Итак, имеем такую оценку: $|\vec z(t)| \leqslant Qe^{\tilde \alpha t} |\vec z (0)|, \, \tilde \alpha < 0$. 
+
+\textbf{Центральная теорема этого параграфа.} Мы возвращаемся к уравнениям $(1)$, $(2)$.
+
+\Th (Ляпунов). Пусть все собственные значения матрицы $\dfrac{\partial \vec f}{\partial \vec y}(\vec a)$ лежат в левой полуплоскости. Тогда решение $\vec y(t) \equiv \vec a$ системы $(1)$
+(или, то же самое) $\vec z(t) = \vec 0$ системы $(2)$ устойчиво по Ляпунову и асимптотически устойчиво. 
+
+\Rem Доказательство нужно проводить, используя уже более тщательные оценки.
+
+\textbf{Напоминание:}
+$$
+    \dfrac{\id \vec z}{\id t} = A + \vec g(\vec z), \, |\vec g(\vec z)| = o(|\vec z|). \eqno (2)
+$$
+
+\Proof
+$\forall 0 < \beta \, \exists \gamma > 0 \such$ из $|\vec z|\leqslant |\gamma|$ следует $|\vec g(\vec z)| \leqslant \beta$. 
+
+Пока решение нашей задачи существует при $0 \leqslant \tau \leqslant t$, и $|\vec g(\vec z)| \leqslant \beta |\vec z|$, (см. \S 10 главы 1)
+$$
+    \vec z(t) = e^{tA}\vec z (0) + \int\limits_0^\beta e^{(t-\tau)A} \vec g(\tau) \id \tau
+$$ 
+Из доказательства предыдущей теоремы заимствуем оценку:
+$$
+    |\vec z(t)| \leqslant Qe^{\tilde \alpha t} |\vec z (0)| +
+    \int\limits_0^t Q e^{(t-\tau)\tilde \alpha} \beta |\vec z (\tau)|\id \tau
+$$
+$$
+    e^{-\tilde\alpha t} |\vec z(t)| \leqslant Q |\vec z(0)| + Q \beta \int\limits_0^t
+    e^{-\tau \tilde \alpha} |\vec z (\tau)|\id \tau
+$$
+По неравенству Гронуолла (см. \S 1 главы 3),
+$$
+    e^{-\tilde\alpha t} |\vec z(t)| \leqslant Q|\vec z(0)| e^{Q\beta t}
+$$
+Таким образом,
+$$
+    |\vec z(t)| \leqslant Q|\vec z (0)| e^{(\tilde \alpha + Q \beta)t}
+$$
+Выберем $\beta$ так, чтобы $\tilde \alpha + Q\beta < 0$. (Чтобы отрицательное число $\tilde\alpha$ мало сдвинулось вправо.) Для этого надо взять соответствующее $\gamma$. Теперь взяли $\tilde \gamma$, обладающее таким свойством:
+
+$Q\tilde \gamma < \gamma$, $\tilde \gamma < \gamma$.
+
+Начальные значения подчиняются условию:
+$$ 
+    |\vec z(0)| < \tilde \gamma \eqno (4)
+$$ 
+Если для $0\leqslant\tau \leqslant t$ решение $\vec z(t)$ определено, имеет место $|\vec z| \leqslant \gamma$ и выполняется условие $(4)$, то
+$$
+    |\vec z(t)| \leqslant Q|\vec z(0)| e^{(\tilde \alpha + Q \beta)t} \eqno (5)
+$$
+Сейчас мы докажем, что решение действительно определено, причём для всех $t$, и для всех решений $\vec z$ не выходит за указанные пределы. (Иначе говоря, эти предположения выполняются).
+
+Возьмём цилиндр $S$, такой, что
+$$
+    S\such \{0 \leqslant t < + \infty, \, |\vec z| \leqslant \gamma\}
+$$
+Задача Коши с такими начальными данными имеет решение. Теперь докажем, что оно не выходит за пределы цилиндра.
+$$
+    \bar S \such \{0\leqslant t \leqslant T, \, |\vec z| \leqslant \gamma\},
+    \, 0 < T\text{ -- любое}
+$$ 
+\Pic{Chapter4/pic/11.png}
+Из $(5)$ получаем, что $|\vec z(\tilde t)| < \gamma$. $|\vec z(t)| \leqslant \gamma$.
+
+Теорема доказана.
+
+\Rem Докажите, что если хотя бы одно собственное значение матрицы лежит в правой полуплоскости, то решение не является устойчивым по Ляпунову. \textbf{Подсказка:} ограничиться случаем уравнения $(3)$.
+
+%Глава закончена

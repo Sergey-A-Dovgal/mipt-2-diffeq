@@ -1,0 +1,203 @@
+%27.09.2011
+\subsection{Линейные уравнения с постоянными коэффициентами}
+$$
+    y^{(n)} + a_1 y^{(n-1)} + \ldots + a_n y = f(t)
+$$
+\begin{tabular}{rl}
+$
+    \left.
+  \begin{array}{r}
+    a_1, \ldots, a_n \text{ -- заданные числа} \\
+    f(t) \text{ -- заданная функция} \\
+    y(t) \text{ -- искомая функция}
+  \end{array}
+    \right\}
+$                                             & комплексные \\
+  $t \text{ -- независимая переменная} \}$    & вещественная \\
+\end{tabular}
+
+\point{1} \textbf{Вспомогательные сведения:}
+$$
+    \varphi(t) = \alpha(t) + i \beta(t). \quad \alpha, \beta, t \in \RR
+$$
+\begin{enumerate}
+  \item $\varphi(t)$ непрерывна $\LRA$ $\alpha, \beta$ непрерывны.
+  \item $\varphi'(t) = \alpha'(t) + i \beta'(t)$
+  \item $\int \varphi(t) = \int \alpha (t) + i \int \beta(t)$
+\end{enumerate}
+\Def
+$$
+    e^z = 1 + \dfrac{z}{1!} + \dfrac{z^2}{2!} + \ldots.
+$$
+Этот ряд сходится абсолютно для любого комплексного $z$.
+
+Имеет место:
+\begin{enumerate}
+  \item $e^{z_1}\cdot e^{z_2} = e^{z_1 + z_2}$
+  \item $\dfrac{1}{e^z} = e^{-z}$
+  \item $\left(e^{\varphi(t)}\right)' = \varphi'(t)e^{\varphi(t)}$, $\varphi(t) = \alpha(t) + i \beta(t)$.
+
+  В частности, $\left(e^{\lambda t}\right)' = \lambda e^{\lambda t}$, $\lambda$~--- комплексное число.
+  \item $e^{\alpha + i \beta} = e^{\alpha} (\cos \beta + i \sin \beta)$~--- Формула Эйлера-Муавра.
+\end{enumerate}
+\Def формула $\varphi(t)$ вида
+$$
+    g_1(t)e^{\lambda_1 t} + \ldots + g_n(t)e^{\lambda_n t},
+$$
+где $\lambda_1, \ldots, \lambda_n$~--- комплексные числа, а $g_1(t), \ldots, g_n(t)$~--- многочлены с комплексными коэффициентами, называется \emph{квазимногочленом}.
+
+\Rem Многочлен, тождественно равный нулю, степени не имеет.
+
+\Lem{1} Рассмотрим квазимногочлен $\varphi(t) = g(t)e^{\lambda t}$, где $g(t)$~--- многочлен степени $m$. Тогда $$
+    \varphi'(t) = q(t)e^{\lambda t},  \quad \int \varphi(t) = r(t)e^{\lambda t} + C,\, C = \text{const},
+$$
+а $g(t)$, $r(t)$~--- многочлены, при этом степень $q$ равна $m$ при $\lambda \ne 0$, и равна $m-1$, если $\lambda = 0, m \ne 0$; степень $r$ равна $m$ при $\lambda \ne 0$, и равна $m+1$, при $\lambda = 0$.
+
+\Proof
+\begin{itemize}
+  \item Для дифференцирования: $\left(g(t)e^{\lambda t}\right)' = g'(t)e^{\lambda t} + \lambda g(t) e^{\lambda t} = (g'(t) + \lambda g(t))e^{\lambda t}$.
+  \item Для интегрирования:
+  \begin{enumerate}
+    \item $\lambda \ne 0$. $\displaystyle\int g(t) e^{\lambda t} \id t = \dfrac{1}{\lambda} g(t)e^{\lambda t} -
+    \displaystyle\int g'(t) \dfrac{e^{\lambda t}}{\lambda} \id t = \ldots = $
+
+    $= \dfrac{e^{\lambda t}}{\lambda} \left( g(t) - \dfrac{g'(t)}{\lambda} + \dfrac{g''(t)}{\lambda^2}+\ldots
+    + (-1)^m \dfrac{g^{(m)}(t)}{\lambda^m} \right) + C$
+    \item $\lambda = 0$. $\int g(t) \id t = r(t) + C$, где $r(t)$~--- фиксированный многочлен, $C$~--- произвольная константа.
+  \end{enumerate}
+\end{itemize}
+
+\Lem{2} Пусть квазимногочлен $\varphi(t) = g_1(t) e^{\lambda_1 t} + \ldots + g_N(t) e^{\lambda_N t}$, где $\lambda_1, \ldots, \lambda_N$ попарно различные, тождественно равен нулю на каком-либо промежутке $[\alpha, \beta]$. Тогда все коэффициенты во всех $g_i$~--- нули.
+
+Отсюда, в частности, следует, что если квазимногочлены совпадают как функции, то у них все коэффициенты одинаковые.
+
+\Proof Индукция по числу слагаемых.
+\begin{enumerate}
+  \item $N = 1$. $\varphi(t) = g(t) e^{\lambda t} \equiv 0$, $g(t) \equiv 0$.
+  \item $N > 1$. $\varphi(t) = g_1(t)e^{\lambda_1 t} + \sum\limits_{i=2}^N g_i(t) e^{\lambda_i t}$.
+
+  Рассмотрим функцию  $\psi (t) = e^{-\lambda_1 t}\varphi(t) = g_q(t) +
+  \sum\limits_{i=2}^N g_i(t) e^{(\lambda_i - \lambda_1) t} \equiv 0$ на $[\alpha, \beta]$.
+
+  Продифференцируем это тождество $m$ раз, где $m > \mathrm{deg}\, g_1$. Так как $(\lambda_i - \lambda_1)$ попарно различны и отличны от нуля, получим, в силу леммы 1,
+$$
+    \psi^{(m)} = \sum\limits_{i=2}^N \tilde{g_i} (t) e^{(\lambda_i - \lambda_1) t}, \quad
+    \mathrm{deg}\, \tilde{g_i} = \mathrm{deg}\, g_i, \, i = \overline{2, N}
+$$
+По предположению индукции, коэффициенты в $\tilde{g_i}$ все равны нулю. Так как степень не менялась,
+то $g_i \equiv 0$. Отсюда $g_1 \equiv 0$, и все коэффициенты  во всех $g_i$ равны нулю, что и требовалось доказать.
+\end{enumerate}
+
+\textbf{Удобная символика.}
+Введем  в рассмотрение дифференциальный оператор $\D$:
+$$
+    \dfrac{\id}{\id t} = \D, \quad \dfrac{\id u}{\id t} = \D u, \quad \dfrac{\id ^2 u}{\id t^2} = \D u,\quad \text{и т.д.}
+$$
+Пусть $b_0 + b_1 \D + \ldots + b_m \D^m = \mathcal{M} (\D)$, где $b_0, \ldots, b_m$~--- комплексные числа.
+
+\Def $\mathcal{M} (\D) u = b_0 u + b_1 u' + \ldots + b_m u^{(m)}$.
+
+Имеет место:
+\begin{enumerate}
+  \item $\mathcal{M} (\D) (\alpha u + \beta v) = \alpha \mathcal{M} (\D) u + \beta \mathcal{M} (\D) v$,
+  $\alpha$ и $\beta$~--- числа.
+  \item $(\mathcal{M} (\D) + \mathcal{N} (\D))u = \mathcal{M} (\D) u + \mathcal{N} (\D) u$
+  \item $(\mathcal{M}(\D)\cdot \mathcal{N}(\D))u = \mathcal{M} ( \mathcal{N}(\D) u )\quad$ (подумайте, почему)
+\end{enumerate}
+\point{2} \textbf{Общий метод решения линейного уравнения с постоянными коэффициентами.}
+$$
+    y^{(n)} + a_1 y^{(n-1)} + \ldots + a_n y = f(t) \eqno (1)
+$$
+\begin{tabular}{rl}
+$
+    \left.
+  \begin{array}{r}
+    a_1, \ldots, a_n \text{ -- заданные числа} \\
+    f(t) \text{ -- заданная функция} \\
+    y(t) \text{ -- искомая функция}
+  \end{array}
+    \right\}
+$                                             & комплексные \\
+  $t \text{ -- независимая переменная} \}$    & вещественная \\
+  $f(t)$ -- непрерывная на $[\alpha, \beta]$  &  \\
+\end{tabular}
+
+\Def Функция $y = \varphi(t)$ --- решение уравнения $(1)$, если:
+\begin{enumerate}
+  \item $\varphi(t)$ определена на некотором промежутке $[\delta, \gamma], (\delta, \gamma), [\delta, \gamma)$, или $(\delta, \gamma]$.
+  \item $\varphi^{(n)}(t)$ непрерывна на $[\delta, \gamma], (\delta, \gamma), [\delta, \gamma)$, или $(\delta, \gamma]$ соответственно.
+  \item  $\varphi^{(n)} (t) + a_1 \varphi^{(n-1)}(t) + \ldots + a_n \varphi(t) = f(t)$
+на $[\delta, \gamma], (\delta, \gamma), [\delta, \gamma)$, или $(\delta, \gamma]$ соответственно.
+\end{enumerate}
+Введём дифференциальный оператор $\mathcal{L} (\D) = \D^n + a_1 \D ^ {n-1} + \ldots + a_n$.
+$$
+    \L(\D) y = f(t) \eqno (1)
+$$
+\Def Многочлен $\L (\lambda) = \lambda^n + a_1\lambda^{n-1} + \ldots + a_n$ относительно комплексного переменного~--- \emph{характеристический многочлен} линейного дифференциального уравнения с постоянными коэффициентами; уравнение $\L(\lambda) = 0$~--- \emph{характеристическое уравнение} линейного дифференциального уравнения $(1)$.
+
+$\L(\lam) = 0$ имеет корни $\lam_1, \ldots, \lam_n$.
+$$
+    \L(\lam) = (\lam-\lam_1)(\lam-\lam_2)\ldots(\lam-\lam_n)
+$$
+$$
+    \L(\D) = (\D - \lam_1)(\D - \lam_2)\ldots(\D - \lam_n),
+    \text{ где } \lam_1, \ldots, \lam_n \text{ --- корни характеристического уравнения.}
+$$
+$\L(\D) = (\D - \lam_1)\mathcal{M} (\D),\quad \mathcal{M} (\D) = \D^{n-1} + b_1 \D^{n-2} + \ldots + b_{n-1}$.
+$$
+    \L(\D)y = f(t) \eqno (1)
+$$
+$$
+    \big( (\D - \lam_1)\mathcal{M} (\D) \big) y = f(t)
+$$
+$$
+    (\D - \lam_1)\big( \mathcal{M} (\D) y \big) = f(t)
+$$
+Введём функцию $U$:
+$$
+    U \eqdef \mathcal{M} (\D) y \eqno(2)
+$$
+$$
+    (\D - \lam_1) U = f, \quad  U' - \lam U = f, \eqno (3)
+$$
+причём $(1) \LRA \left\{ \begin{array}{c}
+                           (2) \\
+                           (3)
+                         \end{array}
+ \right.$. 
+Ищем $U$ в виде $U = e^{\lam_1 t}v$.
+$$
+   \underline{\lam_1 e^{\lam_1 t}v} + e^{\lam_1 t}v' - \underline{\lam_1 e^{\lam_1 t} v} = f 
+$$
+Подчеркнутые слагаемые взаимно уничтожаются, получаем решение:
+$$
+     v' = e^{\lam_1 t}f; \quad v = \displaystyle\int e^{\lam_1 t} f(t)\id t + C
+$$
+$$
+    U = e^{\lam_1 t}\left( \displaystyle\int e^{\lam_1 t} f(t)\id t + C \right) \eqno(4)
+$$
+Переходим к $(2)$. За $n$ шагов получаем решение.
+
+\Cor \begin{enumerate}
+       \item Линейные дифференциальные уравнения с постоянными коэффициентами решаются в квадратурах.
+       \item Исследуем задачу Коши:
+$$
+    t_0 \in [\alpha, \beta], \quad q_0,\ldots, q_{n-1} \text{ -- заданные числа.}
+$$
+Найти $y(t)$~--- то решение уравнения $(1)$, что
+$$
+    y(t_0) = q_0, \,\, y^{(k)}(t_0) = q_k, \, k=\overline{1, (n-1)} \eqno (5)
+$$
+\end{enumerate}
+\Th Задача $(1)\land(5)$ имеет решение, это решение продолжимо на весь $[\alpha, \beta]$, и единственно.
+$$
+    U = \D^{n-1} y + b_1 \D^{n-2} y + \ldots + b_{n-1}
+$$
+$$
+    U(t_0) = q_{n-1} + b_1 q_{n-2} + \ldots + q_0.
+$$
+$$
+    U(t) = e^{t-t_0}U(t_0) + \displaystyle\int\limits_{t_0}^t e^{t - \tau}f(\tau)\id \tau \eqno(6)
+$$
+Продолжая решение на весь отрезок, получим доказательство.
+

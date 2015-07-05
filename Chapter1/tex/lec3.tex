@@ -1,0 +1,146 @@
+%20.09.2011
+\subsection{Уравнения высших степеней.}
+
+\textbf{В этом параграфе все величины вещественные.}
+
+\point{1} \textbf{Понижение порядка уравнения}
+Пусть $t$ --- независимая переменная, $y(t)$~--- искомая, $f$~--- задана. Уравнение
+$$
+    f\big(t, y, y', \ldots, y^{(n)}\big) = 0 \eqno(1)
+$$
+называется \emph{обыкновенным дифференциальным уравнением порядка $n$.}
+
+\Def Функция $y = \varphi(t)$ --- решение $(1)$, если
+\begin{enumerate}
+  \item $\varphi(t)$ определена на $(\alpha, \beta), [\alpha, \beta), (\alpha, \beta]$, или $[\alpha, \beta]$.
+  \item $\varphi^{(k)} (t)$ непрерывна на $(\alpha, \beta), [\alpha, \beta), (\alpha, \beta]$, или $[\alpha, \beta]$ соответственно.
+  \item $f\big(t, \varphi(t), \varphi'(t), \ldots, \varphi^{(n)} (t)\big)  = 0$ на $(\alpha, \beta), [\alpha, \beta), (\alpha, \beta]$, или $[\alpha, \beta]$ соответственно.
+\end{enumerate}
+
+\textbf{Задача Коши для $(1)$:}
+
+Заданы числа $t_0, q_0, q_1, \ldots, q_n$, удовлетворяющие условию $f(t_0, q_0, q_1, \ldots, q_n) = 0$. Найти $y(t)$~--- решение $(1)$, удовлетворяющее условиям $y(t_0) = q_0$, $y'(t_0) = q_1$, \ldots, $y^{(n)} (t_0) = q_n$.
+
+\emph{Важный частный случай $(1)$:}
+$$
+    y^{(n)} = f(t, y, y', \ldots, y^{(n-1)}) \eqno (2)
+$$
+--- уравнение, разрешенное относительно старшей производной.
+
+\textbf{Задача Коши для $(2)$:}
+Заданы числа $t_0, q_0, q_1, \ldots, q_{n-1}$.  Найти $y(t)$~--- решение $(2)$, удовлетворяющее условиям $y(t_0) = q_0$, $y^{(k)} (t_0) = q_k$ для $k = \overline{1, (n-1)}$.
+
+\point{2} Далее рассматриваем уравнение $(1)$. Для простоты изложения $f$ определена для $t, y, y', \ldots, y^{(n)}$~--- любые. Все используемые функции достаточно гладкие (у них существуют все нужные нам производные).
+
+Основной случай: $y$ в уравнение не входит.
+$$
+    f(t, y, y', \ldots, y^{(n)}) = F(t, y', \ldots, y^{(n)})
+$$
+\Rem Задача понижения порядка уравнения включает в себя задачу решения уравнения первого порядка, так как понизить порядок уравнения первого порядка~--- значит решить его.
+
+$y' = z$~--- новая искомая функция, $t$~--- независимая переменная.
+$$
+    (1) \LRA F(t, z, z', \ldots, z^{(n)}) = 0, \quad y (t) = \int z(t) \id t + C
+$$
+
+\point{3} \textbf{Основная теорема.}
+\nopagebreak
+Рассматриваем преобразования (взаимно однозначные отображения) плоскости $(t, y)$ на себя. Пусть преобразование $\varphi (t, y) = (\Hat{t}, \Hat{y})$ задаётся следующими формулами:
+$$
+\begin{array}{c}
+  \Hat{t} = \alpha(t,y), \\
+  \Hat{y} = \beta(t, y).
+\end{array}
+$$
+$$
+    \text{Ясно, что }\dfrac{\id \Hat{y}}{\id \Hat{t}} = \dfrac{\beta_t + \beta_y y'}{\alpha_t + \alpha_y y'}
+$$
+\Def Уравнение \emph{инвариантно} относительно преобразования $\varphi$, если
+$$
+    f\left(\Hat{t}, \Hat{y}, \dfrac{\id \Hat{y}}{\id \Hat{t}}, \ldots, \dfrac{\id^n \Hat{y}}{\id \Hat{t} ^ n}\right) =
+    f\left(t, y, \dfrac{\id y}{\id t}, \ldots, \dfrac{\id^n y}{\id t^n}\right)
+$$
+\Th Пусть уравнение $(1)$ инвариантно в переменных $\xi, \eta$ относительно
+группы преобразований $\varphi \such \Hat{\xi} = \xi, \Hat{\eta} = \eta + C$, $C$~--- произвольная константа.
+Тогда в переменных $\xi, \eta$ уравнение $(1)$ не зависит от $\eta$.
+
+\Proof
+$$
+    f\left(t, y, \dfrac{\id y}{\id t}, \ldots, \dfrac{\id^n y}{\id t^n}\right) =
+    g\left(\xi, \eta, \dfrac{\id \eta}{\id \xi}, \ldots, \dfrac{\id^n \eta}{\id \xi^n}\right)
+$$
+$$
+    g\left(\xi, \eta + C, \dfrac{\id \eta}{\id \xi}, \ldots, \dfrac{\id^n \eta}{\id \xi^n}\right) =
+    g\left(\xi, \eta, \dfrac{\id \eta}{\id \xi}, \ldots, \dfrac{\id^n \eta}{\id \xi^n}\right)
+$$
+Так как на месте второго аргумента может стоять любое число, то $\eta$ не входит в $g$.
+
+\point{4} \textbf{Некоторые конкретные типы уравнений, допускающих понижение порядка.}
+\nopagebreak
+\begin{enumerate}
+  \item $f(t, y, y', \ldots, y^{(n)}) = g(y, y', \ldots, y^{(n)})$, $\eta = t$, $\xi = y$.
+
+  $\Hat{t} = t + \alpha$, $\alpha$~--- произвольная постоянная.
+
+  Назначаем $y$ независимой переменной некоторой функции $\dfrac{\id t}{\id y}$ (или $\dfrac{\id y}{\id t}$, как удобнее).
+  Получим уравнение $(n-1)$-го порядка.
+
+  \Rem Точки, в которых $y' = 0$, надо исследовать отдельно!
+
+  \item Уравнение, однородное относительно $y, y', \ldots, y^{(n)}$:
+$$
+    f(t, \sigma y, \sigma y', \ldots, \sigma y^{(n)}) = \sigma^k f(t, y, y', \ldots, y^{(n)})
+$$
+$k$~--- фиксированное, $\sigma \ne 0$.
+
+Сделаем замену $\tilde{f} = y^{-k} f$.
+$$
+    \tilde{f} (t, \sigma y, \sigma y', \ldots, \sigma y^{(n)}) =
+    \tilde{f}(t, y, y', \ldots, y^{(n)})
+$$
+
+$\Hat{t} = t$, $\xi = t$, $\eta = \ln y$ (или $\ln (-y)$, если $y < 0$).
+
+Преобразование $\varphi$ задаётся формулами:
+$\left\{
+\begin{array}{c}
+  \Hat {y} = \sigma y \\
+  \Hat {\xi} = \xi
+\end{array}\right.
+.\quad \Hat{\eta} = \eta + \alpha$, $\alpha = \ln \sigma$, или $\ln (-\sigma)$, если $\sigma < 0$.
+
+Назначаем $t$ независимой переменной некоторой функции $z = \dfrac{\id (\ln y)}{\id t} = \dfrac{y'}{y}$.
+Получим уравнение $(n-1)$-го порядка. Точки, в которых $y=0$, исследовать дополнительно. Возможность решения $y\equiv 0$
+тоже исследовать дополнительно.
+  \item Уравнение, однородное относительно $t, y, \id t, \id y, \id^2 y, \ldots, \id^n y$:
+$$
+    f\left(\sigma t, \sigma y, \dfrac{\id y}{\id t}, \dfrac{1}{\sigma} \dfrac{\id ^2 y}{\id t^2}, \ldots,
+    \dfrac{1}{\sigma^{n-1}}\cdot\dfrac{\id^n y}{\id t^n}\right) =
+    \sigma^k f\left(t, y, \dfrac{\id y}{\id t}, \ldots, \dfrac{\id^n y}{\id t^n}\right)
+$$
+$k$~--- некоторое фиксированное число, $\sigma \ne 0$~--- произвольное.
+
+Делаем замену $\tilde{f} = t^{-k} f$, заменяем $f = 0$ уравнением $\tilde{f} = 0$.
+$$
+    \tilde{f} \left( \sigma t, \sigma y, \dfrac{\id y}{\id t}, \dfrac{1}{\sigma} \dfrac{\id^2 y}{\id t^2} , \ldots,
+    \dfrac{1}{\sigma^{n-1}}\cdot\dfrac{\id^n y}{\id t^n} \right) =
+    \tilde{f} \left( t, y, \dfrac{\id y}{\id t}, \ldots, \dfrac{\id^n y}{\id t^n}\right)
+$$
+Преобразование $\varphi$ задаётся формулами:
+$\left\{
+\begin{array}{c}
+  \Hat {t} = \sigma t \\
+  \Hat {y} = \sigma y
+\end{array}\right.$.
+Делаем замену $\xi = \dfrac{y}{t}$, $\eta = \ln t$ $\Big( \ln(-t) $ при $ t < 0 \Big)$
+Назначаем независимой переменной $\dfrac{y}{t}$ функции $\dfrac{\id (\ln t)}{\id(y / t)}$, получаем
+уравнение $(n-1)$-го порядка. Точки, где $t = 0$, исследовать дополнительно.
+Решения вида $y = Ct$, $C$~--- const, исследовать дополнительно.
+\end{enumerate}
+
+{\Large Резюме к \S 2-5:}
+
+Если можно выписать явное выражение для $y(t) = \ldots$, используя элементарные функции, алгебраические операции, операции интегрирования, то говорят. что $y(t)$ выражается в квадратурах.
+
+Лиувилль показал, что уравнение $y' + y^2 = a(t)$ не решается в квадратурах.
+

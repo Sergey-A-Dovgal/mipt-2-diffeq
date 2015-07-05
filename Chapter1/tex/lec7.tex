@@ -1,0 +1,264 @@
+%18.10.2011
+\subsection{О системах обыкновенных дифференциальных уравнений.}
+
+\point{1} \textbf{Матричные функции $Q(t)$ скалярной переменной $t$.}
+
+$t$~--- вещественная,
+$$
+    Q(t) = \left\|
+    \begin{array}{ccc}
+      q_{11}(t) & \ldots & q_{1m} (t) \\
+      \cdots & \cdots & \cdots \\
+      q_{n1} (t) & \ldots & q_{nm}  (t)
+    \end{array}
+    \right\|
+$$
+$q_{rs} (t)$--- вещественная, если нужно, комплексная (оговаривается отдельно).
+Введем следующие определения:
+\begin{enumerate}
+  \item $Q(t)$~--- непрерывна $\LRA$ все $q_{rs}$ непрерывны.
+  \item $\dfrac{\id Q(t)}{\id t} = L(t)$ $\LRA$ $\dfrac{\id q_{rs} (t)}{\id t} = \ell _{rs} (t)$ для всех $r,s$; $\ell_{rs}$~--- соответствующие элементы  $L(t)$.
+  \item $\displaystyle\int\limits_\alpha^\beta Q(t) \id t = L \LRA
+  \displaystyle\int\limits_\alpha^\beta q_{rs}(t)\id t = \ell_{rs}$ для всех $r,s$;
+      $\ell_{rs}$~--- соответствующие элементы  $L(t)$.
+\end{enumerate}
+\Rem Порядок сомножителей для матриц важен!
+
+\Th 
+
+\begin{enumerate}
+  \item Пусть $\dfrac{\id A(t)}{\id t}$ и $\dfrac{\id B(t)}{\id t}$ существуют и $(A+B)$ определено. Тогда
+$$
+    \dfrac{\id\big(A(t) + B(t)\big)}{\id t} = \dfrac{\id A(t)} {\id t} + \dfrac{\id B(t)} {\id t}
+$$
+  \item Пусть $\dfrac{\id A(t)}{\id t}$ и $\dfrac{\id B(t)}{\id t}$ существуют и $AB$ определено. Тогда
+$$
+    \dfrac{\id\big(A(t) B(t)\big)}{\id t} = \dfrac{\id A(t)} {\id t} \cdot B(t) +
+    A(t) \cdot\dfrac{\id B(t)} {\id t}
+$$
+  \item Пусть $\dfrac{\id Q(t)}{\id t}$ непрерывна на $[\alpha, \beta]$. Тогда
+$$
+    \int\limits_\alpha^\beta \dfrac{\id Q(t)}{\id t}\id t = Q(\beta) - Q(\alpha)
+$$
+\end{enumerate}
+\textbf{Обозначение:}
+$$
+    \vec{x} \eqdef
+    \left\|
+        \begin{array}{c}
+          x_{11} \\
+          \vdots \\
+          x_{n1}
+        \end{array}
+    \right\|.
+    \qquad \begin{array}{r}
+             x_{11}, \ldots, x_{n1} \text{ -- вещественные } \LRA \vec{x} \in \mathbb{R}^n \\
+             x_{11}, \ldots, x_{n1} \text{ -- комплексные  } \LRA \vec{x} \in \mathbb{C}^n
+           \end{array}
+$$
+\point{2}
+$$
+    \left\{
+    \begin{array}{c}
+      f_1(t, y_1, y'_1, \ldots, y^{(k_1)}_1, \ldots, y_m, y'_m, \ldots, y^{(k_m)}_m) = 0 \\
+      \cdots \\
+      f_m(t, y_1, y'_1, \ldots, y^{(k_1)}_1, \ldots, y_m, y'_m, \ldots, y^{(k_m)}_m) = 0
+    \end{array}
+    \right.
+$$
+$t$~--- независимая переменная (вещественная); $y_1, \ldots, y_m$~--- искомые функции от $t$.
+$f_1, \ldots, f_m$~--- заданные функции, $y_1, \ldots, y_m$, $f_1, \ldots, f_m$~--- вещественные или комплексные.
+
+Такую систему можно свести к системе, в которую входит только первая производная. Стандартный способ такого сведения:
+$$
+\left\{
+    \begin{array}{l}
+      f(t, y, y', \ldots, y^{(k)}) = 0 \\
+      u_1 = y', u_2 = y'', \ldots, u_{k-1} = y^{(k-1)}
+    \end{array}
+\right. \LRA
+\left\{
+    \begin{array}{c}
+      y' = u_1 \\
+      u'_1 = u_2 \\
+      \ldots \\
+      u'_{k-2} - u_{k-1} \\
+      f(t, y, u_1, \ldots, u_{k-1}, u'_{k-1}) = 0
+    \end{array}
+\right.
+$$
+$$
+\left\{
+\begin{array}{l}
+  f_1(t, y_1, \ldots, y_n, y'_1, \ldots, y'_n) = 0 \\
+  \cdots \\
+  f_n(t, y_1, \ldots, y_n, y'_1, \ldots, y'_n) = 0
+\end{array}
+\right.
+\eqno(1)
+$$
+$$
+\vec{y} \eqdef \left\|  \begin{array}{c}
+                          y_1 \\
+                          \vdots \\
+                          y_n
+                        \end{array}
+ \right\|,\quad
+\vec{f} \eqdef \left\|  \begin{array}{c}
+                          f_1 \\
+                          \vdots \\
+                          f_n
+                        \end{array}
+ \right\|
+$$
+$$
+    \vec{f} (t, \vec{y}, \vec{y'})= \vec{0} \eqno (1)
+$$
+\Def Функция $\vec{y} = \vec{\varphi}(t)$~--- решение $(1)$, если:
+\begin{enumerate}
+  \item $\vec{\varphi}(t)$ определена на некотором промежутке $(\alpha, \beta)$, $(\alpha, \beta]$, $[\alpha, \beta)$, или $[\alpha, \beta]$.
+  \item $\vec{\varphi'}(t)$ непрерывна на $(\alpha, \beta)$, $(\alpha, \beta]$, $[\alpha, \beta)$, или $[\alpha, \beta]$ соответственно.
+  \item $\vec{f} \big(t, \vec{\varphi}(t), \vec{\varphi'} (t)\big) = \vec{0}$ на $(\alpha, \beta)$, $(\alpha, \beta]$, $[\alpha, \beta)$, или $[\alpha, \beta]$ соответственно.
+\end{enumerate}
+
+\textbf{Важный частный случай:}
+$$
+    \left\{
+    \begin{array}{c}
+      y'_1 = f_1 (t, y_1, \ldots, y_n) \\
+      \cdots \\
+      y'_n = f_n (t, y_1, \ldots, y_n)
+    \end{array}
+    \right.
+    \eqno(2)
+$$
+$$
+    \dfrac{\id \vec{y}}{\id t} = \vec{f} (t, \vec{y} ) \eqno (2)
+$$
+Система $(2)$ называется нормальной формой системы обыкновенных дифференциальных уравнений, где каждое
+уравнение разрешено относительно производной.
+
+\textbf{Задача Коши для $(2)$:}
+
+Заданы $t_0$, $\vec{y}_0$. Найти $\vec{y} (t)$~--- решение $(2)$, удовлетворяющее условию $\vec{y}(t_0) = \vec{y}_0$.
+
+\subsection{Системы линейных обыкновенных дифференциальных уравнений с постоянными коэффициентами.}
+
+\point{1}
+
+$$
+\left\{
+\begin{array}{l}
+  y'_1 = a_{11} y_1 + \ldots + a_{1n} y_n + f_1 (t) \\
+  \cdots \\
+  y'_n = a_{n1} y_1 + \ldots + a_{nn} y_n + f_n (t)
+\end{array}
+\right. \eqno (1)
+$$
+Для определённости $t$ меняется на \underline{отрезке} $\alpha \leqslant t \leqslant \beta$. ($t$~--- вещественная).
+$y_1, \ldots, y_n$~--- искомые функции от $t$; $f_1, \ldots, f_n$~--- заданные функции; $a_{11}, \ldots, a_{nn}$~--- заданные числа.
+
+$a_{rs}, y_r, f_r$~--- комплексные. $f_1(t), \ldots, f_n(t)$~--- непрерывны на $[\alpha, \beta]$.
+$$
+    \vec{y} = \left\| \begin{array}{c}
+                          y_1 \\
+                          \vdots \\
+                          y_n
+                        \end{array}
+     \right\|, \quad
+    \vec{f} = \left\| \begin{array}{c}
+                          f_1 \\
+                          \vdots \\
+                          f_n
+                        \end{array}
+     \right\|, \quad
+     A = \left\|
+     \begin{array}{ccc}
+       a_{11} & \ldots & a_{1n} \\
+       \cdots & \cdots & \cdots \\
+       a_{n1} & \ldots & a_{nn}
+     \end{array}
+     \right\|
+$$
+$$
+    \dfrac{\id \vec{y}}{\id t} = A \vec{y} + \vec{f} (t)
+    \eqno (1)
+$$
+\textbf{Задача Коши для $(1)$:}
+
+Заданы $t_0 \in [\alpha, \beta]$ и $\vec{y}_0$. Найти $\vec{y} (t)$~--- решение $(1)$, удовлетворяющее условию
+$$
+    \vec{y} (t_0) = \vec{y}_0 \eqno (2)
+$$
+\Th Пусть $A$~--- линейное преобразование в линейном комплексном пространстве. Пусть существует базис из собственных векторов $A$. Тогда в этом базисе $A$ имеет вид $
+    \left\|
+    \begin{array}{ccc}
+      \lam_1 &  & \text{{\Huge 0}} \\
+       & \ddots &  \\
+      \text{{\Huge 0}} &  & \lam_n
+    \end{array}
+    \right\|
+$ (\emph{диагональная матрица}), где $\lam_1, \ldots, \lam_n$~--- корни характеристического уравнения $\det(A - \lam E) = 0$.
+
+\Rem
+$$
+    \left\|
+    \begin{array}{cc}
+      0 & 1 \\
+      0 & 0
+    \end{array}
+    \right\|
+$$
+пример матрицы, у которой не существует базиса из собственных векторов. 
+
+\Th Пусть $A$~--- линейное преобразование в комплексном линейном пространстве. Тогда существует базис, в котором матрица $A$~--- верхняя треугольная.
+
+\point{2} \textbf{Общий метод решения нормальных систем линейных обыкновенных дифференциальных уравнений с постоянными коэффициентами.} 
+
+$A = SBS^{-1}$, где $S$ --- матрица перехода к новому базису, $B$~--- верхняя треугольная матрица, $
+B = \left\|
+\begin{array}{ccc}
+  b_{11} & \ldots & b_{1n} \\
+   & \ddots & \vdots \\
+  \text{\Huge 0} &  & b_{nn}у
+\end{array}
+\right\|
+$
+$$
+    (1) \LRA \dfrac{\id \vec{y}}{\id t} = SBS^{-1} \vec{y} + \vec{f} (t), \quad
+    S^{-1} \dfrac{\id \vec{y}}{\id t} = BS^{-1} + S^{-1} \vec{f} (t)
+$$
+$$
+    \dfrac{\id ( S^{-1} \vec{y} )}{\id t} = B(S^{-1} \vec{y}) + S^{-1} \vec{f} (t)
+$$
+$S^{-1} \vec{y} = \vec{J}$~--- новая искомая функция, $S^{-1} \vec{f} (t) = \vec{F} (t)$~--- новая заданная функция.
+$$
+    \dfrac{\id \vec{J}}{\id t} = B \vec{J} + \vec{F} (t) \eqno (1')
+$$ 
+$$
+    \left\{
+    \begin{array}{l}
+      \dfrac{\id J_1}{\id t} = b_{11} J_1 + \ldots + b_{1n} J_n + F_1 (t) \\ \\
+      \dfrac{\id J_2}{\id t} = b_{22} J_2 + \ldots + b_{2n} J_n + F_2 (t) \\
+      \cdots \\
+      \dfrac{\id J_{n-1}}{\id t} = b_{(n-1)(n-1)} J_{n-1} + \ldots + b_{(n-1)n} J_n + F_{n-1} (t) \\ \\
+      \dfrac{\id J_n}{\id t} = b_{nn} J_n + F_n (t)
+    \end{array}
+    \right.
+    \eqno (1')
+$$
+Порядок решения: снизу вверх
+
+\textbf{Следствия:}
+\begin{enumerate}
+  \item Система $(1)$ решается в квадратурах (можно написать явное решение, содержащее заданные функции, элементарные функции, алгебраические операции и операцию интегрирования)
+  \item \Th Задача $(1)\land (2)$ имеет решение. Это решение может быть продолжено на весь отрезок $[\alpha, \beta]$, и это решение единственно.
+
+        \Proof
+$$
+    \vec{y} (t_0) = \vec{y}_0 \LRA \vec{J} (t_0) = S^{-1}\vec{y}_0
+$$
+$$
+    (1') \land \Big( \vec{J} (t_0) = S^{-1}\vec{y}_0 \Big) \LRA (1) \land (2)
+$$
+\end{enumerate}

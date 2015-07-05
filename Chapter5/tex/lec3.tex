@@ -1,0 +1,169 @@
+
+\point{2} \textbf{Задача Коши для уравнения $(1)$}
+
+В $G$ задана $n-1$-мерная поверхность $\Pi$. На $\Pi$ задана функция $h$. Найти $u(\vec x)$~--- то решение $(1)$, которое удовлетворяет условию $u = h$ на $\Pi$
+
+\Pic{Chapter5/pic/5.png}
+
+В данном случае $n-1$-мерная поверхность~--- это одномерная кривая. Возьмём точки, лежащие на $\Pi$, и проведём через эти точки характеристики.
+
+\Th Пусть а $G$ задано множество $\Pi$ уравнением
+$$
+    g(\vec x) = 0, \eqno (4)
+$$
+где $g(\vec x)$ непрерывна вместе с первыми частными производными.
+
+Пусть $ \vec a \in \Pi$. Пусть выполняется условие 
+$$
+    \F_1 (\vec a) \dfrac{\pa q}{\pa x_1}(\vec a) + \ldots +
+    \F_n (\vec a) \dfrac{\pa q}{\pa x_n}(\vec a)\eqno (5)
+$$
+Пусть в некоторой окрестности $\vec a$  задана функция $h(\vec x)$, непрерывная вместе с первыми частными производными. Тогда в некоторой окрестности $\vec a$ существует и притом единственное решение $(1)$ такое, что
+$$
+    u(\vec x) = h(\vec x) \quad \forall \vec x \in \Pi
+$$
+\Proof Мы имеем точку $\vec a$. Возьмём в окрестности точки $\vec a$ какие-либо независимые в $\vec a$ первые интегралы $(2)$. Тогда, как говорилось ранее,
+$$
+    u(\vec x) = \Phi \big(
+                    u_1(\vec x), \ldots, u_n(\vec x)
+                     \big).\,\,
+                    \Phi = ?
+$$
+Следующий фрагмент рассуждений от $\blacktriangleright$ до $\blacktriangleleft$~--- на $\Pi$.
+$\blacktriangleright$
+$$
+    \left[
+        \begin{array}{c}
+          u_1(x_1, \ldots, x_n) = u_1 \\
+          \cdots \\
+          u_{n-1}(x_1, \ldots, x_n) = u_1 \\
+          g(x_1, \ldots, x_n) = 0
+        \end{array}
+    \right. \eqno (6)
+$$
+Докажем, что якобиан
+$
+    \left. \dfrac{\pa(u_1, \ldots, u_{n-1}, q)}{\pa(x_1, \ldots, x_n)} \right|_{\vec a}
+$
+не равен нулю. Доказательство от противного. $\vec x = \vec a$:
+$$
+    0 = \left|
+    \begin{array}{ccc}
+      \dfrac{\pa u_1}{\pa x_1} & \cdots & \dfrac{\pa u_1}{\pa x_n} \\
+      \cdots & \cdots & \cdots \\
+      \dfrac{\pa u_{n-1}}{\pa x_1} & \cdots & \dfrac{\pa u_{n-1}}{\pa x_n} \\
+      \dfrac{\pa q}{\pa x_1} & \cdots & \dfrac{\pa q}{\pa x_n}
+    \end{array}
+    \right|
+$$
+Мы знаем, что первые $n-1$ строк линейно независимы. Значит, последняя строка является линейной комбинацией предыдущих:
+$$
+    \dfrac{\pa q}{\pa \vec x} = 
+    \alpha_1 \dfrac{\pa u_1}{\pa \vec x} + \ldots + \alpha_{n-1} \dfrac{\pa u_{n-1}}{\pa \vec x}
+$$ 
+$$
+    \sum\limits_{k=1}^n \F_k \dfrac{\pa q}{\pa x_k} = 
+    \sum\limits_{k=1}^n \F_k \left(
+            \sum\limits_{r=1}^{n-1} \alpha_r \dfrac{\pa u_r}{\pa x_k}
+            \right) = 
+    \sum\limits_{r=1}^{n-1} \alpha_r \sum\limits_{k=1}^n \F_k \dfrac{\pa u_r}{\pa x_k}
+    =
+$$
+$$
+    = \sum\limits_{r=1}^{n-1} \alpha_r \cdot 0 = 0,
+$$
+что противоречит $(5)$ю
+$$
+    (6) \underset{\text{в нек. окр. $\vec a$}}{\LRA}
+    \left[
+        \stolb
+        {x_1 = q_1(u_1, \ldots, u_{n-1})}
+        {\cdots}
+        {x_n = q_n(u_1, \ldots, u_{n-1})}
+    \right. \eqno (7)
+$$
+$q_1, \ldots, q_n$~--- непрерывные вместе с первыми частными производными.
+$$
+     h(\vec x) = h\big(
+        q_1(u_1, \ldots, u_{n-1}),
+        \ldots,
+        q_n(u_1, \ldots, u_{n-1})
+     \big) = 
+     \Phi (u_1, \ldots, u_{n-1}).
+$$
+$\Phi$ непрерывна вместе с первыми частными производными, $\Phi$ определена однозначно.
+$\blacktriangleleft$
+
+Берём в $G$ в некоторой окрестности $\vec a$
+$$
+    u(\vec x) = \Phi\big( u_1 (\vec x) ,\ldots, u_{n-1} (\vec x) \big).
+$$
+$u(\vec x)$~--- некоторое решение $(1)$.
+
+\Rem \textbf{О геометрическом смысле $(5)$.}
+
+Как известно из курса математического анализа, математическое выражение
+$$
+    \left\| \dfrac{\pa q}{\pa x_1}, \ldots, \dfrac{\pa q}{\pa x_n} \right\|
+$$
+есть градиент функции $q$. $\Pi$~--- множество уровня $q$.
+$\mathrm{grad}\, q$ ортогонален множеству уровня $q$.
+$$
+    \big(\mathrm{grad}\, q, \vec \F\big) \ne 0  \LRA \eqno (5) 
+$$
+$$
+    \LRA \F \text{ не касается } \Pi.
+$$
+Иллюстрация при $n=2$.
+
+\Pic{Chapter5/pic/6.png}
+
+%break
+
+\textbf{Пример.}
+$$
+    y \dfrac{\pa u}{\pa x} - x \dfrac{\pa u}{\pa y} = 0,
+$$
+$G$~--- плоскость $x, y$ с выброшенной точкой $(0,0)$. (Точку выбрасываем, потому что в ней $\F_1 = 0, \, \F_2 = 0 $. )
+
+Составляем систему:
+$$
+    \dfrac{\id x}{y} = \dfrac{\id y}{-x},
+$$
+откуда
+$$
+    \id (x^2 + y^2) = 0, \, u_1(x,y) = x^2 + y^2\text{ -- первый интеграл.}
+$$
+$n = 2,\, n-1 = 1$. Надо проверить, что система из одного первого интеграла является независимой системой.
+$$
+    \left\|
+        \dfrac{\pa u_1}{\pa x},\, \dfrac{\pa u_1}{\pa y}
+    \right\|
+    =
+    \left\|
+        2x,\, 2y
+    \right\| .   
+$$ 
+$$
+    \Rg \left\|
+        \dfrac{\pa u_1}{\pa x},\, \dfrac{\pa u_1}{\pa y}
+    \right\| = 1.
+$$
+$$
+    u(x,y) = \Phi(x^2 + y^2) \text{ -- формула общего решения.}
+$$
+$$
+    u_1 = c,\, x^2 + y^2 = c
+$$
+\Pic{Chapter5/pic/7.png}
+
+Задача Коши: $u(x,y) = h(x)$ при $y = 0 \land x > 0$.
+$$
+    g(x,y) = y, \, y\cdot 0 - x \cdot 1 = -x \ne 0.
+$$
+$$
+    u_1(x,y) = x^2 \text{ при } x > 0 \, \land \, y = 0
+$$
+$$
+    \text{на $\Pi$ } x = \sqrt{u_1}, \, u(x,y) = h(\sqrt{x^2 + y^2}) \text{ в } G.
+$$

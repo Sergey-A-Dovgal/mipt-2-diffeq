@@ -1,0 +1,250 @@
+\subsection{Условный экстремум}
+
+\textbf{В этом параграфе все функции достаточно гладкие.}
+
+\point{1} \textbf{Изопериметрическая задача.}
+
+$t_1 \leqslant t \leqslant t_2$, $y(t)$,
+$$
+    F(y) = \inttt f\big( t, y(t), y'(t) \big) \id t,\,
+    G(y) = \inttt g\big( t, y(t), y'(t) \big)\id t
+$$
+$F(y),\, G(y)$~--- заданные функции, $f$ и $g$ определены
+при $t_1 \leqslant t \leqslant t_2$, $y$ и $y'$~--- любые.
+
+\Def Функция $y(t)$ называется допустимой, если
+$$
+    y(t_1) = y_1, \quad y(t_2) = y_2, \quad G(y) = \ell,
+$$
+где $y_1$, $y_2$, $\ell$~--- заданы.
+
+\Def Допустимая функция $y(t)$ дает минимум $F$, если существует $\eps > 0$ такое, что
+для всех допустимых функций $\tilde{y} (t)$, удовлетворяющих условию
+$$
+    \mmax{t} \big| y(t) - \tilde{y} (t) \big|
+    + \mmax{t} \big| y'(t) - \tilde{y}' (t) \big|%t' {'}t..
+$$
+имеет место $F(y) \leqslant F(\tilde{y})$.
+
+\Th Пусть допустимая функция $y(t)$ дает минимум $F$, и $y(t)$ не является экстремумом
+функционала $G$. Тогда существует число $\lambda$ такое, что $y(t)$~--- экстремаль
+функционала $H = F + \lambda G$, то есть удовлетворяет уравнению
+$$
+    h_y - \dfrac{\id}{\id t}h_{\psi} = 0,
+$$
+где $h = f + \lambda g$.
+
+\Proof Пусть $y(t)$~--- решение задачи.
+$$
+    \eta_0 \such \eta_0(t_1) = \eta_0(t_2) = 0,
+$$
+$$
+    \inttt \Big( g_y \big( t, y(t), y'(t) \big)\eta(t) + g_{y'}\big( t, y(t), y'(t) \big)\eta'_0(t) \Big)\id t \neq 0.
+$$
+$\eta_0(t)$ существует, так как $y(t)$ не является экстремалью функционала $G$.
+$$
+    y(t) + \alpha \eta_0 (t) + \beta \eta(t),
+$$
+$\eta(t_1) = \eta(t_2)$, $\alpha$ и $\beta$~--- числа (малые).
+$$
+    \omega(\alpha, \beta) \eqdef F(y + \alpha \eta_0 + \beta \eta),\quad
+    \varphi(\alpha, \beta) \eqdef G(y + \alpha \eta_0 + \beta \eta).
+$$
+$\alpha = \beta = 0$~--- решение задачи: найти минимум $\omega$ при условии $\varphi = \ell$.
+Тогда:
+$$
+    \exists \lambda \such \left.\dfrac{\partial(\omega + \lambda \varphi)}{\partial \alpha} \right|_{\alpha = \beta = 0} = 0, \quad \left. \dfrac{\partial(\omega + \lambda \varphi)}{\partial \beta} \right|_{\alpha = \beta = 0} = 0.
+$$
+Из первого равенства следует:
+$$
+    \left.\dfrac{\partial(\omega + \lambda \varphi)}{\partial \alpha} \right|_{\alpha = \beta = 0} \RA
+    \inttt\big( f_y \eta_0 + f_{y'} n'_0 + \lambda( g_y \eta_0 + g_{y'}\eta'_0 ) \big) = 0
+$$
+$$
+    \lambda = - \left( \inttt f_y \eta_0 + f_{y'} \eta'_0\right)  \left/\left( \inttt (g_y \eta_0 + g_{y'} \eta'_0)\id t\right)\right.
+$$
+$\lambda$ не зависит от выбора $\eta(t)$.
+Посмотрим, что дает второе равенство:
+$$
+    \left.\dfrac{\partial(\omega + \lambda \varphi)}{\partial \beta} \right|_{\alpha = \beta = 0} \RA
+    \inttt\big[ (f_y + \lambda g_y)\eta + (f_{y'} + \lambda g_{y'})\eta' \big]\id t = 0.
+$$
+$$
+    h = f + \lambda g, \quad \text{ $h$ не зависит от выбора $\eta$.}
+$$
+$$
+    \inttt (h_y \eta + h_{y'}\eta')\id t = 0 \RA h_y - \dfrac{\id}{\id t} h_{y'} = 0.
+    \text{ (см. \S 1)}
+$$
+\Rem Мы получили уравнение Эйлера для функцонала $H$. В типичном случае мы получим решение в виде уравнения второго порядка, $y$  будет функцией от $t, c_1, c_2, \lambda$,
+$$
+    y(t_1) = y_1, \quad y(t_2) = y_2, \quad G(y) = \ell.
+$$
+
+\Task На плоскости заданы две точки $A$ и $B$. Соединяем их отрезком, рассматриваем некоторую соединяющую их кривую $\gamma$.
+Надо выбрать ее так, чтобы длина кривой была постоянной, и площадь ограниченной фигуры была максимальна.
+
+\Pic{Chapter2/pic/6.png}
+
+Выберем координаты так, чтобы отрезок $AB$ лежал на оси $O_x$.
+$$
+    \gamma \such y = y(x),\quad y(x_1) = y(x_2) = 0, \quad x_1 < x_2.
+$$
+$$
+    F(y) = -\intxx y(x)dx, \quad G(x) = \intxx \sqrt{1+ (y')^2}dx
+$$
+$G(y) = \ell$~--- задано, $F(y)$~--- max.
+$$
+    h = -y + \lambda\sqrt{1 + (y')^2}; \quad H = \intxx \big( -y + \lambda\sqrt{1 + (y')^2} \big)dx
+$$
+Решая уравнение Эйлера, получаем:
+$$
+    (x+c_1)^2 + (y+c_2)^2 = \lambda^2
+$$
+Если задача имеет решение, то это решение~--- дуга окружности.
+Рассмотрим несколько случаев:
+\begin{enumerate}
+  \item $\ell < x_2 - x_1$. Задача не имеет решения. (Множество допустимых функций пусто)
+  \item $\ell = x_2 - x_1$. Допустимая функция -- только отрезок $[x_1, x_2]$.
+  \item $\ell > x_2 - x_1$, $\ell < \dfrac{\pi}2 (x_2 - x_1)$. В этом случае получается
+  дуга, которая является гладкой кривой. \Pic{Chapter2/pic/7.png}
+  \item $\ell = \dfrac{\pi}2 (x_2 - x_1)$. Получим полуокружность, $|y'| = \infty$ на концах.
+  \Pic{Chapter2/pic/8.png}
+  \item $\ell > \dfrac{\pi}2 (x_2 - x_1)$. Получим дугу окружности. \Pic{Chapter2/pic/9.png}
+  Кривая не представляется уравнением какой-нибудь функции.
+\end{enumerate}
+
+\Rem Под нашу теорию подходит только случай $3)$. Можно показать, что решение в случаях пунктов $3)$, $4)$, $5)$
+действительно является искомым. Данная задача является изопериметрической в буквальном смысле. Эта конкретная задача
+дала название всему класса задач, который мы рассматриваем, несмотря на то, что функционал $G$ может не давать длину, а какое-нибудь другое значение.
+другое значение
+
+%break
+\point{2} \textbf{Задача Лагранжа}
+
+$t_1 \leqslant t \leqslant t_2$, $\left\|\begin{array}{c}
+                                    y(t) \\
+                                    z(t)
+                                  \end{array}\right\|,$
+$$
+    F(y,z) = \inttt f\big( t, y(t), z(t), y'(t), z'(t) \big)\id t.
+$$
+Дана функция $g(t, y, z)$. Заданные функции $f$ и $g$ определены при $t_1 \leqslant t \leqslant t_2$, остальные
+аргументы~--- любые.
+
+\Def Пара $\left\|\begin{array}{c}
+            y(t) \\
+            z(t)
+           \end{array}\right\|$ допустимая, если
+\begin{enumerate}
+    \item $g\big(t, y(t), z(t)\big) = 0$ при $t_1 \leqslant t \leqslant t_2$.
+    \item $y(t_1) = y_1$, $z(t_1) = z_1$, $y(t_2) = y_2$, $z(t_2) = z_2$, где $y_1$, $z_1$, $y_2$, $z_2$~---
+    заданы (разумеется $g(t, y_1, z_1) = 0$, $g(t_2, y_2, z_2) = 0$.)
+\end{enumerate}
+
+\Def Допустимая пара $\pair{y}{z}$ дает минимум функционала $F$, если существует $\eps > 0$
+такое, что для любой допустимой пары $\pair{y}{z}$, удовлетворяющей условию
+$$
+    \mmax{t} \sqrt{(y(t) - \tilde{y} (t))^2 + (z(t) - \tilde{z} (t))^2}
+    + \mmax{t} \sqrt{(y'(t) - \tilde{y'} (t))^2 + (z'(t) - \tilde{z'} (t))^2} < \eps,
+$$
+имеет место $F(y,z) \leqslant F(\tilde{y}, \tilde{z})$.
+
+Геометрический смысл задачи Лагранжа:
+\Pic{Chapter2/pic/10.png}
+Задана поверхность $\Pi$, рассматриваются кривые, соединяющие данные две точки, и лежащие на данной поверхности.
+Среди этих кривых надо найти ту, которая дает минимум функционала $F$.
+
+\Rem Если мы можем выразить, скажем, $y$ через $t$ и $z$, то надо это сделать и получить простейшую задачу вариационного исчисления. Сейчас мы рассматриваем общий случай, когда такая ситуация не имеет место.
+
+\Th Пусть допустимая пара $\pair{y}{z}$ даёт минимум $F$. Пусть в каждой точке кривой $y = y(t)$, $z = z(t)$,
+$t \in [t_1, t_2]$ имеет место
+$$
+    \condition{\dfrac{\partial y}{\partial y} \neq 0} \bigvee \condition{ \dfrac{\partial g}{\partial z} \neq 0}.
+$$
+Тогда существует функция $\lambda(t)$, $t\in[t_1, t_2]$ такая, что пара $\pair{y}{z}$ является
+экстремалью функционала $H(y,z)$, где
+$$
+    H(y,z) \eqdef \inttt h(t, y, z, y', z') \id t, \quad h = f + \lambda g.
+$$
+То есть, удовлетворяется система уравнений
+$$
+    \left\{ \begin{array}{c}
+      h_y - \dfrac{\id}{\id t} h_{y'} = 0, \\
+      h_z - \dfrac{\id}{\id t} h_{z'} = 0.
+    \end{array}\right.
+$$
+\Proof
+\Pic{Chapter2/pic/11.png}
+Поверхность задана уравнением $g=0$. Берем любую точку $\Hat{t}$ на кривой, удовлетворяющую условию
+$\Hat{t} \in (t_1, t_2)$. Затем проведем построения в некоторой окрестности этой точки.
+$$
+    y(\Hat{t}) = \Hat{y}, \quad z(\Hat{t}) = \Hat{z}.
+$$
+Пусть в этой точке частная производная $\dfrac{\partial g}{\partial z} (\Hat{t}, \Hat{y}, \Hat{z})$ не равна нулю.
+Существует окрестность точки $U$ точки $\Hat{t}, \Hat{y}, \Hat{z}$, для которой
+$g(t, y, z) = 0 \LRA z = a(t, y)$. (Это следует из теоремы о неявной функции.)
+
+Возьмем $\Hat{t_1} < \Hat{t} < \Hat{t_2}$.
+$$
+    \inttt f(t, y, z, y', z')\id t = \int\limits_{t_1}^{\Hat{t_1}} (\cdots)
+                                + \int\limits_{\Hat{t_1}}^{\Hat{t_2}} \Hat{f} \big( t, y, y' \big)\id t
+                                + \int\limits_{\Hat{t_2}}^{t_2} (\cdots), \text{ где}
+$$
+$$
+    \Hat{f} \big( t, y, y' \big) = f\Big( t, y, a(t,y), y', a_t (t,y) + a_y (t,y)y' \Big)
+$$
+На отрезке $[\Hat{t_1}, \Hat{t_21}]$ функция $y(t)$~--- экстремаль $\displaystyle\int\limits_{\Hat{t_1}}^{\Hat{t_2}} \Hat{f} \id t$.
+$$
+    \Hat{f}_y - \dfrac{\id}{\id t} \Hat{f}_{y'} = 0.
+$$
+Выразим производные:
+$$
+    \Hat{f}_y = f_y + f_z a_y + \underline{f_{z'} a_{ty} + f_{z'} a_{yy} y' }
+$$
+$$
+    \Hat{f}_{y'} = f_{y'} + f_{z'} a_y.
+$$
+$$
+    \dfrac{\id}{\id t}\Hat{f}_{y'} = \dfrac{\id}{\id t} f_{y'} + \left( \dfrac{\id}{\id t} f_{z'} \right)a_y
+    + \underline{f_{z'} a_{yt} + f_{z'} a_{yy} y'}
+$$
+По теореме о равенстве смешанных производных, подчеркнутые слагаемые взаимно уничтожаются.
+Следовательно,
+$$
+    0 = f_y - \dfrac{\id}{\id t} f_{y'} + \left( f_z - \dfrac{\id}{\id t} f_{z'} \right) a_y
+$$
+По теореме о неявных функциях,
+$$
+    a_y = - \dfrac{g_y}{g_z}
+$$
+Значит, последнее равенство можно записать в виде
+$$
+    f_y - \dfrac{\id}{\id t} f_{y'} - \left( f_z - \dfrac{\id}{\id t} f_{z'} \right) \dfrac{g_y}{g_z} = 0.
+$$
+$$
+    \dfrac{f_y - \dfrac{\id}{\id t} f_{y'}}{g_y} = \dfrac{f_z - \dfrac{\id}{\id t}f_{z'}}{g_z}
+$$
+\Quest{Если $g_y = 0$?}
+
+\Ans Можно трактовать равенство следующим образом: хотя бы один из знаменателей отличен от нуля; если оба знаменателя
+отличны от нуля, то это обычное равенство. Если один из знаменателей равен нулю, то соответствующий числитель тоже равен нулю.
+
+Введем функцию $\lambda(t) \such$
+$$
+    \lambda(t) \eqdef - \dfrac{f_y - \dfrac{\id}{\id t}f_{y'}}{g_y} = -\dfrac{f_z - \dfrac{\id}{\id t}f_{z'}}{g_z},
+    \quad t_1 \leqslant t \leqslant t_2.
+$$
+$h \eqdef f + \lambda g$.
+$$
+    h_y = f_y + \lambda g+y, h_{y'} = f_{y'}
+$$
+$$
+    h_y - \dfrac{\id}{\id t}h_{y'} = f_y - \dfrac{\id}{\id t} f_{y'} + \lambda g_y = 0
+$$
+Первое уравнение удовлетворяется. Аналогично показываем, что удовлетворяется и второе. Теорема доказана.
+
+\Rem Здесь $y = y(t, c_1, c_2, c_3, c_4, \lambda(t))$, $z = z(t, c_1, c_2, c_3, c_4, \lambda(t))$.
+Находим параметры из граничных условий и из равенства $g(t, y, z) \equiv 0$.
+
+% Раздел заканчивается, как и лекции первого семестра.

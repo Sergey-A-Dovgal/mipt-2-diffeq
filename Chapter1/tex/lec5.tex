@@ -1,0 +1,168 @@
+%4.10.2011
+\point{3} \textbf{Однородные уравнения.}
+$$
+    z^{(n)} + a_1 z^{(n-1)} + \ldots + a_n z = 0 , \, -\infty < t < +\infty \eqno (7)
+$$
+\Rem $\alpha_0 + \alpha_1 t + \ldots + \alpha_r t^r$~--- многочлен \emph{формальной степени} $r$,
+$\alpha_0, \alpha_1, \ldots, \alpha_r$~--- комплексные числа. При этом старший коэффициент не обязательно
+равен нулю.
+
+\Th Пусть характеристическое уравнение
+$$
+    \lam^n + a_1 \lam^{n-1} + \ldots + a_n = 0 
+$$
+имеет корни $\lam_1, \ldots, \lam_m$ кратности соответственно $k_1, \ldots, k_m$.
+Тогда $z(t)$~--- решение $(7)$ тогда и только тогда, когда
+$$
+    z(t) = q_1(t)e^{\lam_1 t} + \ldots + q_m(t) e^{\lam_m t}, \eqno (8)
+$$
+где $q_s(t)$~--- многочлен формальной степени $k_s - 1$ с комплексными коэффициентами.
+
+\Proof Используем $(3)$ и $(4)$. Проведём индукцию по $n$.
+\begin{enumerate}
+  \item $n=1$. $\,(7) \,\Rightarrow\, z' + a_1 z = 0 \,\Rightarrow\, z = e^{-a_1 t}C $.
+  \item $n>1$. $\, \L(\D) = \mathcal{M} (\D) (\D - \lam_1)$,
+$$
+    \mathcal{M} (\D) = (\D - \lam_1)^{k_1 - 1} (\D - \lam_2)^{k_2}\ldots (\D - \lam_m)^{k_m}
+$$
+$$
+    (7) \LRA \L(\D)z = 0, \quad \Big( \mathcal{M}(\D) (\lam-\lam_1) \Big)z = 0, \quad
+    \mathcal{M} (\D) \Big( (\D - \mathcal{M})z \Big) = 0
+$$
+$$
+    (7) \LRA \left\{
+    \begin{array}{c}
+      \mathcal{M} (\D) v = 0 \\
+      (\D - \lam_1)z = v
+    \end{array}
+    \right\}, \quad
+    v = h_1(t) e^{\lam_1 t} + \sum\limits_{s=2}^m h_s(t)e^{\lam_s t},
+$$
+где $h_s(t)$~--- произвольный многочлен формальной степени $k_s - 2$ при $k_s > 1$; $h_s(t) = 0$ при $k_s = 1$.
+$$
+\begin{array}{rl}
+    z & = e^{\lam_1 t} \left\{ \displaystyle\int e^{\lam_1 t}\Big( h_1 (t) e^{\lam_1 t} + \sum\limits_{s=2}^m h_s (t) \cdot e^{\lam_s t} \Big)\id t + C \right\} = \\
+      & = e^{\lam_1 t} \left\{ \displaystyle\int \Big( h_1(t) + \sum\limits_{s=2}^m h_s (t) e^{(\lam_s - \lam_1)t} \Big)\id t + C \right\}, \,\, \lam_s - \lam_1 \ne 0 \text{ при } s \ne 1.
+\end{array}
+$$
+Таким образом,
+$$
+    z = e^{\lam_1 t}\left( q_1(t) + \sum\limits_{s=2}^m e^{\lam_s - \lam_1} q_s (t) + C \right),
+$$
+где степень $q_s(t)$ равна $k_s - 1$ при $s = \overline{1,m}$, $z = \sum\limits_{s=1}^m e^{\lam_s t}q_s(t)$.
+\end{enumerate}
+
+\point{4} \textbf{Неоднородные уравнения.}
+Пусть $f(t)$ непрерывна на $[\alpha, \beta]$,
+$$
+    y^{(n)} + a_1 y^{(n-1)} + \ldots a_n y = f(t), \eqno (1)
+$$
+$$
+    z^{(n)} + a_1 z^{(n-1)} + \ldots + a_n z = 0 \eqno (9)
+$$
+\Stat Пусть $y_{\ast} (t)$~--- решение $(1)$, $y(t) = y_{\ast} (t) + z(t)$. Тогда
+$y(t)$~--- решение $(1)$ тогда и только тогда, когда $z(t)$~--- решение $(9)$.
+
+\Proof $\L(\D) y = \L(\D) (y_{\ast} + z) = \L(\D) y_{\ast} + \L(\D) z = f + \L(\D)z$
+$$
+    \L(\D) y = f \LRA \L(\D)z = 0
+$$
+\Stat Пусть $f = f_1 + \ldots + f_N$, $\L(\D) y_k = f_k$ при $k=\overline{1,N}$;
+$y = y_1 + \ldots + y_N$. Тогда $\L(\D)y = f$.
+
+\Th Пусть $f(t) = g(t) e^{\mu t}$, где $\mu$~--- комплексное число, $g(t)$~--- комплексный многочлен степени $m$. Пусть $\mu$~--- корень кратности $k$ характеристического уравнения
+$$
+    \lam^n + a_1\lam^{n-1} + \ldots + a_n = 0.
+$$
+Тогда существует единственное решение уравнения $(1)$, имеющее вид
+$$
+    y(t) = t^k \cdot r(t) e^{\mu t},
+$$
+где $r(t)$~--- многочлен степени $m$.
+
+\Proof (индукция по $n$ -- суммарной кратности корней).
+
+Докажем существование решения $\tilde{y} (t)$ вида
+$$
+    \tilde{y} (t) = \tilde{r} (t) e^{\mu t},
+$$
+где $\tilde{r}(t)$~--- многочлен степени $(m+k)$.
+\begin{enumerate}
+  \item $n=1$. $\, y' + a_1 y = f(t)$. По формуле $(4)$:
+$$
+    y(t) = e^{-a_1 t}\left( \displaystyle\int e^{a_1 t} f(t) \id t + C \right), \text{ и т.д.}
+$$
+Надо отдельно рассмотреть случаи $\mu = -a_1$, $\mu \ne -a_1$. В обоих случаях,
+интегрируя, получаем, что утверждение выполняется.
+  \item $n>1$.
+$$
+    \L(\D) y = f, \quad \Big( \mathcal{M} (\D) (\D - \lam_1) \Big)y = f,
+    \quad \mathcal{M} (\D) \Big( \underbrace{(\D - \lam_1)y}_{\text{обозначим }\tilde{v}} \Big) = f.
+$$
+$$
+    \left\{ \begin{array}{c}
+              \mathcal{M} (\D) \tilde{v} = f \qquad(a) \\
+              (\D - \lam_1)y = \tilde{v} \quad (b)
+            \end{array}
+     \right.
+$$
+Из нашего предположения, $y(t)$ ищем в виде $y(t) = e^{\mu t}\cdot\tilde{r}(t)$, поэтому из второго равенства дифференцированием получаем:
+$$
+    \tilde{v} = e^{\mu t}\big( \tilde{r}'(t) + \underline{ (\mu - \lam_1) \tilde{r} (t)} \big). \eqno(c)
+$$
+Таким образом,
+$$ \left\{
+     \begin{array}{c}
+       \tilde{v} = e^{\mu t} h(t) \\
+       y = e^{\mu t} \tilde{r} (t)
+     \end{array}
+   \right., \text{ где $h(t)$ и $\tilde{r} (t)$ -- многочлены.} 
+$$
+Возможны 2 случая:
+\begin{enumerate}
+  \item $\lam_1 \ne \mu$. Подчёркнутое слагаемое в $(c)$ не обращается в 0. Рассматривая уравнение $(a)$ степени $n-1$, по предположению индукции получаем, что $h(t)$ имеет степень $m+k$. Из $(c)$ видно, что она также равна степени многочлена $\tilde{r} (t)$.
+  \item $\lam_1 =   \mu$. В этом случае подчёркнутое слагаемое в $(c)$ обращается в 0. По предположению индукции, многочлен $h(t)$ имеет степень $m+k-1$, а степень многочлена $\tilde{r}(t)$ равна $m+k$, как видно из $(c)$.
+\end{enumerate}
+\end{enumerate}
+Для завершения доказательства представим $\tilde{y}(t)$ в виде
+$$
+    \tilde{y}(t) = \underbrace{t^k r(t) e^{\mu t}}_
+    {y(t)}
+    +
+    \underbrace{(\alpha_0 + \alpha_1 t + \ldots + \alpha_{k-1}t^{k-1})e^{\mu t}}_
+    {\text{решение однородного уравнения}}.
+$$
+Напомним, что $\mu$~--- корень характеристического уравнения кратности $k$, $\mathrm{deg}\, r(t) = m$.
+
+\Rem Коэффициенты многочлена $r(t)$ ищут методом неопределенных коэффициентов.
+
+\point{5} \textbf{Случай, когда все величины вещественны.}
+
+Пусть в $(1)$ $a_1, \ldots, a_n$~--- вещественны, $f(t)$~--- вещественная.
+Для корней характеристического уравнения $\lam^n + a_1 \lam^{n-1} + \ldots a_n = 0$ возможны два случая:
+$\lam$~--- вещественный корень, либо $\lam = \alpha + i \beta$, $\bar{\lam} = \alpha - i\beta$ оба являются корнями характеристического уравнения. $\alpha, \beta$~--- вещественные, причём кратность этих корней одна и та же.
+$$
+    e^{\alpha \pm i \beta} = e^{\alpha} (\cos \beta \pm i \sin \beta)
+$$ 
+Решение однородного уравнения складывается из слагаемых вида $q(t)e^{\lam t}$, $q(t)$~--- многочлен.
+Если $\lam \in \RR$, то слагаемое можно переписать без изменений. Если $\lam$~--- комплексное, то
+$$
+    q(t)e^{\lam t} + \tilde{q}(t)e^{\bar{\lam} t} = \Big( A(t)\cos \beta t + B(t) \sin \beta t \Big)e^{\alpha t}
+$$ 
+При этом $\max \big(\deg A(t), \deg B(t)\big)$ равна кратности корня $\lam$ в характеристическом уравнении,
+а формальная степень $A(t)$ равна формальной степени $B(t)$.
+
+Для неоднородного уравнения справедлива аналогичная сформулированной в пункте 4 теорема:
+
+\Th Если
+$$
+    f(t) = e^{\gamma t} \big( M(t)\cos \dta t + N(t) \sin \dta t \big),
+$$
+$M(t)$, $N(t)$~--- многочлены, $\mu = \gamma + i \dta$, $\mu$~--- корень кратности $k$ характеристического уравнения, то решение $y(t)$ надо искать в виде
+$$
+    y(t) = t^k \cdot e^{\gamma t} \Big( u(t)\cos \dta t + v(t) \sin \dta t \Big),
+$$
+где $\max(\deg u, \deg v) = \max(\deg M, \deg N)$.
+
+Если $SA(t), B(t), M(t), N(t), u(t), v(t)$ вещественные, то $y(t)$~--- тоже вещественная.
+
